@@ -3,33 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <link rel="stylesheet" href="resources/css/font.css" type="text/css">
         <link rel="stylesheet" href="resources/css/mainpage.css" type="text/css">
+        <link rel="stylesheet" href="resources/css/login.css">
         <title>로그인-사주로그</title>
-        <style>
-            html { scroll-behavior: smooth; }
-            * { margin: 0; padding: 0; vertical-align: top; box-sizing: border-box; }
-            body { max-width: 800px; min-width: 320px; 
-            margin: 0 auto; font-size: 18px; }
-            li { list-style: none; }
-            button { all: unset; cursor: pointer; padding: 0; margin: 0; font: inherit; color: inherit; }
-
-
-            .bg { width: 100%; position: relative; overflow: hidden; }
-            .bg > img { width: 100%; object-fit: contain; }
-            .tcolor { color: #fff000; }
-            .bg_inner { width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: flex; flex-direction: column; justify-content: center; padding: 0 1em; }
-            .inner { width: 95%; margin: 0 auto; padding: 15% 0; }
-
-
-
-            /* login */
-            .login_con { text-align: center; }
-            .login_con h2 { color: #fff; }
-            .login_con ul li { margin-bottom: .5em; }
-            .login_con ul li button { color: #fff; }
-            .login_con ul li button img path  { fill: #7b5cff; stroke: #222; }
-        </style>
     </head>
 
     <body>
@@ -39,9 +17,35 @@
                 <div class="login_con">
                     <h2>로그인 / 회원가입</h2>
                     <ul>
-                        <li><button><img src="resources/img/login/talk.png" alt="카카오">카카오로 시작하기<img src="resources/img/login/arrow.svg" alt="화살표"></button></li>
-                        <li><button><img src="resources/img/login/naver.png" alt="카카오">네이버로 시작하기<img src="resources/img/login/arrow.svg" alt="화살표"></button></li>
-                        <li><button><img src="resources/img/login/google.png" alt="카카오">구글로 시작하기<img src="resources/img/login/arrow.svg" alt="화살표"></button></li>
+                        <li>
+                            <button type="button" id="kakao">
+                                <img src="resources/img/login/talk.png" alt="카카오">카카오로 시작하기
+                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
+                                    <path d="M24.3938 14.0223L13.1736 2.80216L16.0288 -0.00287339L32.0576 16.0259L16.0288 32.0547L13.1736 29.2496L24.3938
+                                    18.0295L-5.58155e-05 18.0295L-5.54652e-05 14.0223L24.3938 14.0223Z" fill="#2A2A2A"/>
+                                </svg>
+                            </button>
+                        </li>
+
+
+                        <li>
+                            <button type="button" id="naver">
+                                <img src="resources/img/login/naver.png" alt="카카오">네이버로 시작하기
+                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
+                                    <path d="M24.3938 14.0223L13.1736 2.80216L16.0288 -0.00287339L32.0576 16.0259L16.0288 32.0547L13.1736 29.2496L24.3938
+                                    18.0295L-5.58155e-05 18.0295L-5.54652e-05 14.0223L24.3938 14.0223Z" fill="#2A2A2A"/>
+                                </svg>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" id="google">
+                                <img src="resources/img/login/google.png" alt="카카오">구글로 시작하기
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
+                                    <path d="M24.3938 14.0223L13.1736 2.80216L16.0288 -0.00287339L32.0576 16.0259L16.0288 32.0547L13.1736 29.2496L24.3938
+                                    18.0295L-5.58155e-05 18.0295L-5.54652e-05 14.0223L24.3938 14.0223Z" fill="#2A2A2A"/>
+                                </svg>
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>

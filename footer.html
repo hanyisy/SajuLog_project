@@ -5,13 +5,56 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <style>
+            html { scroll-behavior: smooth; }
+            * { margin: 0; padding: 0; vertical-align: top; box-sizing: border-box; }
+            body { max-width: 800px; min-width: 320px; 
+            margin: 0 auto; font-size: 18px; }
+            li { list-style: none; }
+
             footer { background: #1B1B1B; }
+            footer .inner { padding: 2.5em 1em; }
+            footer .inner img { width: 40%; margin-bottom: 1.5em; max-width: 205px; }
+            footer .inner ul li span, footer .inner p { color: #999; }
+            footer .inner p { margin-bottom: 1em; font-weight: 200; }
+            footer .inner ul { display: flex; gap: .35em; }
         </style>
     </head>
 
     <body>
         <footer>
-            <img src="img/logo.png" alt="로고">
+            <div class="inner">
+                <img src="img/logo.png" alt="로고">
+                <p>
+                    대표 OOO<br>
+                    사업자등록번호 OOO-OO-OOOOO<br>
+                    통신판매번호 OOOO-OOOO-OOOO<br>
+                    경기도 부천시 OOO-OO, OOO-OOO<br>
+                    withus@withus.co.kr<br>
+                    000-0000-0000
+                </p>
+                <ul>
+                    <li><span id="show-Box" class="policy_btn">회사소개 |</span></li>
+                    <li><span id="show-Box" class="policy_btn">이용약관 |</span></li>
+                    <li><span id="show-Box" class="policy_btn" style="font-weight: bolder;">개인정보 처리방침</span></li>
+                </ul>
+            </div>
         </footer>
+
+
+        <script>  // 팝업 창
+            const openPop = document.getElementById("show-Box");
+            openPop.addEventListener('click', () => {
+                const popup = window.open(
+                    'https://land.withusmk.co.kr/assets/etc/file/policy.html', // 조약 내용을 담은 실제 경로
+                    '개인정보이용동의',
+                    'width=800,height=600,scrollbars=yes'
+                );      
+    
+                if (!popup || popup.closed || typeof popup.closed === 'undefined') {
+                    alert('팝업 차단이 감지되었습니다! 팝업 허용을 설정해주세요.');
+                }
+            });
+        </script>
+
     </body>
 </html>

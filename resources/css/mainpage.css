@@ -12,8 +12,47 @@ body{
 /* 한문 */
 .main_resule_han{font-family: 'JoseonPalace';}
 
+a{text-decoration: none;}
+img{
+    width: 100%; object-fit: contain;
+}
 h1{font-family: 'YeogiOttaeJalnanGothic'; font-weight: 100;}
 
+header{
+    width: 100%; position: fixed;
+    z-index: 1000; left: 50%; top: 0; transform: translateX(-50%);
+}
+.header_deco{width: 100%; position: relative;}
+.header_deco1>div{width: 100%; background-color: #ddc49b;}
+.header_deco1>div:first-child{ height: 0.4em;}
+.header_deco1>div:last-child{ height: 0.2em; margin-top: 0.2em;}
+.header_deco2{
+    width: 100%; height: 0.2em; background-color: #ddc49b; position: relative;
+}
+.header_box{
+    width: 100%; margin: auto; max-width: 800px; color: #fff;
+    display: flex; justify-content: space-between; padding: 0.5em 2.5%;
+    align-items: center;
+}
+.header_logo{
+    width: 32%; margin: 3% 0;
+}
+.header_maenuBox{
+    display: flex; justify-content: right; gap: 1em; font-size: 1.1em; align-items: center;
+}
+.header_cashBtn{width: 33%;}
+.header_cashBtn a{
+    display: block; width: 100%;
+}
+.header_barBtn{
+    width: 2.5em;
+}
+.header_deco_obj{
+    position: absolute; top: 0%; right: 2.5%; 
+    width: 8%; display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+.header_deco_obj>div:nth-child(1){width: 100%; transform: translateY(-45%) translateX(10%);}
+.header_deco_obj>div:nth-child(2){width: 100%; transform: translateY(-20%) translateX(10%);}
 
 
 

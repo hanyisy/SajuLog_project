@@ -1,0 +1,101 @@
+/* JalnanGothic 강조텍스트 */
+@font-face {
+    font-family: 'JalnanGothic';
+    src: url('https://cdn.jsdelivr.net/gh/hyeins-w/with-webFonts@main/JalnanGothic/JalnanGothic.woff2') format('woff2');
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* 조선궁서  사주 한자 */
+@font-face {
+    font-family: 'JoseonPalace';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+/* 푸라닭 젠틀 고딕  사주로그 영문버전*/
+@font-face {
+    font-family: 'PuradakGentleGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.1/PuradakGentleGothicR.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+
+/* 박물관문화재단클래식 사주로그 한글버전 */
+
+@font-face {
+    font-family: 'MuseumCulturalFoundationClassic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+
+
+/* Presentation-font 일반텍스트 */
+@font-face {
+    font-family: 'Presentation';
+    src: url('https://cdn.jsdelivr.net/gh/hyeins-w/with-webFonts@main/Presentation-font/Freesentation-1Thin.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Presentation';
+    src: url('https://cdn.jsdelivr.net/gh/hyeins-w/with-webFonts@main/Presentation-font/Freesentation-2ExtraLight.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Presentation';
+    src: url('https://cdn.jsdelivr.net/gh/hyeins-w/with-webFonts@main/Presentation-font/Freesentation-3Light.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Presentation';
+    src: url('https://cdn.jsdelivr.net/gh/hyeins-w/with-webFonts@main/Presentation-font/Freesentation-4Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Presentation';
+    src: url('https://cdn.jsdelivr.net/gh/hyeins-w/with-webFonts@main/Presentation-font/Freesentation-5Medium.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Presentation';
+    src: url('https://cdn.jsdelivr.net/gh/hyeins-w/with-webFonts@main/Presentation-font/Freesentation-6SemiBold.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Presentation';
+    src: url('https://cdn.jsdelivr.net/gh/hyeins-w/with-webFonts@main/Presentation-font/Freesentation-7Bold.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Presentation';
+    src: url('https://cdn.jsdelivr.net/gh/hyeins-w/with-webFonts@main/Presentation-font/Freesentation-8ExtraBold.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Presentation';
+    src: url('https://cdn.jsdelivr.net/gh/hyeins-w/with-webFonts@main/Presentation-font/Freesentation-9Black.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+}

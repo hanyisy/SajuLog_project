@@ -1,0 +1,127 @@
+*{margin: 0; padding: 0; box-sizing: border-box; } 
+body{
+    max-width: 800px; margin: auto;
+    position: relative; overflow-x: hidden; font-size: 18px;
+    font-family: 'Presentation'; font-weight: 500;
+}
+
+.main_logo_kr{font-family: 'MuseumCulturalFoundationClassic';}
+.main_logo_en{font-family: 'PuradakGentleGothic';}
+/* 한문 */
+.main_resule_han{font-family: 'JoseonPalace';}
+
+h1{font-family: 'JalnanGothic';}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.saju_frameBox { position: absolute;
+    width: 100%;   /* ← 원하는 가로 크기 */
+    height: 100%;  /* ← 원하는 세로 크기 */
+}
+.saju_frameBox {
+    --frame-scale   : 0.8;          /* 전체 배율 (0.5 = 절반) */
+    --color-deco    : #ddc49b;    /* 장식 색상 */
+    --color-line    : #ffffff;    /* 선 색상 */
+    
+    /* ── vw 기준 계산값 (건드리지 마세요) ── */
+    --corner-size   : calc(12.9265vw * var(--frame-scale));
+    --offset-h      : calc(12.6629vw * var(--frame-scale));  /* 상/하 선 left·right */
+    --offset-v      : calc(12.6268vw * var(--frame-scale));  /* 좌/우 선 top·bottom */
+    --line-h-height : calc(2.0833vw  * var(--frame-scale));  /* 상/하 선 높이 */
+    --line-v-width  : calc(2.0913vw  * var(--frame-scale));  /* 좌/우 선 너비 */
+    --line-thickness: calc(0.2756vw  * var(--frame-scale));  /* 선 두께 */
+    position: relative;
+}
+/* 모서리 장식 — 고정 크기, CSS transform으로 미러링 */
+.saju_frameBox_corner {
+    position: absolute; width:  var(--corner-size); height: var(--corner-size);
+}
+.saju_frameBox_corner svg {
+    display: block; width:  100%; height: 100%;
+}
+.saju_frameBox_corner-tl { top: 0; left: 0; }
+.saju_frameBox_corner-tr { top: 0; right: 0;  transform: scaleX(-1); }
+.saju_frameBox_corner-bl { bottom: 0; left: 0;  transform: scaleY(-1); }
+.saju_frameBox_corner-br { bottom: 0; right: 0; transform: scale(-1); }
+/* 선 공통 */
+.saju_frameBox_line-top,
+.saju_frameBox_line-bottom,
+.saju_frameBox_line-left,
+.saju_frameBox_line-right {
+    position: absolute;
+}
+/* 상단 선 (2가닥) */
+.saju_frameBox_line-top {
+    top: 0; left:  var(--offset-h); right: var(--offset-h); height: var(--line-h-height); display: flex; flex-direction: column; justify-content: space-between;
+}
+.saju_frameBox_line-top::before,
+.saju_frameBox_line-top::after {
+    content: ''; display: block; width: 100%; height: var(--line-thickness); background: var(--color-line);
+}
+/* 하단 선 (2가닥) */
+.saju_frameBox_line-bottom {
+    bottom: 0; left:  var(--offset-h); right: var(--offset-h); height: var(--line-h-height); display: flex; flex-direction: column; justify-content: space-between;
+}
+.saju_frameBox_line-bottom::before,
+.saju_frameBox_line-bottom::after {
+    content: ''; display: block; width: 100%; height: var(--line-thickness); background: var(--color-line);
+}
+/* 왼쪽 선 (2가닥) */
+.saju_frameBox_line-left {
+    left: 0; top:    var(--offset-v); bottom: var(--offset-v); width: var(--line-v-width); display: flex; flex-direction: row; justify-content: space-between;
+}
+.saju_frameBox_line-left::before,
+.saju_frameBox_line-left::after {
+    content: ''; display: block; height: 100%; width: var(--line-thickness); background: var(--color-line);
+}
+/* 오른쪽 선 (2가닥) */
+.saju_frameBox_line-right {
+    right: 0; top:    var(--offset-v); bottom: var(--offset-v); width: var(--line-v-width); display: flex; flex-direction: row; justify-content: space-between;
+}
+.saju_frameBox_line-right::before,
+.saju_frameBox_line-right::after {
+    content: ''; display: block; height: 100%; width: var(--line-thickness); background: var(--color-line);
+}
+/* 안쪽 콘텐츠 영역 */
+.saju_frameBox_frame-content {
+    position: absolute; inset: var(--corner-size); display: flex; align-items: center; justify-content: center;
+}
+
+
+
+@media (max-width: 800px) {
+    body { width: 100%; font-size: 18px;}
+}
+@media (min-width: 481px) and (max-width: 600px) {
+    body { width: 100%; font-size: 15px;}
+}
+@media (min-width: 380px) and (max-width: 480px) {
+    body { width: 100%; font-size: 12px;}
+}
+@media (max-width: 379px) {
+    body { width: 100%; font-size: 12px;}
+}

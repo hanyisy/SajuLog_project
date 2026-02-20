@@ -1,3 +1,5 @@
+@import url("resources/css/font.css");
+
 *{margin: 0; padding: 0; box-sizing: border-box; } 
 body{
     max-width: 800px; margin: auto;
@@ -10,7 +12,7 @@ body{
 /* 한문 */
 .main_resule_han{font-family: 'JoseonPalace';}
 
-h1{font-family: 'JalnanGothic';}
+h1{font-family: 'YeogiOttaeJalnanGothic'; font-weight: 100;}
 
 
 

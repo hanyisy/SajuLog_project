@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
+        <script src="./resources/js/common.js"></script>
         <link rel="stylesheet" href="resources/css/font.css" type="text/css">
         <link rel="stylesheet" href="resources/css/product.css">
         <link rel="stylesheet" href="resources/css/mainpage.css" type="text/css">
@@ -11,6 +12,8 @@
     </head>
 
     <body>
+        <header></header>
+        <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"> </section>
         <section class="product">
             <div class="inner">
                 <div class="product_menu">
@@ -60,11 +63,11 @@
                 </div>
 
                 <div class="product_policy">
-                    <div class="js_product_check" id="policy"></div>
+                    <input type="checkbox" id="policy" class="js_product_check" required checked>
                     <label for="policy">위 주문 내용을 확인했으며, 이용약관, 개인정보 이용 및 제공, 결제에 동의합니다.</label>
                 </div>
 
-                <button type="button" class="js_product_btn">상품을 선택해주세요</button>
+                <button type="submit" class="js_product_btn">상품을 선택해주세요</button>
 
             </div>
         </section>
@@ -77,23 +80,45 @@
             document.addEventListener('DOMContentLoaded', () => {
 
                 const productBoxes = document.querySelectorAll('.js_product_box');
+                const choiceBoxes = document.querySelectorAll('.js_product_choice_box');
                 const productBtn = document.querySelector('.js_product_btn');
                 const productChoice = document.querySelector('.product_choice');
 
+                let productSelected = false;
+
+                // 상품 선택
                 productBoxes.forEach(box => {
                     box.addEventListener('click', () => {
 
-                        // 기존 active 제거
                         productBoxes.forEach(el => el.classList.remove('active'));
-
-                        // 현재 선택 활성화
                         box.classList.add('active');
 
-                        // 결제수단 영역 노출
                         productChoice.style.display = 'block';
 
-                        // 버튼 문구 변경
                         productBtn.textContent = '결제수단을 선택해주세요';
+
+                        productBtn.classList.remove('active');
+                        productBtn.classList.add('ready');
+
+                        choiceBoxes.forEach(el => el.classList.remove('active'));
+
+                        productSelected = true;
+                    });
+                });
+
+                // 결제수단 선택
+                choiceBoxes.forEach(box => {
+                    box.addEventListener('click', () => {
+
+                        if (!productSelected) return;
+
+                        choiceBoxes.forEach(el => el.classList.remove('active'));
+                        box.classList.add('active');
+
+                        productBtn.textContent = '결제하기';
+
+                        productBtn.classList.remove('ready');
+                        productBtn.classList.add('active');
                     });
                 });
 

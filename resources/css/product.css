@@ -8,12 +8,13 @@ button { all: unset; cursor: pointer; padding: 0; margin: 0; font: inherit; colo
 .bg_inner { width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: flex; flex-direction: column; justify-content: center; padding: 0 1em; }
 .inner { width: 95%; margin: 0 auto; padding: 15% 0; }
 
-
+/* product */
 .product { background: #00001D; }
 .product_menu { display: flex; position: relative; margin-bottom: 2em; }
 .product_menu h2 { font-family: 'PuradakGentleGothic'; font-weight: 500; color: #fff; font-size: 2.8em;
 transform: translateX(-50%); position: absolute; left: 50%; }
 
+.product_con { margin-bottom: 2em; }
 .js_product_box { position: relative; margin-bottom: 1.5em; }
 .js_product_box:last-child { margin-bottom: 0; }
 .js_product_box img { width: 100%; border: 2.5px solid #DDC49B; border-radius: .7em; filter: brightness(.4); }
@@ -26,6 +27,19 @@ font-weight: 500; }
 .product_tit_wrap h3 { font-size: 1.3em; }
 .product_tit_wrap h4 { font-size: 2.5em; }
 
+.product_choice { margin-bottom: 2em; }
+.js_product_choice_box { color: #DDC49B; text-align: center; border: 1.5px solid #DDC49B; margin-bottom: .5em;
+font-size: 2em; padding: .3em 0; }
+
+.product_policy { color: #fff; display: flex; gap: .5em; align-items: center; }
+.js_product_check { width: 1em; height: 1em; border: 1.5px solid #fff; }
+.product_policy label { font-weight: 200; }
 
 .js_product_btn { color: #999; font-size: 2.5em; text-align: center; display: block; border: 1.5px solid #999; border-radius: .5em; padding: .3em .8em;
 margin: 1.5em auto 0 auto; }
+
+.product_choice { display: none; }
+
+.js_product_box.active img { filter: brightness(.8); }
+
+.js_product_box.active h2 { color: #DDC49B; }

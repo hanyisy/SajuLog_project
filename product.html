@@ -59,15 +59,47 @@
                     <div class="js_product_choice_box">카카오페이</div>
                 </div>
 
-                <div class="form_policy">
-                    <input id="policy" type="checkbox" value="동의" checked required> 
+                <div class="product_policy">
+                    <div class="js_product_check" id="policy"></div>
                     <label for="policy">위 주문 내용을 확인했으며, 이용약관, 개인정보 이용 및 제공, 결제에 동의합니다.</label>
-                </div>  <!----form_policy------->
+                </div>
 
                 <button type="button" class="js_product_btn">상품을 선택해주세요</button>
 
             </div>
         </section>
+
+
+
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+                const productBoxes = document.querySelectorAll('.js_product_box');
+                const productBtn = document.querySelector('.js_product_btn');
+                const productChoice = document.querySelector('.product_choice');
+
+                productBoxes.forEach(box => {
+                    box.addEventListener('click', () => {
+
+                        // 기존 active 제거
+                        productBoxes.forEach(el => el.classList.remove('active'));
+
+                        // 현재 선택 활성화
+                        box.classList.add('active');
+
+                        // 결제수단 영역 노출
+                        productChoice.style.display = 'block';
+
+                        // 버튼 문구 변경
+                        productBtn.textContent = '결제수단을 선택해주세요';
+                    });
+                });
+
+            });
+        </script>
+
 
 
     </body>

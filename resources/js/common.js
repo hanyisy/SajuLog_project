@@ -48,10 +48,33 @@ const stickyBottom = `
 `;
 
 
+const footerCon = `
+        <footer>
+            <div class="inner">
+                <img src="resources/img/logo.png" alt="로고">
+                <p>
+                    대표 OOO<br>
+                    사업자등록번호 OOO-OO-OOOOO<br>
+                    통신판매번호 OOOO-OOOO-OOOO<br>
+                    경기도 부천시 OOO-OO, OOO-OOO<br>
+                    withus@withus.co.kr<br>
+                    000-0000-0000
+                </p>
+                <ul>
+                    <li><span id="show-Box" class="js_policy_btn">회사소개 |</span></li>
+                    <li><span id="show-Box" class="js_policy_btn">이용약관 |</span></li>
+                    <li><span id="show-Box" class="js_policy_btn" style="font-weight: bolder;">개인정보 처리방침</span></li>
+                </ul>
+            </div>
+        </footer>
+`;
+
+
 // 2. DOM 로드 후 실행
 window.addEventListener('DOMContentLoaded', () => {
     const headerElement = document.querySelector('header');
     const stickyBottomElement = document.querySelector('.js_sticky_Bottom_Bar');
+    const footerConElement = document.querySelector('footer');
     
     // 페이지에 <header> 태그가 존재할 때만 실행
     if (headerElement) {
@@ -63,4 +86,8 @@ window.addEventListener('DOMContentLoaded', () => {
         stickyBottomElement.innerHTML = stickyBottom;
         console.log("Header loaded successfully!");
     }
+
+    if (footerConElement) {
+    footerConElement.innerHTML = footerCon;
+}
 });

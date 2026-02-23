@@ -1,0 +1,44 @@
+html { scroll-behavior: smooth; }
+* { margin: 0; padding: 0; vertical-align: top; box-sizing: border-box; }
+li { list-style: none; }
+button { all: unset; cursor: pointer; padding: 0; margin: 0; font: inherit; color: inherit; }
+.bg { width: 100%; position: relative; overflow: hidden; }
+.bg > img { width: 100%; object-fit: contain; }
+.tcolor { color: #fff000; }
+.bg_inner { width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: flex; flex-direction: column; justify-content: center; padding: 0 1em; }
+.inner { width: 95%; margin: 0 auto; padding: 15% 0; }
+
+.faq { min-height: 100vh; padding: 10% 0; background: #00001D; }
+.faq .inner { width: 100%; }
+.faq_menu { padding-left: 5%; display: flex; align-items: center; position: relative; margin-bottom: 2em; }
+.faq_menu h2 { font-family: 'PuradakGentleGothic'; font-weight: 500; color: #fff; font-size: 2.5em;
+transform: translateX(-50%); position: absolute; left: 50%; }
+.faq_menu img { width: 60%; }
+
+.faq_tab { display: flex; justify-content: space-between; }
+.faq_tab_box { width: 100%; text-align: center; border-bottom: 1.5px solid #8B7859; padding-bottom: 1em; }
+.faq_tab h3 { color: #8B7859; font-size: 2.2em; }
+
+/* 탭 active */
+.faq_tab_box.active { border-bottom: 2px solid #DDC49B; }
+.faq_tab_box.active h3 { color: #DDC49B; }
+/* 패널 제어 */
+.faq_panel { display: none; }
+.faq_panel.active { display: block; }
+
+/* faq_box */
+.faq_box { border-bottom: 1.5px solid #DDC49B; padding: 1em; }
+.faq_box p  {color: #fff; word-break: keep-all; }
+.faq_box_top { display: flex; align-items: center; justify-content: space-between; }
+.faq_box_top p { font-size: 2em; }
+.faq_box_top img { width: 5%; }
+.faq_box_btm { max-height: 0; overflow: hidden; opacity: 0;
+transition: max-height 0.4s ease, opacity 0.3s ease; font-size: 1.2em; line-height: 1.6; margin-top: 0; }
+
+/* 열림 상태 */
+.faq_box.active { padding: 0; }
+.faq_box.active .faq_box_top { padding: 1em; }
+.faq_box.active .faq_box_btm { max-height: 500px;  opacity: 1; background: #000; width: 100%; height: 100%; padding: 1em; }
+
+/* 화살표 회전 */
+.faq_box.active .faq_box_top img { transform: rotate(180deg); transition: transform 0.3s ease; }

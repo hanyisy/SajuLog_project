@@ -11,7 +11,7 @@ button { all: unset; cursor: pointer; padding: 0; margin: 0; font: inherit; colo
 /* product */
 .product { background: #00001D; min-height: 100vh; padding: 20% 0; }
 .product_menu { display: flex; align-items: center; position: relative; margin-bottom: 2em; }
-.product_menu h2 { font-family: 'PuradakGentleGothic'; font-weight: 500; color: #fff; font-size: 2.8em;
+.product_menu h2 { font-family: 'PuradakGentleGothic'; font-weight: 500; color: #fff; font-size: 2.5em;
 transform: translateX(-50%); position: absolute; left: 50%; }
 .product_menu img { width: 60%; }
 

@@ -1,3 +1,5 @@
+section{background-color: #00001d;}
+
 .main_section1{
     width: 100%; padding-top: 0em;
     background-image: url(../img/main-img/main_bgimg.webp);
@@ -50,4 +52,84 @@
     color: white; font-size: 1.2em; font-family: 'YeogiOttaeJalnanGothic';
     margin-top: 3%; display: inline-block; padding: 0.2em 0.7em; padding-top: 0.4em;
     border-radius: 0.5em; border: 1px solid white; background-color: rgba(255, 255, 255, 0.089);
+}
+
+
+.main_section2{padding-top: 5%;}
+.main_subcontentBox{
+    width: 95%; height: fit-content; margin: auto; position: relative;
+}
+.main_section2 div.saju_frameBox {
+    --frame-scale   : 0.5;          /* 전체 배율 (0.5 = 절반) */
+    --color-deco    : #ddc49b;    /* 장식 색상 */
+    --color-line    : #ffffff;    /* 선 색상 */
+    
+    /* ── vw 기준 계산값 (건드리지 마세요) ── */
+    --corner-size   : calc(12.9265vw * var(--frame-scale));
+    --offset-h      : calc(12.6629vw * var(--frame-scale));  /* 상/하 선 left·right */
+    --offset-v      : calc(12.6268vw * var(--frame-scale));  /* 좌/우 선 top·bottom */
+    --line-h-height : calc(2.0833vw  * var(--frame-scale));  /* 상/하 선 높이 */
+    --line-v-width  : calc(2.0913vw  * var(--frame-scale));  /* 좌/우 선 너비 */
+    --line-thickness: calc(0.2756vw  * var(--frame-scale));  /* 선 두께 */
+    position: relative;
+}
+
+.main_subConTxt{
+    width: 100%; margin: auto; color: white; padding: 7% 0; padding-top: 9%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+.main_subConTxt h1{font-size: 1.8em;}
+.main_subConTxt h1:nth-child(2){font-size: 2.3em;}
+.main_subConTxt h1>span{color: #ddc49b;}
+.main_str{
+    width: 1px; height: 3em; background-color: white; margin: 5% auto;
+}
+.main_subConTxt p{
+    font-size: 1.8em; font-weight: 400; margin-bottom: 0.5em;
+}
+
+
+@media (max-width: 800px) {
+    body { width: 100%; font-size: 18px;}
+}
+@media (min-width: 601px) and (max-width: 720px) {
+    body { width: 100%; font-size: 18px;}
+    .main_titBox{font-size: 1.1em;}
+    .main_sajuBtn_box{font-size: 1.3em;}
+    .main_subConTxt{font-size: 0.7em;}
+}
+@media (min-width: 531px) and (max-width: 600px) {
+    body { width: 100%; font-size: 15px;}
+    .main_titBox{font-size: 1.1em;}
+    .main_sajuBtn_box{font-size: 1.3em;}
+    .main_subConTxt{font-size: 0.7em;}
+    .main_conTxt{font-size: 2em;}
+}
+@media (min-width: 481px) and (max-width: 530px) {
+    body { width: 100%; font-size: 13px;}
+    .main_titBox{font-size: 1.1em;}
+    .main_sajuBtn_box{font-size: 1.3em;}
+    .main_subConTxt{font-size: 0.7em;}
+    .main_conTxt{font-size: 2em;}
+}
+@media (min-width: 411px) and (max-width: 480px) {
+    body { width: 100%; font-size: 12px;}
+    .main_titBox{font-size: 1.1em;}
+    .main_sajuBtn_box{font-size: 1.3em;}
+    .main_subConTxt{font-size: 0.7em;}
+    .main_conTxt{font-size: 2em;}
+}
+@media (min-width: 380px) and (max-width: 410px) {
+    body { width: 100%; font-size: 12px;}
+    .main_titBox{font-size: 1em;}
+    .main_sajuBtn_box{font-size: 1.3em;}
+    .main_subConTxt{font-size: 0.7em;}
+    .main_conTxt{font-size: 2em;}
+}
+@media (max-width: 379px) {
+    body { width: 100%; font-size: 12px;}
+    .main_titBox{font-size: 0.9em;}
+    .main_sajuBtn_box{font-size: 1.3em;}
+    .main_subConTxt{font-size: 0.7em;}
+    .main_conTxt{font-size: 2em;}
 }

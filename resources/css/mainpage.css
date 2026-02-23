@@ -20,7 +20,7 @@ h1{font-family: 'YeogiOttaeJalnanGothic'; font-weight: 100;}
 
 header{
     width: 100%; max-width: 800px; position: fixed;background-color: #00001d;
-    z-index: 1000; left: 50%; top: 0; transform: translateX(-50%);
+    z-index: 999; left: 50%; top: 0; transform: translateX(-50%);
 }
 .header_deco{width: 100%; position: relative;}
 .header_deco1>div{width: 100%; background-color: #ddc49b;}
@@ -54,8 +54,26 @@ header{
 .header_deco_obj>div:nth-child(1){width: 100%; transform: translateY(-45%) translateX(10%);}
 .header_deco_obj>div:nth-child(2){width: 100%; transform: translateY(-20%) translateX(10%);}
 
-
-
+.sticky_Bottom_Bar{
+    width: 100%; max-width: 800px; position: fixed;
+    left: 50%; bottom: 0; transform: translateX(-50%);
+    background-color: transparent; z-index: 999;
+}
+.sticky_Bottom_BarBox{
+    width: 98%; position: relative; margin: auto; background-color: #00001d; 
+}
+.sticky_Bottom_BarBox img{
+    position: absolute;
+    width: 100%; object-fit: contain;
+    left: 0; top: 0;
+}
+.sticky_Bottom_BarBox>div{
+    display: flex; justify-content: space-between; align-items: center; color: #fff;
+}
+.sticky_Bottom_btn{
+    width: 33%; text-align: center;
+}
+.sticky_Bottom_btn a{ width: 100%; color: white;  padding-top: 15%; padding-bottom: 1em; display: inline-block; z-index: 1;}
 
 
 
@@ -149,7 +167,7 @@ header{
 }
 /* 안쪽 콘텐츠 영역 */
 .saju_frameBox_frame-content {
-    position: absolute; inset: var(--corner-size); display: flex; align-items: center; justify-content: center;
+    position: relative; 
 }
 
 

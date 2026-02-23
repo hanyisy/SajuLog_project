@@ -1,4 +1,4 @@
-// 1. 헤더 템플릿
+// 헤더 템플릿
 const headerContent = `
     <div class="header_deco header_deco1"><div></div><div></div></div>
     <div class="header_box">
@@ -21,14 +21,46 @@ const headerContent = `
         </div>
     </div>
 `;
+const stickyBottom = `
+    <div class="sticky_Bottom_BarBox">
+            <img src="./resources/img/ui/sticky_Bottom_Bar_frame.webp" alt="">
+            <div>
+                <div class="sticky_Bottom_btn">
+                    <a href="#">
+                        <h1>사주</h1>
+                        <p>용하다고 소문난 사주</p>
+                    </a>
+                </div>
+                <div class="sticky_Bottom_btn">
+                    <a href="#">
+                        <h1>궁합</h1>
+                        <p>우리 궁합은 몇점?</p>
+                    </a>
+                </div>
+                <div class="sticky_Bottom_btn">
+                    <a href="#">
+                        <h1>운세</h1>
+                        <p>2026 신년운세</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+`;
+
 
 // 2. DOM 로드 후 실행
 window.addEventListener('DOMContentLoaded', () => {
     const headerElement = document.querySelector('header');
+    const stickyBottomElement = document.querySelector('.js_sticky_Bottom_Bar');
     
     // 페이지에 <header> 태그가 존재할 때만 실행
     if (headerElement) {
         headerElement.innerHTML = headerContent;
+        console.log("Header loaded successfully!");
+    }
+    // 페이지에 <header> 태그가 존재할 때만 실행
+    if (stickyBottomElement) {
+        stickyBottomElement.innerHTML = stickyBottom;
         console.log("Header loaded successfully!");
     }
 });

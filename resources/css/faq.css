@@ -22,8 +22,8 @@ p { word-break: keep-all; }
 transform: translateX(-50%); position: absolute; left: 50%; }
 .faq_menu img { width: 60%; }
 
-.faq_tab { display: flex; justify-content: space-between; cursor: pointer; }
-.faq_tab_box { width: 100%; text-align: center; border-bottom: 1.5px solid #8B7859; padding-bottom: 1em; }
+.faq_tab { display: flex; justify-content: space-between; }
+.faq_tab_box { width: 100%; text-align: center; border-bottom: 1.5px solid #8B7859; padding-bottom: 1em; cursor: pointer; }
 .faq_tab h3 { color: #8B7859; font-size: 2.2em; }
 
 /* 탭 active */

@@ -101,6 +101,10 @@ header{
     scrollbar-width: none;    /* Firefox */
 }
 
+.mainMenu_userBox{
+    padding-top: 20%; color: white;
+}
+
 
 
 /* 푸터 footer */

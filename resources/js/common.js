@@ -99,21 +99,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
 //데이터 활용테스트
 
-// 1. 데이터를 담을 빈 변수 선언 (공용 파일 상단)
+// 1. 데이터를 담을 빈 변수 선언
 let test_sajuData = null; 
 
 // 2. 데이터를 불러오는 함수
 async function loadSajuData() {
     try {
-        const response = await fetch('./resources/js/userData.json'); // 경로 확인!
-        const data = await response.json();
+        const response = await fetch('./resources/js/userData.json');
+        if (!response.ok) throw new Error('파일을 찾을 수 없습니다.');
         
-        // 변수에 데이터 집어넣기
+        const data = await response.json();
         test_sajuData = data;
         
         console.log("데이터 로드 완료:", test_sajuData);
-
-        // 데이터가 들어온 직후에 실행되어야 하는 함수가 있다면 여기서 호출
         updateUI(); 
         
     } catch (error) {
@@ -123,13 +121,13 @@ async function loadSajuData() {
 
 // 3. 변수에 담긴 데이터를 사용하는 함수
 function updateUI() {
-    if (!test_sajuData) return; // 데이터 없으면 중단
+    if (!test_sajuData) return;
 
-    // 변수사용
-    // const mainTitleElement = document.querySelector('.main_title');
-    // if (mainTitleElement) {
-    //     mainTitleElement.innerText = `${test_sajuData.user_profile.name}님의 운명 기록`;
-    // }
+    // 요소를 찾고, 있을 때만 텍스트를 넣어줍니다 (방어 코드)
+    const js_userNameElement = document.querySelector('.js_userName');
+    if (js_userNameElement) {
+        js_userNameElement.innerText = `${test_sajuData.user_profile.name}`;
+    }
 }
 
 // 실행!

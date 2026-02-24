@@ -9,7 +9,7 @@ const headerContent = `
             <div class="header_cashBtn">
                 <a href="#" target="_self"><img src="./resources/img/ui/header_btn.webp" alt="버튼"></a>
             </div>
-            <div class="header_barBtn">
+            <div class="header_barBtn js_header_barBtn">
                 <img src="./resources/img/ui/burger_bar.webp" alt="메뉴">
             </div>
         </div>

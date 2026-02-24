@@ -89,6 +89,10 @@ section{background-color: #00001d;}
     font-size: 1.8em; font-weight: 400; margin-bottom: 0.5em;
 }
 
+.main_subOb{
+    width: 80%; margin: 3% auto; padding: 5% 0; margin-bottom: 0; background-color: #00001d;
+}
+
 
 @media (max-width: 800px) {
     body { width: 100%; font-size: 18px;}

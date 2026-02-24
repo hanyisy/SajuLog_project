@@ -12,7 +12,7 @@ textarea {
 border: 1px solid #D0C9BC; outline: none; font-family: inherit; font-size: inherit; color: #333; background: transparent;
 resize: none; box-sizing: border-box; -webkit-appearance: none; -moz-appearance: none; appearance: none;        
 }
-
+p { word-break: keep-all; }
 
 
 .faq { min-height: 100vh; padding: 10% 0; background: #00001D; }
@@ -45,7 +45,8 @@ transition: .3s; font-size: 1.2em; line-height: 1.6; margin-top: 0; }
 /* 열림 상태 */
 .js_faq_box.active { padding: 0; }
 .js_faq_box.active .faq_box_top { padding: 1em; }
-.js_faq_box.active .faq_box_btm { max-height: 500px;  opacity: 1; background: #000; width: 100%; height: 100%; padding: 1em; }
+.js_faq_box.active .faq_box_btm { max-height: 500px; opacity: 1; background: #000; width: 100%; height: 100%; padding: 1em;
+font-size: 1.3em; }
 
 /* 화살표 회전 */
 .js_faq_box.active .faq_box_top img, .inquiry_box.active img  { transform: rotate(180deg); transition: transform 0.3s ease; }
@@ -70,17 +71,19 @@ border: 1.5px solid #DDC49B; padding: .3em 1.5em; border-radius: .5em; width: 80
 .inquiry_box_btm p { color: #fff; text-align: left; } 
 
 .inquiry_box_btm p:first-child { font-size: 1.5em; margin-bottom: 1em; }
-.inquiry_box_btm p:last-child { border: 1.5px solid #D0C9BC; color: #D0C9BC; padding: 1em .5em; border-radius: .3em; }
+.inquiry_box_btm p:last-child { border: 1.5px solid #D0C9BC; color: #D0C9BC; padding: 1em .5em; border-radius: .3em; font-size: 1.4em; }
 .inquiry_answer_not { background: #666; }
 .inquiry_box_btm { max-height: 0; overflow: hidden; opacity: 0; transition: .3s; padding: 0; }
 .js_inquiry_box.active .inquiry_box_btm { max-height: 500px; opacity: 1; padding: 1em; }
 .inquiry_empty { display: none; }
 
+.js_inquiry_box.active .inquiry_box_top { padding-bottom: 1em; }
 
 /* inquiry_write */
 .inquiry_write { text-align: center; padding: 10% 0; }
 .inquiry_write h2 { color: #fff; font-size: 3em; margin-bottom: 1em; }
-.inquiry_write textarea { width: 90%; height: 10em; border-radius: .3em; padding: 1em .5em; margin-bottom: 3.5em; color: #D0C9BC; }
+.inquiry_write textarea { width: 90%; height: 10em; border-radius: .3em; padding: 1em .5em; margin-bottom: 3.5em; color: #D0C9BC;
+font-size: 1.3em; }
 
 .textarea_wrap { position: relative; }
 .text_count { position: absolute; right: 1.2em; bottom: 1em; color: #888; font-size: 1.2em; font-weight: 100; }

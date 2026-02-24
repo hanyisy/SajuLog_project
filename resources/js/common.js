@@ -79,15 +79,58 @@ window.addEventListener('DOMContentLoaded', () => {
     // 페이지에 <header> 태그가 존재할 때만 실행
     if (headerElement) {
         headerElement.innerHTML = headerContent;
-        console.log("Header loaded successfully!");
     }
     // 페이지에 <header> 태그가 존재할 때만 실행
     if (stickyBottomElement) {
         stickyBottomElement.innerHTML = stickyBottom;
-        console.log("Header loaded successfully!");
     }
 
     if (footerConElement) {
     footerConElement.innerHTML = footerCon;
-}
+    }
+
+    document.querySelector('.js_header_barBtn').addEventListener('click',()=>{
+        document.querySelector('.js_mainMenu').classList.toggle('on');
+    });
+
+
 });
+
+
+//데이터 활용테스트
+
+// 1. 데이터를 담을 빈 변수 선언 (공용 파일 상단)
+let test_sajuData = null; 
+
+// 2. 데이터를 불러오는 함수
+async function loadSajuData() {
+    try {
+        const response = await fetch('./resources/js/userData.json'); // 경로 확인!
+        const data = await response.json();
+        
+        // 변수에 데이터 집어넣기
+        test_sajuData = data;
+        
+        console.log("데이터 로드 완료:", test_sajuData);
+
+        // 데이터가 들어온 직후에 실행되어야 하는 함수가 있다면 여기서 호출
+        updateUI(); 
+        
+    } catch (error) {
+        console.error("데이터 로드 실패:", error);
+    }
+}
+
+// 3. 변수에 담긴 데이터를 사용하는 함수
+function updateUI() {
+    if (!test_sajuData) return; // 데이터 없으면 중단
+
+    // 변수사용
+    // const mainTitleElement = document.querySelector('.main_title');
+    // if (mainTitleElement) {
+    //     mainTitleElement.innerText = `${test_sajuData.user_profile.name}님의 운명 기록`;
+    // }
+}
+
+// 실행!
+loadSajuData();

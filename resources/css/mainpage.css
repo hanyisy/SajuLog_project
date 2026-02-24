@@ -18,6 +18,8 @@ img{
 }
 h1{font-family: 'YeogiOttaeJalnanGothic'; font-weight: 100;}
 
+
+/* 헤더 */
 header{
     width: 100%; max-width: 800px; position: fixed;background-color: #00001d;
     z-index: 999; left: 50%; top: 0; transform: translateX(-50%);
@@ -45,8 +47,10 @@ header{
     display: block; width: 100%;
 }
 .header_barBtn{
-    width: 2.5em;
+    width: 2.5em; cursor: pointer;
 }
+.header_barBtn img{pointer-events: none;}
+
 .header_deco_obj{
     position: absolute; top: 0%; right: 2.5%; 
     width: 8%; display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -54,6 +58,8 @@ header{
 .header_deco_obj>div:nth-child(1){width: 100%; transform: translateY(-45%) translateX(10%);}
 .header_deco_obj>div:nth-child(2){width: 100%; transform: translateY(-20%) translateX(10%);}
 
+
+/* 하단메뉴바 */
 .sticky_Bottom_Bar{
     width: 100%; max-width: 800px; position: fixed;
     left: 50%; bottom: 0; transform: translateX(-50%);
@@ -75,6 +81,25 @@ header{
 }
 .sticky_Bottom_btn a{ width: 100%; color: white;  padding-top: 15%; padding-bottom: 1em; display: inline-block; z-index: 1;}
 
+
+/* 메뉴페이지 */
+.mainMenu{
+    width: 100vw; max-width: 800px; height: 100vh; position: fixed; 
+    z-index: -100; top: 0%; left: 50%; transform: translateX(-50%) translateY(-100%); 
+    transition: 0.3s; overflow: hidden;
+}
+
+
+.js_mainMenu.on{
+    z-index: 900;  transform: translateX(-50%) translateY(0%);  background-color: #00001d;
+    overflow-x: hidden;
+    /* 1. 스크롤 가능하게 설정 */
+    overflow-y: auto; 
+    
+    /* 2. 스크롤바 숨기기 (브라우저별 대응) */
+    -ms-overflow-style: none; /* IE, Edge */
+    scrollbar-width: none;    /* Firefox */
+}
 
 
 

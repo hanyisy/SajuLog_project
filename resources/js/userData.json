@@ -1,0 +1,36 @@
+{
+  "user_profile": {
+    "name": "홍길동",
+    "gender": "남성",
+    "birth_date": "1995-06-15",
+    "birth_type": "양력",
+    "birth_time": "14:30",
+    "birth_animal": "개",
+    "birth_color": "blue",
+    "is_lunar": false,
+    "zodiac": "돼지띠"
+  },
+  "saju_analysis": {
+    "day_master": "갑목(甲木)",
+    "five_elements": {
+      "wood": 3,
+      "fire": 2,
+      "earth": 1,
+      "metal": 1,
+      "water": 1
+    },
+    "score_summary": {
+      "energy": 85,
+      "wealth": 70,
+      "honor": 60,
+      "health": 90
+    }
+  },
+  "daily_fortune": {
+    "date": "2026-02-24",
+    "summary": "새로운 기운이 싹트는 날입니다.",
+    "detail": "오늘은 뜻밖의 귀인을 만나 문제를 해결할 실마리를 찾게 될 것입니다. 기록하는 습관이 행운을 가져다줍니다.",
+    "lucky_color": "#ddc49b",
+    "lucky_direction": "동북쪽"
+  }
+}

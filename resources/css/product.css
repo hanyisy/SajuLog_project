@@ -19,7 +19,7 @@ transform: translateX(-50%); position: absolute; left: 50%; }
 .js_product_box { position: relative; margin-bottom: 1.5em;}
 .js_product_box:last-child { margin-bottom: 0; }
 .js_product_box img { width: 100%; border: 2.5px solid #DDC49B; border-radius: .7em; filter: brightness(.4); transition: .3s; }
-.product_tit_wrap { position: absolute; width: 100%; height: 100%; top: 0; left: 0; 
+.product_tit_wrap { position: absolute; width: 100%; height: 100%; top: 0; left: 0; cursor: pointer;
 display: flex; align-items: center; justify-content: space-between; padding: 0 1em; }
 
 .product_tit_wrap h2, .product_tit_wrap h3, .product_tit_wrap h4 { color: #fff; font-family: 'YeogiOttaeJalnanGothic'; transition: .3s; 
@@ -29,7 +29,7 @@ font-weight: 500; }
 .product_tit_wrap h4 { font-size: 2em; }
 
 .product_choice { margin-bottom: 2em; }
-.js_product_choice_box { color: #DDC49B; text-align: center; border: 1.5px solid #DDC49B; margin-bottom: .5em; 
+.js_product_choice_box { color: #DDC49B; text-align: center; border: 1.5px solid #DDC49B; margin-bottom: .5em; cursor: pointer;
 font-size: 2em; padding: .3em 0; transition: .3s;  }
 
 .product_policy { color: #fff; display: flex; gap: .5em; align-items: center; }

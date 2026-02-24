@@ -23,10 +23,10 @@
                 </div>
 
                 <div class="faq_tab">
-                    <div class="faq_tab_box active" data-tab="faq">
+                    <div class="faq_tab_box" data-tab="faq">
                         <h3>자주하는 질문</h3>
                     </div>
-                    <div class="faq_tab_box" data-tab="inquiry">
+                    <div class="faq_tab_box active" data-tab="inquiry">
                         <h3>1:1문의</h3>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                 <!-- 탭 컨텐츠 영역 추가 -->
                 <div class="faq_contents">
 
-                    <div class="faq_panel active" id="faq">
+                    <div class="faq_panel" id="faq">
                         <div class="js_faq_box">
                             <div class="faq_box_top">
                                 <p>사주는 어떻게 보는건가요?</p>
@@ -115,7 +115,7 @@
                         </div> <!-- js_faq_box --->
                     </div>
 
-                    <div class="faq_panel" id="inquiry">
+                    <div class="faq_panel active" id="inquiry">
                         <div class="inquiry_write">
                             <h2>1:1문의하기</h2>
                             <form method="post" action="apply.html" id="myModal1" name="page_form">
@@ -165,6 +165,34 @@
                             }
                         });
 
+                    });
+                });
+
+            });
+
+            
+
+            document.addEventListener('DOMContentLoaded', () => {
+
+                // faq + inquiry 공통 처리
+                const accordionBoxes = document.querySelectorAll('.js_faq_box, .js_inquiry_box');
+
+                accordionBoxes.forEach(box => {
+
+                    const top = box.querySelector('.faq_box_top, .inquiry_box_top');
+
+                    top.addEventListener('click', () => {
+
+                        const isActive = box.classList.contains('active');
+
+                        // 같은 그룹 내에서만 닫히게 하려면 부모 기준으로 잡는 게 안전
+                        const parent = box.parentElement;
+                        parent.querySelectorAll('.js_faq_box, .js_inquiry_box')
+                            .forEach(el => el.classList.remove('active'));
+
+                        if (!isActive) {
+                            box.classList.add('active');
+                        }
                     });
                 });
 

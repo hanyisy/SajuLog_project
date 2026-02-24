@@ -117,7 +117,7 @@ footer .inner img { width: 40%; margin-bottom: 1.5em; max-width: 205px; }
 footer .inner ul li span, footer .inner p { color: #999; }
 footer .inner p { margin-bottom: 1em; font-weight: 200; }
 footer .inner ul { display: flex; gap: .35em; }
-
+footer .inner ul li { cursor: pointer; }
 
 
 

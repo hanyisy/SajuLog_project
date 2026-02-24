@@ -22,7 +22,7 @@ resize: none; box-sizing: border-box; -webkit-appearance: none; -moz-appearance:
 transform: translateX(-50%); position: absolute; left: 50%; }
 .faq_menu img { width: 60%; }
 
-.faq_tab { display: flex; justify-content: space-between; }
+.faq_tab { display: flex; justify-content: space-between; cursor: pointer; }
 .faq_tab_box { width: 100%; text-align: center; border-bottom: 1.5px solid #8B7859; padding-bottom: 1em; }
 .faq_tab h3 { color: #8B7859; font-size: 2.2em; }
 
@@ -34,13 +34,13 @@ transform: translateX(-50%); position: absolute; left: 50%; }
 .faq_panel.active { display: block; }
 
 /* faq_box */
-.js_faq_box { border-bottom: 1.5px solid #DDC49B; padding: 1em; }
+.js_faq_box { border-bottom: 1.5px solid #DDC49B; padding: 1em; cursor: pointer; }
 .js_faq_box p  {color: #fff; word-break: keep-all; }
 .faq_box_top { display: flex; align-items: center; justify-content: space-between; }
 .faq_box_top p { font-size: 2em; }
 .faq_box_top img { width: 5%; }
 .faq_box_btm { max-height: 0; overflow: hidden; opacity: 0;
-transition: max-height 0.4s ease, opacity 0.3s ease; font-size: 1.2em; line-height: 1.6; margin-top: 0; }
+transition: .3s; font-size: 1.2em; line-height: 1.6; margin-top: 0; }
 
 /* 열림 상태 */
 .js_faq_box.active { padding: 0; }
@@ -58,7 +58,7 @@ height: 30vh; }
 .inquiry_empty a, .inquiry_fill a, .inquiry_write button { display: block; color: #DDC49B; text-align: center; font-size: 2.8em;
 border: 1.5px solid #DDC49B; padding: .3em 1.5em; border-radius: .5em; width: 80%; margin: 0 auto; box-sizing: border-box; }
 
-.js_inquiry_box { padding: 1em 0; border-bottom: 1.5px solid #DDC49B; }
+.js_inquiry_box { padding: 1em 0; border-bottom: 1.5px solid #DDC49B; cursor: pointer; }
 .inquiry_box_top { display: flex; align-items: center; justify-content: space-between; width: 95%; margin: 0 auto; }
 .inquiry_box_tit { display: flex; gap: 1em; }
 .inquiry_box_tit p:first-child { font-size: 2em; }
@@ -72,7 +72,7 @@ border: 1.5px solid #DDC49B; padding: .3em 1.5em; border-radius: .5em; width: 80
 .inquiry_box_btm p:first-child { font-size: 1.5em; margin-bottom: 1em; }
 .inquiry_box_btm p:last-child { border: 1.5px solid #D0C9BC; color: #D0C9BC; padding: 1em .5em; border-radius: .3em; }
 .inquiry_answer_not { background: #666; }
-.inquiry_box_btm { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.3s ease; padding: 0; }
+.inquiry_box_btm { max-height: 0; overflow: hidden; opacity: 0; transition: .3s; padding: 0; }
 .js_inquiry_box.active .inquiry_box_btm { max-height: 500px; opacity: 1; padding: 1em; }
 .inquiry_empty { display: none; }
 

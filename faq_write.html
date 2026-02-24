@@ -116,52 +116,18 @@
                     </div>
 
                     <div class="faq_panel" id="inquiry">
-                        <div class="inquiry_empty">
-                            <h2>문의 내역이 없습니다.</h2>
-                            <a href="#">1:1문의하기</a>
-                        </div> <!-- 문의내역 없을 시 노출 --->
-
-                        <div class="inquiry_fill">
-                            <div class="inquiry_con">
-                                <div class="js_inquiry_box">
-                                    <div class="inquiry_box_top">
-                                        <div class="inquiry_box_tit">
-                                            <p>환불 신청 하고 싶어요.</p>
-                                            <p>답변대기</p>
-                                        </div>
-                                        <img src="resources/img/faq/faq_arrow.png" alt="화살표">
+                        <div class="inquiry_write">
+                            <h2>1:1문의하기</h2>
+                            <form method="post" action="apply.html" id="myModal1" name="page_form">
+                                <div class="textarea_wrap">
+                                    <textarea name="faq_write" id="js_faq_write" maxlength="300" placeholder="문의사항을 남겨주시면 빠르게 처리해드리겠습니다." required></textarea>
+                                    <div class="text_count">
+                                        <span id="currentCount">0</span>/300
                                     </div>
-                                    <div class="inquiry_box_btm">
-                                        <p>안녕하세요. 사주로그를 처음 써보는데, 사용 방법이 궁금합니다!</p>
-                                        <p class="inquiry_answer_not">
-                                            운영팀이 확인하고 있어요. 잠시 기다려주세요!
-                                        </p>
-                                    </div>
-                                </div> <!-- inquiry_box --->
-
-                                <div class="js_inquiry_box">
-                                    <div class="inquiry_box_top">
-                                        <div class="inquiry_box_tit">
-                                            <p>사주 결과를 다시볼 수 있나요?</p>
-                                            <p style="font-weight: bold;">답변완료</p>
-                                        </div>
-                                        <img src="resources/img/faq/faq_arrow.png" alt="화살표">
-                                    </div>
-                                    <div class="inquiry_box_btm">
-                                        <p>안녕하세요. 사주로그를 처음 써보는데, 사용 방법이 궁금합니다!</p>
-                                        <p>
-                                            메인 화면에서 생년월일, 출생 시간, 성별을 입력합니다.
-                                            정보 입력 후 ‘사주 보기’를 선택하면 기본 사주 분석 결과가 제공됩니다.
-                                            상세 해석, 연·월 운세, 궁합 등은 추가 메뉴에서 확인할 수 있습니다.
-                                            입력 정보는 사주 분석 목적 외에는 사용되지 않으며, 결과는 참고용으로 활용하시기 바랍니다.
-                                            이용 중 문제가 발생하면 고객센터 또는 문의하기를 통해 안내받으실 수 있습니다.
-                                        </p>
-                                    </div>
-                                </div> <!-- inquiry_box --->
-                                
-                            </div>
-                            <a href="#">1:1문의하기</a>
-                        </div>  <!-- 문의내역 있을 시 노출 --->
+                                </div>
+                                <button type="submit">제출하기</button>
+                            </form>
+                        </div>
 
                     </div>
 
@@ -204,31 +170,22 @@
 
             });
 
-
-
-
             document.addEventListener('DOMContentLoaded', () => {
 
-                // faq + inquiry 공통 처리
-                const accordionBoxes = document.querySelectorAll('.js_faq_box, .js_inquiry_box');
+                const textarea = document.getElementById('js_faq_write');
+                const counter = document.getElementById('currentCount');
+                const maxLength = 300;
 
-                accordionBoxes.forEach(box => {
+                textarea.addEventListener('input', () => {
 
-                    const top = box.querySelector('.faq_box_top, .inquiry_box_top');
+                    let length = textarea.value.length;
 
-                    top.addEventListener('click', () => {
+                    if (length > maxLength) {
+                        textarea.value = textarea.value.substring(0, maxLength);
+                        length = maxLength;
+                    }
 
-                        const isActive = box.classList.contains('active');
-
-                        // 같은 그룹 내에서만 닫히게 하려면 부모 기준으로 잡는 게 안전
-                        const parent = box.parentElement;
-                        parent.querySelectorAll('.js_faq_box, .js_inquiry_box')
-                            .forEach(el => el.classList.remove('active'));
-
-                        if (!isActive) {
-                            box.classList.add('active');
-                        }
-                    });
+                    counter.textContent = length;
                 });
 
             });

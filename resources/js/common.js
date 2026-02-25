@@ -7,7 +7,7 @@ const headerContent = `
         </div>
         <div class="header_maenuBox">
             <div class="header_cashBtn">
-                <a href="#" target="_self"><img src="./resources/img/ui/header_btn.webp" alt="버튼"></a>
+                <a href="./product.html" target="_self"><img src="./resources/img/ui/header_btn.webp" alt="버튼"></a>
             </div>
             <div class="header_barBtn js_header_barBtn">
                 <img src="./resources/img/ui/burger_bar.webp" alt="메뉴">

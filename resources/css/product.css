@@ -4,7 +4,7 @@
 
 
 .product_con { margin: 2em auto; }
-.js_product_box { position: relative; margin-bottom: 1.5em;}
+.js_product_box { position: relative; margin-bottom: 1.5em; transition: .2s; }
 .js_product_box:last-child { margin-bottom: 0; }
 .js_product_box img { width: 100%; border: 2.5px solid #DDC49B; border-radius: .7em; filter: brightness(.35); transition: .3s; }
 .product_tit_wrap { position: absolute; width: 100%; height: 100%; top: 0; left: 0; cursor: pointer;
@@ -29,7 +29,6 @@ font-size: 2em; padding: .3em 0; transition: .3s;  }
 margin: 1.5em auto 0 auto; transition: .3s; }
 
 .product_choice { display: none; }
-
 .js_product_box.active img { filter: brightness(.8); }
 
 .js_product_box.active h2, .js_product_box.active h3, .js_product_box.active h4 { color: #DDC49B; text-shadow: 2px 2px 5px #00000034; }

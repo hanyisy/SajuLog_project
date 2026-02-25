@@ -165,8 +165,5 @@ function updateUI() {
 }
 
 
-
-
-
 // 실행!
 loadSajuData();

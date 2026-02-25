@@ -17,7 +17,9 @@
         <section class="product">
             <div class="inner">
                 <div class="product_menu">
-                    <button><img src="resources/img/product/tab.png" alt="화살표"></button>
+                    <button class="js_backBtn">
+                        <img src="resources/img/product/tab.png" alt="화살표">
+                    </button>
                     <h2>충전하기</h2>
                 </div>
 
@@ -147,6 +149,22 @@
 
 
             });
+
+
+                        
+            const backBtn = document.querySelector('.js_backBtn');
+
+            if (backBtn) {
+                backBtn.addEventListener('click', () => {
+                    if (history.length > 1) {
+                        history.back();
+                    } else {
+                        location.href = '/';
+                    }
+                });
+            }
+
+
 
 
         </script>

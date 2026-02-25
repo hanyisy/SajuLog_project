@@ -43,9 +43,10 @@ border: 1.5px solid #DDC49B; padding: .3em 1.5em; border-radius: .5em; width: 80
 
 .js_inquiry_box { padding: 1em 0; border-bottom: 1.5px solid #DDC49B; cursor: pointer; }
 .inquiry_box_top { display: flex; align-items: center; justify-content: space-between; width: 95%; margin: 0 auto; }
-.inquiry_box_tit { display: flex; gap: 1em; }
-.inquiry_box_tit p:first-child { font-size: 1.7em; }
+.inquiry_box_tit { display: flex; gap: 1em; width: 85%; }
+.inquiry_box_tit p:first-child { font-size: 2em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .inquiry_box_tit p:last-child { color: #000; background: #DDC49B; padding: .3em; border-radius: .3em; font-size: 1.3em; }
+
 .inquiry_box_tit p { color: #fff; }
 .inquiry_box_top img { width: 5%; }
 

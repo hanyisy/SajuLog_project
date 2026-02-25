@@ -124,7 +124,12 @@ header{
     padding-top: 20%; color: white;
 }
 
+/* 페이지메뉴 */
 
+.page_menu { width: 95%; margin: 0 auto; position: relative;  display: flex;  align-items: center;  justify-content: center;  margin-bottom: 1em; }
+.page_menu h2 { font-family: 'PuradakGentleGothic'; font-weight: 500; color: #fff; font-size: 2.5em; margin: 0; }
+.page_menu button { position: absolute; left: 0; }
+.page_menu img { width: 50%; }
 
 /* 푸터 footer */
 

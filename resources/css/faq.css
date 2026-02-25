@@ -2,13 +2,10 @@
 /* faq */
 .faq { min-height: 100vh; padding: 10% 0; background: #00001D; }
 .faq .inner { width: 100%; }
-.faq_menu { padding-left: 5%; display: flex; align-items: center; position: relative; margin-bottom: 2em; }
-.faq_menu h2 { font-family: 'PuradakGentleGothic'; font-weight: 500; color: #fff; font-size: 2.5em;
-transform: translateX(-50%); position: absolute; left: 50%; }
-.faq_menu img { width: 60%; }
+
 
 .faq_tab { display: flex; justify-content: space-between; }
-.faq_tab_box { width: 100%; text-align: center; border-bottom: 1.5px solid #8B7859; padding-bottom: 1em; cursor: pointer; }
+.faq_tab_box { width: 100%; text-align: center; border-bottom: 1.5px solid #8B7859; padding: 1em 0; cursor: pointer; }
 .faq_tab h3 { color: #8B7859; font-size: 2.2em; }
 
 /* 탭 active */
@@ -47,7 +44,7 @@ border: 1.5px solid #DDC49B; padding: .3em 1.5em; border-radius: .5em; width: 80
 .js_inquiry_box { padding: 1em 0; border-bottom: 1.5px solid #DDC49B; cursor: pointer; }
 .inquiry_box_top { display: flex; align-items: center; justify-content: space-between; width: 95%; margin: 0 auto; }
 .inquiry_box_tit { display: flex; gap: 1em; }
-.inquiry_box_tit p:first-child { font-size: 2em; }
+.inquiry_box_tit p:first-child { font-size: 1.7em; }
 .inquiry_box_tit p:last-child { color: #000; background: #DDC49B; padding: .3em; border-radius: .3em; font-size: 1.3em; }
 .inquiry_box_tit p { color: #fff; }
 .inquiry_box_top img { width: 5%; }

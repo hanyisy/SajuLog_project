@@ -40,7 +40,7 @@ transform: translateX(-50%); position: absolute; left: 50%; }
 .faq_box_top p { font-size: 2em; }
 .faq_box_top img { width: 5%; }
 .faq_box_btm { max-height: 0; overflow: hidden; opacity: 0;
-transition: .3s; font-size: 1.2em; line-height: 1.6; margin-top: 0; }
+transition: .2s; font-size: 1.2em; line-height: 1.6; margin-top: 0; }
 
 /* 열림 상태 */
 .js_faq_box.active { padding: 0; }
@@ -49,7 +49,7 @@ transition: .3s; font-size: 1.2em; line-height: 1.6; margin-top: 0; }
 font-size: 1.3em; }
 
 /* 화살표 회전 */
-.js_faq_box.active .faq_box_top img, .inquiry_box.active img  { transform: rotate(180deg); transition: transform 0.3s ease; }
+.js_faq_box.active .faq_box_top img, .inquiry_box.active img  { transform: rotate(180deg); transition: transform 0.2s ease; }
 
 /* inquiry */
 .inquiry_con { margin-bottom: 3.5em; }
@@ -73,7 +73,7 @@ border: 1.5px solid #DDC49B; padding: .3em 1.5em; border-radius: .5em; width: 80
 .inquiry_box_btm p:first-child { font-size: 1.5em; margin-bottom: 1em; }
 .inquiry_box_btm p:last-child { border: 1.5px solid #D0C9BC; color: #D0C9BC; padding: 1em .5em; border-radius: .3em; font-size: 1.4em; }
 .inquiry_answer_not { background: #666; }
-.inquiry_box_btm { max-height: 0; overflow: hidden; opacity: 0; transition: .3s; padding: 0; }
+.inquiry_box_btm { max-height: 0; overflow: hidden; opacity: 0; transition: .2s; padding: 0; }
 .js_inquiry_box.active .inquiry_box_btm { max-height: 500px; opacity: 1; padding: 1em; }
 .inquiry_empty { display: none; }
 

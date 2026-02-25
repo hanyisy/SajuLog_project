@@ -61,9 +61,9 @@ const footerCon = `
                     000-0000-0000
                 </p>
                 <ul>
-                    <li><span id="show-Box" class="js_policy_btn">회사소개 |</span></li>
-                    <li><span id="show-Box" class="js_policy_btn">이용약관 |</span></li>
-                    <li><span id="show-Box" class="js_policy_btn" style="font-weight: bolder;">개인정보 처리방침</span></li>
+                    <li><span id="aboutBtn" class="js_policy_btn">회사소개 |</span></li>
+                    <li><span id="termsBtn" class="js_policy_btn">이용약관 |</span></li>
+                    <li><span id="policyBtn" class="js_policy_btn" style="font-weight: bolder;">개인정보 처리방침</span></li>
                 </ul>
             </div>
         </footer>
@@ -92,6 +92,40 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.js_header_barBtn').addEventListener('click',()=>{
         document.querySelector('.js_mainMenu').classList.toggle('on');
     });
+
+
+
+    const aboutBtn = document.getElementById('aboutBtn');
+    const termsBtn = document.getElementById('termsBtn');
+    const policyBtn = document.getElementById('policyBtn');
+
+    if (aboutBtn) {
+        aboutBtn.addEventListener('click', () => {
+            window.open('about.html', '회사소개', 'width=800,height=600,scrollbars=yes');
+        });
+    }
+
+    if (termsBtn) {
+        termsBtn.addEventListener('click', () => {
+            window.open('terms.html', '이용약관', 'width=800,height=600,scrollbars=yes');
+        });
+    }
+
+    if (policyBtn) {
+        policyBtn.addEventListener('click', () => {
+            window.open(
+                'policy.html',
+                '개인정보이용동의',
+                'width=800,height=600,scrollbars=yes'
+            );
+        });
+    }
+
+
+
+
+
+
 
 
 });
@@ -129,6 +163,10 @@ function updateUI() {
         js_userNameElement.innerText = `${test_sajuData.user_profile.name}`;
     }
 }
+
+
+
+
 
 // 실행!
 loadSajuData();

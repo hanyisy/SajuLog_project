@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * { margin: 0; padding: 0; vertical-align: top; }
+            body { max-width: 1024px; min-width: 320px; margin: 0 auto; }
+            p { word-break: keep-all; font-size: 14px; color: #666; letter-spacing: -.5px; line-height: 160%; }
+
+
+            .tit { padding: 30px 0; border-bottom: 2px solid #ccc; width: 95%; margin: 0 auto; }
+            .tit h1 { color: #333; font-size: 35px; font-weight: 700; letter-spacing: -1.5px; }
+
+            .con_box_wrap { padding: 50px 0 30px 0; width: 95%; margin: 0 auto; }
+            .con_box { margin-bottom: 30px; }
+            .con_box:last-child { margin-bottom: 0; }
+
+            .con_tit { font-size: 23px; color: #333; font-weight: 600; letter-spacing: -1.5px; margin-bottom: 20px; }
+            .con_article_box { padding: 20px 10px; background: #F8F8F8; }
+            .con_article_box img { filter: brightness(0.2); width: 30%; margin-bottom: 1.5em; }
+            .btm_btn { width: 95%; margin: 0 auto; padding-bottom: 50px;  }
+            .agreeBtn{ cursor: pointer; font-weight: bold;
+            width: 100%; margin: auto; height: 3em; font-size: 18px;
+            background-color: #e9e9e9 ; color: 333; border: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="tit">
+            <h1>회사소개</h1>
+        </div> <!----tit----->
+
+        <section class="con_box_wrap">
+            <div class="con_article_box">
+                <img src="resources/img/logo.png" alt="로고">
+                <p>
+                    대표 OOO<br>
+                    사업자등록번호 OOO-OO-OOOOO<br>
+                    통신판매번호 OOOO-OOOO-OOOO<br>
+                    경기도 부천시 OOO-OO, OOO-OOO<br>
+                    withus@withus.co.kr<br>
+                    000-0000-0000
+                </p>
+            </div>
+        </section>
+
+    <section class="btm_btn">
+        <button onclick="pageClose()" class="agreeBtn">닫기</button>
+    </section>  
+
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"101ce9c1fe504d418693b3081aad5d6a","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+
+    <script>
+        function pageClose() {
+            window.close(); // 팝업창 닫기
+        }
+    </script>
+</html>

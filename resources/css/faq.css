@@ -31,7 +31,7 @@ transition: .2s; font-size: 1.2em; line-height: 1.6; margin-top: 0; }
 font-size: 1.3em; }
 
 /* 화살표 회전 */
-.js_faq_box.active .faq_box_top img, .inquiry_box.active img  { transform: rotate(180deg); transition: transform 0.2s ease; }
+.js_faq_box.active .faq_box_top img, .js_inquiry_box.active .inquiry_box_top img  { transform: rotate(180deg); transition: transform 0.2s ease; }
 
 /* inquiry */
 .inquiry_con { margin-bottom: 3.5em; }

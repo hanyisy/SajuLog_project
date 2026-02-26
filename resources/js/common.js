@@ -162,6 +162,9 @@ function updateUI() {
     if (js_userNameElement) {
         js_userNameElement.innerText = `${test_sajuData.user_profile.name}`;
     }
+    document.querySelectorAll('.js_userData1').forEach(item => {
+        item.innerText = `${test_sajuData.user_profile.gender} | ${test_sajuData.user_profile.birth_type} ${test_sajuData.user_profile.birth_date} | ${test_sajuData.user_profile.zodiac}`;
+    });
 }
 
 

@@ -121,8 +121,69 @@ header{
 }
 
 .mainMenu_userBox{
-    padding-top: 20%; color: white;
+    padding: 0 3%;
+    padding-top: 30%; color: white; margin-bottom: 5%;
 }
+.mainMenu_userBox_str{width: 100%; height: 0.1em; background-color: #ddc49b; margin: auto; margin-top: 2%;}
+.mainMenu_userBox>h1{
+    font-size: 3.5em;
+}
+.mainMenu_userBox>p{
+    font-size: 2em; font-weight: 300;
+}
+.mainMenu_cashBox{
+    width: 100%; margin: auto;
+    display: flex; justify-content: space-between; align-items: center;
+    border: 1px solid white; margin-top: 3%; border-radius: 0.5em;
+}
+.mainMenu_mov_productBtn{
+    width: 25%; border-left: 1px solid white;
+}
+.mainMenu_mov_productBtn a{width: 100%; padding: 10% 15%; height: fit-content; display: inline-block;}
+.mainMenu_mov_productBtn img{pointer-events: none;}
+.mainMenu_ticket_count{
+    font-size: 3.5cqw; display: flex; justify-content: space-between; padding: 0 0.5em;
+    font-weight: 300; flex: 1;align-items: end;
+}
+.mainMenu_ticket_count p{display: block;}
+.mainMenu_ticket_count p:nth-child(2){display: flex; align-items: end; font-size: 0.8em;}
+.mainMenu_ticket_count p:nth-child(2) b{font-size: 1.5em; font-weight: 800;}
+
+.mainMenu_menuBox{
+    width: 93%; height: auto; margin: auto; position: relative;
+    display: flex; flex-direction: column; justify-content: center;align-items: center;
+    padding-top: 0%;
+}
+.mainMenu_menuBox_frame{
+    position: absolute; width: 100%; height: 100%;
+    top: 50%; left: 50%; transform: translate(-50%,-50%);
+}
+
+.mainMenu_menuBox_frame div{
+    width: 100%; height: 100%; position: absolute;
+    pointer-events: none;
+}
+
+.mainMenu_menuBox_frame div:nth-child(1){left: -1.5%; top: -1.5%;}
+.mainMenu_menuBox_frame div:nth-child(2){right: -1%; bottom: 0;}
+
+.mainMenu_menuList{
+    width: 100%; height: 100%; position: relative;
+    font-size:3.5em; font-weight: 300; color: white;
+    display: flex; flex-direction: column; align-items: center; justify-content: top;
+}
+.mainMenu_menuList p{display: block; width: 90%; height: 1px; background-color: #ddc49b; margin: auto;}
+.mainMenu_menuList div{
+    width: 100%; text-align: center;
+}
+.mainMenu_userLogout{
+    width: 100%;  padding: 5% 0; display: block;
+}
+.mainMenu_menuList div a{
+    width: 100%;  padding: 5% 0; display: block;
+}
+
+
 
 /* 페이지메뉴 */
 

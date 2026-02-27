@@ -47,6 +47,42 @@ const stickyBottom = `
         </div>
 `;
 
+const mainMenuCon =`
+    <section class="mainMenu js_mainMenu">
+        <div class="mainMenu_userBox">
+            <h1 class="js_userName">User</h1>
+            <p class="js_userData1"></p>
+            <div class="mainMenu_cashBox">
+                <div class="mainMenu_ticket_count">
+                    <p>이용권</p>
+                    <p><b>0</b>개</p>
+                </div>
+                <div class="mainMenu_mov_productBtn">
+                    <a href="./product.html">
+                        <img src="./resources/img/ui/mainMenu_ticketbox.webp" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="mainMenu_userBox_str"></div>
+        </div>
+        <div class="mainMenu_menuBox">
+            <div class="mainMenu_menuBox_frame">
+                <div><img src="./resources/img/ui/mainMenu_frameTop.webp" alt=""></div>
+                <div><img src="./resources/img/ui/mainMenu_frameBot.webp" alt=""></div>
+            </div>
+            <div class="mainMenu_menuList">
+                <div><a href="./purchase.html">사주내역</a></div>
+                <p></p>
+                <div><a href="./product.html">이용권 충전</a></div>
+                <p></p>
+                <div><a href="./faq.html">문의하기</a></div>
+                <p></p>
+                <div class="mainMenu_userLogout js_mainMenu_userLogout">로그아웃</div>
+            </div>
+        </div>
+    </section>
+`
+
 
 const footerCon = `
         <footer>
@@ -79,6 +115,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // 페이지에 <header> 태그가 존재할 때만 실행
     if (headerElement) {
         headerElement.innerHTML = headerContent;
+        document.body.insertAdjacentHTML('beforeend', mainMenuCon);
     }
     // 페이지에 <header> 태그가 존재할 때만 실행
     if (stickyBottomElement) {

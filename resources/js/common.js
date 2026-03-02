@@ -3,27 +3,27 @@ const headerContent = `
     <div class="header_deco header_deco1"><div></div><div></div></div>
     <div class="header_box">
         <div class="header_logo">
-            <a href="/"><img src="./resources/img/logo.png" alt="로고"></a>
+            <a href="/"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/logo.png" alt="로고"></a>
         </div>
         <div class="header_maenuBox">
             <div class="header_cashBtn">
-                <a href="./product.html" target="_self"><img src="./resources/img/ui/header_btn.webp" alt="버튼"></a>
+                <a href="https://land.withusmk.co.kr/assets/saju/product.html" target="_self"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/header_btn.webp" alt="버튼"></a>
             </div>
             <div class="header_barBtn js_header_barBtn">
-                <img src="./resources/img/ui/burger_bar.webp" alt="메뉴">
+                <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/burger_bar.webp" alt="메뉴">
             </div>
         </div>
     </div>
     <div class="header_deco header_deco2">
         <div class="header_deco_obj">
-            <div><img src="./resources/img/ui/header_ob1.webp" alt="장식1"></div>
-            <div><img src="./resources/img/ui/header_ob2.webp" alt="장식2"></div>
+            <div><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/header_ob1.webp" alt="장식1"></div>
+            <div><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/header_ob2.webp" alt="장식2"></div>
         </div>
     </div>
 `;
 const stickyBottom = `
     <div class="sticky_Bottom_BarBox">
-            <img src="./resources/img/ui/sticky_Bottom_Bar_frame.webp" alt="">
+            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/sticky_Bottom_Bar_frame.webp" alt="">
             <div>
                 <div class="sticky_Bottom_btn">
                     <a href="#">
@@ -58,8 +58,8 @@ const mainMenuCon =`
                     <p><b>0</b>개</p>
                 </div>
                 <div class="mainMenu_mov_productBtn">
-                    <a href="./product.html">
-                        <img src="./resources/img/ui/mainMenu_ticketbox.webp" alt="">
+                    <a href="https://land.withusmk.co.kr/assets/saju/product.html">
+                        <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/mainMenu_ticketbox.webp" alt="">
                     </a>
                 </div>
             </div>
@@ -67,15 +67,15 @@ const mainMenuCon =`
         </div>
         <div class="mainMenu_menuBox">
             <div class="mainMenu_menuBox_frame">
-                <div><img src="./resources/img/ui/mainMenu_frameTop.webp" alt=""></div>
-                <div><img src="./resources/img/ui/mainMenu_frameBot.webp" alt=""></div>
+                <div><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/mainMenu_frameTop.webp" alt=""></div>
+                <div><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/mainMenu_frameBot.webp" alt=""></div>
             </div>
             <div class="mainMenu_menuList">
-                <div><a href="./purchase.html">사주내역</a></div>
+                <div><a href="https://land.withusmk.co.kr/assets/saju/purchase.html">사주내역</a></div>
                 <p></p>
-                <div><a href="./product.html">이용권 충전</a></div>
+                <div><a href="https://land.withusmk.co.kr/assets/saju/product.html">이용권 충전</a></div>
                 <p></p>
-                <div><a href="./faq.html">문의하기</a></div>
+                <div><a href="https://land.withusmk.co.kr/assets/saju/faq.html">문의하기</a></div>
                 <p></p>
                 <div class="mainMenu_userLogout js_mainMenu_userLogout">로그아웃</div>
             </div>
@@ -176,7 +176,7 @@ window.addEventListener('DOMContentLoaded', () => {
 // // 2. 데이터를 불러오는 함수
 // async function loadSajuData() {
 //     try {
-//         const response = await fetch('./resources/js/userData.json');
+//         const response = await fetch('https://land.withusmk.co.kr/assets/saju/resources/js/userData.json');
 //         if (!response.ok) throw new Error('파일을 찾을 수 없습니다.');
         
 //         const data = await response.json();

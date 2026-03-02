@@ -168,42 +168,42 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-//데이터 활용테스트
+// //데이터 활용테스트
 
-// 1. 데이터를 담을 빈 변수 선언
-let test_sajuData = null; 
+// // 1. 데이터를 담을 빈 변수 선언
+// let test_sajuData = null; 
 
-// 2. 데이터를 불러오는 함수
-async function loadSajuData() {
-    try {
-        const response = await fetch('./resources/js/userData.json');
-        if (!response.ok) throw new Error('파일을 찾을 수 없습니다.');
+// // 2. 데이터를 불러오는 함수
+// async function loadSajuData() {
+//     try {
+//         const response = await fetch('./resources/js/userData.json');
+//         if (!response.ok) throw new Error('파일을 찾을 수 없습니다.');
         
-        const data = await response.json();
-        test_sajuData = data;
+//         const data = await response.json();
+//         test_sajuData = data;
         
-        console.log("데이터 로드 완료:", test_sajuData);
-        updateUI(); 
+//         console.log("데이터 로드 완료:", test_sajuData);
+//         updateUI(); 
         
-    } catch (error) {
-        console.error("데이터 로드 실패:", error);
-    }
-}
+//     } catch (error) {
+//         console.error("데이터 로드 실패:", error);
+//     }
+// }
 
-// 3. 변수에 담긴 데이터를 사용하는 함수
-function updateUI() {
-    if (!test_sajuData) return;
+// // 3. 변수에 담긴 데이터를 사용하는 함수
+// function updateUI() {
+//     if (!test_sajuData) return;
 
-    // 요소를 찾고, 있을 때만 텍스트를 넣어줍니다 (방어 코드)
-    const js_userNameElement = document.querySelector('.js_userName');
-    if (js_userNameElement) {
-        js_userNameElement.innerText = `${test_sajuData.user_profile.name}`;
-    }
-    document.querySelectorAll('.js_userData1').forEach(item => {
-        item.innerText = `${test_sajuData.user_profile.gender} | ${test_sajuData.user_profile.birth_type} ${test_sajuData.user_profile.birth_date} | ${test_sajuData.user_profile.zodiac}`;
-    });
-}
+//     // 요소를 찾고, 있을 때만 텍스트를 넣어줍니다 (방어 코드)
+//     const js_userNameElement = document.querySelector('.js_userName');
+//     if (js_userNameElement) {
+//         js_userNameElement.innerText = `${test_sajuData.user_profile.name}`;
+//     }
+//     document.querySelectorAll('.js_userData1').forEach(item => {
+//         item.innerText = `${test_sajuData.user_profile.gender} | ${test_sajuData.user_profile.birth_type} ${test_sajuData.user_profile.birth_date} | ${test_sajuData.user_profile.zodiac}`;
+//     });
+// }
 
 
-// 실행!
-loadSajuData();
+// // 실행!
+// loadSajuData();

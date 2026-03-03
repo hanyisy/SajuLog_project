@@ -3,7 +3,7 @@ const headerContent = `
     <div class="header_deco header_deco1"><div></div><div></div></div>
     <div class="header_box">
         <div class="header_logo">
-            <a href="/"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/logo.png" alt="로고"></a>
+            <a href=""https://land.withusmk.co.kr/assets/saju/index.html"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/logo.png" alt="로고"></a>
         </div>
         <div class="header_maenuBox">
             <div class="header_cashBtn">

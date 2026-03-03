@@ -195,26 +195,23 @@
 
             document.addEventListener('DOMContentLoaded', () => {
 
-                // faq + inquiry 공통 처리
                 const accordionBoxes = document.querySelectorAll('.js_faq_box, .js_inquiry_box');
 
                 accordionBoxes.forEach(box => {
 
-                    const top = box.querySelector('.faq_box_top, .inquiry_box_top');
+                    box.addEventListener('click', (e) => {
 
-                    top.addEventListener('click', () => {
-
-                        const isActive = box.classList.contains('active');
-
-                        // 같은 그룹 내에서만 닫히게 하려면 부모 기준으로 잡는 게 안전
+                        // 다른 박스 닫기
                         const parent = box.parentElement;
                         parent.querySelectorAll('.js_faq_box, .js_inquiry_box')
-                            .forEach(el => el.classList.remove('active'));
+                            .forEach(el => {
+                                if (el !== box) el.classList.remove('active');
+                            });
 
-                        if (!isActive) {
-                            box.classList.add('active');
-                        }
+                        // 현재 박스 토글
+                        box.classList.toggle('active');
                     });
+
                 });
 
             });

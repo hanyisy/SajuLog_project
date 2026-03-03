@@ -87,7 +87,7 @@ const mainMenuCon =`
 const footerCon = `
         <footer>
             <div class="inner">
-                <img src="resources/img/logo.png" alt="로고">
+                <img src="https://land.withusmk.co.kr/assets/saju/resources/img/logo.png" alt="로고">
                 <p>
                     대표 OOO<br>
                     사업자등록번호 OOO-OO-OOOOO<br>

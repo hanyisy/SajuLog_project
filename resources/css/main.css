@@ -1,9 +1,11 @@
 section{background-color: #00001d;}
 
+
 .main_section1{
-    width: 100%; padding-top: 0em;
-    background-image: url(https://land.withusmk.co.kr/assets/saju/resources/img/main-img/main_bgimg.webp);
-    background-position: center; background-repeat: no-repeat;background-size: 100% contain;
+    width: 100%; position: relative; padding-top: 15%;
+}
+.main_outBox{
+    position: absolute; width: 100%; top: 0; left: 0;
 }
 .main_titBox{
     margin-top: 10%; font-size: 1.3em; 

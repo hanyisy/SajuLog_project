@@ -51,7 +51,7 @@ const mainMenuCon =`
     <section class="mainMenu js_mainMenu">
         <div class="mainMenu_userBox">
             <h1 class="js_userName">User</h1>
-            <p class="js_userData1"></p>
+            <p class="js_userData1">남성 | 1988.04.02 | 02:30 | --띠 | </p>
             <div class="mainMenu_cashBox">
                 <div class="mainMenu_ticket_count">
                     <p>이용권</p>
@@ -67,8 +67,8 @@ const mainMenuCon =`
         </div>
         <div class="mainMenu_menuBox">
             <div class="mainMenu_menuBox_frame">
-                <div><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/mainMenu_frameTop.webp" alt=""></div>
-                <div><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/mainMenu_frameBot.webp" alt=""></div>
+                <div class="mainMenu_menuBox_frame1"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/mainMenu_frameTop.webp" alt=""></div>
+                <div class="mainMenu_menuBox_frame2"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/mainMenu_frameBot.webp" alt=""></div>
             </div>
             <div class="mainMenu_menuList">
                 <div><a href="https://land.withusmk.co.kr/assets/saju/purchase.html">사주내역</a></div>

@@ -105,7 +105,12 @@ header{
 .mainMenu{
     width: 100vw; max-width: 800px; height: 100vh; position: fixed; 
     z-index: -100; top: 0%; left: 50%; transform: translateX(-50%) translateY(-100%); 
-    transition: 0.3s; overflow: hidden;
+    transition: 0.3s; overflow-x: hidden;
+    overflow-y: auto; padding-bottom: 25%;
+    
+    /* 2. 스크롤바 숨기기 (브라우저별 대응) */
+    -ms-overflow-style: none; /* IE, Edge */
+    scrollbar-width: none; 
 }
 
 
@@ -150,13 +155,13 @@ header{
 .mainMenu_ticket_count p:nth-child(2) b{font-size: 1.5em; font-weight: 800;}
 
 .mainMenu_menuBox{
-    width: 93%; height: auto; margin: auto; position: relative;
+    width: 93%; height: fit-content; margin: auto; position: relative;
     display: flex; flex-direction: column; justify-content: center;align-items: center;
-    padding-top: 0%;
+    padding: 0%;
 }
 .mainMenu_menuBox_frame{
     position: absolute; width: 100%; height: 100%;
-    top: 50%; left: 50%; transform: translate(-50%,-50%);
+    top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 1;
 }
 
 .mainMenu_menuBox_frame div{
@@ -164,23 +169,23 @@ header{
     pointer-events: none;
 }
 
-.mainMenu_menuBox_frame div:nth-child(1){left: -1.5%; top: -1.5%;}
-.mainMenu_menuBox_frame div:nth-child(2){right: -1%; bottom: 0;}
+.mainMenu_menuBox_frame1{left: 0%; top: 0%; transform: translateX(-2%) translateY(-2%);}
+.mainMenu_menuBox_frame2{right: 0%; bottom: 0%; transform: translateX(2%);}
 
 .mainMenu_menuList{
-    width: 100%; height: 100%; position: relative;
+    width: 100%; aspect-ratio: 1/0.8; padding: 0.5em 0; position: relative;
     font-size:2em; font-weight: 300; color: white;
     display: flex; flex-direction: column; align-items: center; justify-content: top;
 }
 .mainMenu_menuList p{display: block; width: 90%; height: 1px; background-color: #ddc49b; margin: auto;}
 .mainMenu_menuList div{
-    width: 100%; text-align: center;
+    width: 100%; height: 2.8em; display: flex; justify-content: center; align-items: center;
 }
 .mainMenu_userLogout{
     width: 100%;  padding: 5% 0; display: block;
 }
 .mainMenu_menuList div a{
-    width: 100%;  padding: 5% 0; display: block;
+    width: 100%;  padding: 5% 0; display: block; text-align: center;
 }
 
 

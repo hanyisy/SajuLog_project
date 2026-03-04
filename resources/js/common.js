@@ -77,7 +77,7 @@ const mainMenuCon =`
                 <p></p>
                 <div><a href="https://land.withusmk.co.kr/assets/saju/faq.html">문의하기</a></div>
                 <p></p>
-                <div class="mainMenu_userLogout js_mainMenu_userLogout">로그아웃</div>
+                <div class="mainMenu_userLogout js_mainMenu_userLogout"><a href="https://land.withusmk.co.kr/assets/saju/login.html">로그아웃</a></div>
             </div>
         </div>
     </section>

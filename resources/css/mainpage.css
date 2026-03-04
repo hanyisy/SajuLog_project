@@ -186,6 +186,7 @@ header{
 }
 .mainMenu_menuList div a{
     width: 100%;  padding: 5% 0; display: block; text-align: center;
+    z-index: 10;
 }
 
 

@@ -6,16 +6,64 @@
     <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/font.css" type="text/css">
     <link rel="stylesheet" href="./resources/css/mainpage.css" type="text/css">
     <link rel="stylesheet" href="./resources/css/main.css" type="text/css">
-    <title>Document</title>
+    <title>사주추가 페이지</title>
 </head>
 <body>
     <header></header>
+
+    <section class="register_sec1">
+        <div class="register_backbtn"></div>
+        <div class="register_title"></div>
+    </section>
+
+    <section class="register_sec2">
+        <form method="post" action="apply.html" name="saju_register">
+            <div class="register_formOption">
+                <div class="register_optionBox">
+                    <div class="register_optionName">
+                        <p>이름</p>
+                        <span>초성으로만 입력하지 마시고, 전체 이름을 작성해주세요</span>
+                    </div>
+                    <div class="register_option">
+                        <input type="text" name="name" class="user-name" placeholder="이름" required />
+                    </div>
+                </div>
+                <div class="register_optionBox">
+                    <div class="register_optionName">
+                        <p>관계</p>
+                    </div>
+                    <div class="register_option">
+                        <div class="register_select">
+                            <select class="js_register_userType" onchange="registerUserTypeSelectChange(this)">
+                                <option value="본인" selected>본인</option>
+                                <option value="배우자">배우자</option>
+                                <option value="연인">연인</option>
+                                <option value="부모">부모</option>
+                                <option value="자녀">자녀</option>
+                                <option value="친구">친구</option>
+                                <option value="direct">직접입력</option>
+                            </select>
+                        </div>
+                        <div class="register_hideInput">
+                            <input type="text" class="js_register_userType_direct" placeholder="직접 입력">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="register_formOption"></div>
+            <div class="register_formOption"></div>
+        </form>
+    </section>
+
 
     <footer></footer>
 
 
     <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"> </section>
 
+
+    <!-- 페이지.js -->
+    <script src="./resources/js/register.js"></script>
 
     <!-- 템플릿.js -->
     <script src="./resources/js/common.js"></script>

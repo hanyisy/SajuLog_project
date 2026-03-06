@@ -36,19 +36,19 @@ input:-webkit-autofill {
 
 .register_sec2{
     width: 100%; margin: auto; position: relative; color: white;
-    height: auto; margin-bottom: 8em; margin-top: 10%;
+    height: auto; margin-bottom: 8em; margin-top: 10%; overflow: hidden;
 }
 
 .register_sec2 form{
     width: 95%; margin: auto; position: relative; font-size: 1.5em;
-    padding: 5% 2.5%;
+    padding: 5% 2.5%; padding-top: 10%; z-index: 6;
 }
 .register_formOption{
     width: 100%; border-bottom: 1px solid white; padding-bottom: 3%; margin-bottom: 3%;
 }
 
 .register_optionBox{width: 100%; margin-bottom: 3%;}
-.register_optionName{display: flex; align-items: end; gap: 0.3em; padding-left: 0.5em; margin-bottom: 0.2em;}
+.register_optionName{display: flex; align-items: end; flex-wrap: wrap; gap: 0.3em; padding-left: 0.5em; margin-bottom: 0.2em;}
 .register_optionName p{
     font-size: 1.2em;
 }
@@ -110,5 +110,7 @@ input:-webkit-autofill {
 .register_saveBtn{background-color: #DDC49B; cursor: pointer; color: #000; width: 100%; margin-top: 5%; font-size: 1.5em; text-align: center; padding: 0.3em 0; border-radius: 0.5em; margin-bottom: 2%;}
 
 .register_formFrame{
-    width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none;
+    width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; 
 }
+.register_formFrame_deco{ width: 100%; height: 100%; position: absolute; left: 0; top: 0;z-index: 5;}
+.register_formFrame_deco div{background-color: #00001d;}

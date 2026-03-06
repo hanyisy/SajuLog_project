@@ -1,0 +1,114 @@
+section{background-color: #00001d; position: relative;}
+section img{width: 100%; object-fit: contain;}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+    background: none;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff00;
+}
+
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0) inset;
+    box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0) inset;
+    -webkit-text-fill-color: #000;
+}
+
+.register_sec1{
+    width: 100%; padding-top: 15%;
+}
+.register_backbtn{
+    width: 7%; margin-top: 5%; margin-left: 2%; 
+}
+.register_backbtn a{
+    width: 100%; display: block; height: fit-content;
+}
+.register_backbtn img{pointer-events: none;}
+.register_title{width: 78% ; margin: auto; margin-bottom: 5%;}
+
+.register_sec2{
+    width: 100%; margin: auto; position: relative; color: white;
+    height: auto; margin-bottom: 8em; margin-top: 10%;
+}
+
+.register_sec2 form{
+    width: 95%; margin: auto; position: relative; font-size: 1.5em;
+    padding: 5% 2.5%;
+}
+.register_formOption{
+    width: 100%; border-bottom: 1px solid white; padding-bottom: 3%; margin-bottom: 3%;
+}
+
+.register_optionBox{width: 100%; margin-bottom: 3%;}
+.register_optionName{display: flex; align-items: end; gap: 0.3em; padding-left: 0.5em; margin-bottom: 0.2em;}
+.register_optionName p{
+    font-size: 1.2em;
+}
+.register_optionName span{font-weight: 400;}
+.register_option{
+    width: 100%;
+}
+.register_option input{
+    width: 100%; background-color: white; font-size: 1em;
+    padding: 0.5em; border-radius: 5em;
+}
+.register_option select{
+    width: 100%; background-color: white; font-size: 1em;
+    padding: 0.5em; border-radius: 5em;
+}
+.register_select{
+    width: 100%; position: relative;
+}
+.register_select::before{
+    content: '∨'; color: #000; font-weight: 800;
+    position: absolute; right: 0.5em; top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.register_hideInput{
+    width: 100%; display: none; margin-top: 1%;
+}
+.register_hideInput.on{
+    width: 100%; display: block;
+}
+
+.register_birth{
+    display: flex; justify-content: space-between;
+}
+
+.register_birth .register_select{width: 28%;}
+.register_birth .register_input{width: 70%;}
+
+.register_optionName.register_birthTime_name{
+    display: flex; justify-content: space-between; align-items: end;
+}
+
+.register_optionName .register_ckeck{
+    display: inline-flex; width: fit-content; justify-content: right; padding-right: 1em; font-size: 1.1em;
+}
+.register_optionName .register_ckeck label{
+    display: flex; align-items: center; gap: 0.5em;
+}
+
+.gender_select{width: 100%; display: flex; justify-content: space-between; align-items: center; transition: 0.3s;}
+.gender_select input[type="radio"] {position:absolute; opacity:0; width:1px; height:1px; pointer-events:none;}
+.gender_select label {
+    padding: 0.5em; border-radius: 5em;background-color: white; font-size: 1em;
+    width: 49%; cursor: pointer; user-select: none; transition: all 0.2s ease-in-out; color: black; margin-bottom: 2%; font-weight: 600;
+    text-align: center;
+}
+.gender_select input[type="radio"]:checked + label { background-color: #DDC49B; transform: scale(1.01); box-shadow: 0 0 0.35rem rgba(0, 0, 0, 0.123);}
+
+.register_saveBtn{background-color: #DDC49B; cursor: pointer; color: #000; width: 100%; margin-top: 5%; font-size: 1.5em; text-align: center; padding: 0.3em 0; border-radius: 0.5em; margin-bottom: 2%;}
+
+.register_formFrame{
+    width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none;
+}

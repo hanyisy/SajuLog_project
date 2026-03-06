@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/font.css" type="text/css">
     <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/mainpage.css" type="text/css">
-    <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/register.css" type="text/css">
+    <link rel="stylesheet" href="./resources/css/register.css" type="text/css">
     <title>궁합 입력페이지</title>
 </head>
 <body>
@@ -13,10 +13,67 @@
 
     <section class="register_sec1">
         <div class="register_backbtn"><a href="./index.html"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/arrow-2.webp" alt=""></a></div>
-        <div class="register_title"><img src="./resources/img/register/add_sajuTit.webp" alt=""></div>
+        <div class="register_title"><img src="./resources/img/register/match_subTit.webp" alt=""></div>
     </section>
 
-    <section class="register_match_sec2"></section>
+    <section class="register_match_sec2">
+        <form method="post" action="apply.html" name="saju_register">
+            <div class="register_formOption">
+                <div class="register_optionBox">
+                    <div class="register_optionName">
+                        <p style="text-align: center;">궁합을 확인할 사람을 선택해주세요</p>
+                    </div>
+                    <div class="register_option match_selectUser">
+                        <input type="text" name="option1" style="position: absolute; width: 1px; height: 1px; pointer-events: none; z-index: -100; left: 1000%;" required />
+                        <input type="text" name="option2" style="position: absolute; width: 1px; height: 1px; pointer-events: none; z-index: -100; left: 1000%;" required />
+                        <!-- <div class="match_user1 on">
+                            <div class="match_noneUser">
+                                <h1>?</h1>
+                                <p>선택하기</p>
+                            </div>
+                            <div class="match_user js_match_user">
+                                <div class="match_user_icon js_match_user_icon"><img src="./resources/img/animal/dog.svg" alt=""></div>
+                                <h1 class="js_match_user_Name">User</h1>
+                                <div class="match_change_user">교체하기</div>
+                            </div>
+                        </div> -->
+                        <div class="match_user1">
+                            <div class="match_noneUser">
+                                <h1>?</h1>
+                                <p>선택하기</p>
+                            </div>
+                            <div class="match_user js_match_user"></div>
+                        </div>
+                        <div class="match_user2">
+                            <div class="match_noneUser">
+                                <h1>?</h1>
+                                <p>선택하기</p>
+                            </div>
+                            <div class="match_user js_match_user"></div>
+                        </div>
+                    </div>
+                    <div class="register_userListBox js_register_userListBox">
+                        <div id="user-list-container"></div>
+                        <!-- <div class="register_userCards">
+                            <h3>user1</h3>
+                            <div>
+                                <p><span>남성</span> <span>친구</span></p>
+                                <p><span>양력</span><span>1998.04.02</span> </p>
+                            </div>
+                        </div>
+                        <div class="register_userCards">
+                            <h3>user2</h3>
+                            <div>
+                                <p><span>남성</span> <span>동생</span></p>
+                                <p><span>음력</span><span>2001.05.02</span> </p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            
+        </form>
+    </section>
 
 
 
@@ -29,8 +86,7 @@
 
     <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"> </section>
 
-    <!-- 페이지.js -->
-    <script src="https://land.withusmk.co.kr/assets/saju/resources/js/register.js"></script>
+    <script src="https://land.withusmk.co.kr/assets/saju/resources/js/register_match.js"></script>
 
     <!-- 템플릿.js -->
     <script src="https://land.withusmk.co.kr/assets/saju/resources/js/common.js"></script>

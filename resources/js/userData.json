@@ -1,29 +1,92 @@
-{
+
+[{
   "user_profile": {
-    "name": "홍길동",
+    "name": "김민준",
     "gender": "남성",
-    "birth_date": "1995-06-15",
+    "birth_date": "1990-03-22",
     "birth_type": "양력",
-    "birth_time": "14:30",
-    "birth_animal": "개",
-    "birth_color": "blue",
+    "birth_time": "08:15",
+    "birth_animal": "말",
+    "birth_color": "red",
     "is_lunar": false,
-    "zodiac": "돼지띠"
+    "zodiac": "말띠",
+    "zodiacImg": "../img/animal/hor.svg"
   },
   "saju_analysis": {
-    "day_master": "갑목(甲木)",
+    "day_master": "병화(丙火)",
     "five_elements": {
-      "wood": 3,
-      "fire": 2,
-      "earth": 1,
-      "metal": 1,
+      "wood": 1,
+      "fire": 4,
+      "earth": 2,
+      "metal": 0,
       "water": 1
     },
     "score_summary": {
-      "energy": 85,
-      "wealth": 70,
-      "honor": 60,
-      "health": 90
+      "energy": 92,
+      "wealth": 55,
+      "honor": 78,
+      "health": 65
+    }
+  }
+},
+{
+  "user_profile": {
+    "name": "이서연",
+    "gender": "여성",
+    "birth_date": "1998-11-05",
+    "birth_type": "음력",
+    "birth_time": "23:45",
+    "birth_animal": "토끼",
+    "birth_color": "green",
+    "is_lunar": true,
+    "zodiac": "호랑이띠",
+    "zodiacImg": "../img/animal/tig.svg"
+  },
+  "saju_analysis": {
+    "day_master": "계수(癸水)",
+    "five_elements": {
+      "wood": 2,
+      "fire": 0,
+      "earth": 1,
+      "metal": 3,
+      "water": 2
+    },
+    "score_summary": {
+      "energy": 60,
+      "wealth": 88,
+      "honor": 45,
+      "health": 75
+    }
+  }
+},
+{
+  "user_profile": {
+    "name": "박지현",
+    "gender": "여성",
+    "birth_date": "1985-08-30",
+    "birth_type": "양력",
+    "birth_time": "06:00",
+    "birth_animal": "소",
+    "birth_color": "yellow",
+    "is_lunar": false,
+    "zodiac": "소띠",
+    "zodiacImg": "../img/animal/cow.svg"
+  },
+  "saju_analysis": {
+    "day_master": "무토(戊土)",
+    "five_elements": {
+      "wood": 0,
+      "fire": 2,
+      "earth": 3,
+      "metal": 2,
+      "water": 1
+    },
+    "score_summary": {
+      "energy": 74,
+      "wealth": 80,
+      "honor": 90,
+      "health": 58
     }
   }
 }
+]

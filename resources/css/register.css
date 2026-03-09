@@ -135,6 +135,7 @@ input:-webkit-autofill {
 
 .match_selectUser{
     width: 100%; display: flex; justify-content: space-between; align-items: center;
+    position: relative;
 }
 
 .match_selectUser>div{
@@ -150,11 +151,11 @@ input:-webkit-autofill {
 .match_selectUser > div.on .match_user { 
     display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; 
 }
-.match_noneUser h1{font-size: 4em;}
-.match_noneUser p{font-size: 1.5em;}
+.match_noneUser h1{font-size: 4em; pointer-events: none;}
+.match_noneUser p{font-size: 1.5em; pointer-events: none;}
 
-.register_userListBox.on{display: block;}
-.register_userListBox{
-    display: none;
-    width: 90%; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%) translateY(-10%); z-index: 1;
+.js_register_userListBox.off{display: none;}
+.js_register_userListBox{
+    background-color: aliceblue; z-index: 10; display: block;
+    width: 90%; position: absolute; left: 50%; top: 0; transform: translateX(-50%) translateY(-10%); z-index: 1;
 }

@@ -235,8 +235,8 @@ input:-webkit-autofill {
 .daily_selectUser > div.on .daily_user { 
     display: flex; flex-direction: column; align-items: center;  height: 100%; 
 }
-.daily_noneUser h1{font-size: 4em; pointer-events: none;}
-.daily_noneUser p{font-size: 1.5em; pointer-events: none;}
+.daily_noneUser h1{font-size: 2.5em; pointer-events: none;}
+.daily_noneUser p{font-size: 1.2em; pointer-events: none;}
 
 
 .daily_user_icon{

@@ -23,7 +23,7 @@ const headerContent = `
 `;
 const stickyBottom = `
     <div class="sticky_Bottom_BarBox">
-            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/sticky_Bottom_Bar_frame.webp" alt="" style="pointer-events: none;">
+            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/sticky_Bottom_Bar_frame.webp" alt="">
             <div>
                 <div class="sticky_Bottom_btn">
                     <a href="https://land.withusmk.co.kr/assets/saju/register.html">

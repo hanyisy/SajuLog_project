@@ -21,8 +21,8 @@ function renderUserList() {
         const user = item.user_profile;
         const cardHtml = `
             <div class="register_userCards" onclick="handleUserSelect(${index})" style="cursor:pointer; padding:10px; border-bottom:1px solid #ccc; color:#000;">
-                <h3>${user.name}</h3>
-                <p>${user.gender} | ${user.zodiac}</p>
+                <h3>${user.name} | ${user.zodiac}</h3>
+                <p>${user.gender} | ${user.birth_type} | ${user.birth_date}</p>
             </div>
         `;
         container.insertAdjacentHTML('beforeend', cardHtml);
@@ -68,6 +68,37 @@ function handleUserSelect(index) {
     }
 
     document.querySelector('.js_register_userListBox').classList.add('off'); // ✅ 수정
+    const relationLabel = document.querySelector(`.js_relation_${slotNumber}`);
+    if (relationLabel) relationLabel.innerText = selectedUser.name;
 }
 
 loadSajuData();
+
+
+const radios = document.querySelectorAll('input[type="radio"][name="option3"]');
+const directInput = document.querySelector('.js_register_userrelation_direct');
+
+// 라디오 클릭 시
+radios.forEach(radio => {
+    radio.addEventListener('change', () => {
+        // 텍스트 input 초기화 & name 제거
+        directInput.value = '';
+        directInput.removeAttribute('name');
+        
+        // 라디오에 name 부여 (이미 있지만 혹시 제거됐을 경우 대비)
+        radios.forEach(r => r.name = 'option3');
+    });
+});
+
+// 텍스트 input 입력 시
+directInput.addEventListener('input', () => {
+    // 라디오 전체 해제 & name 제거
+    radios.forEach(r => {
+        r.checked = false;
+        r.removeAttribute('name');
+    });
+    
+    // 텍스트 input에 name 부여
+    directInput.name = 'option3';
+});
+

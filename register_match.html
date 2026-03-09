@@ -32,7 +32,7 @@
                                 <p>선택하기</p>
                             </div>
                             <div class="match_user js_match_user">
-                                <div class="match_user_icon js_match_user_icon"><img src="" alt="" style="width: 80px; height: 80px; object-fit: contain;"></div>
+                                <div class="match_user_icon js_match_user_icon"><img src="" alt=""></div>
                                 <h1 class="js_match_user_Name">User</h1>
                                 <div class="match_change_user">교체하기</div>
                             </div>
@@ -43,33 +43,94 @@
                                 <p>선택하기</p>
                             </div>
                             <div class="match_user js_match_user">
-                                <div class="match_user_icon js_match_user_icon"><img src="" alt="" style="width: 80px; height: 80px; object-fit: contain;"></div>
+                                <div class="match_user_icon js_match_user_icon"><img src="" alt=""></div>
                                 <h1 class="js_match_user_Name">User</h1>
                                 <div class="match_change_user">교체하기</div>
                             </div>
                         </div>
                     </div>
                     <div class="register_userListBox js_register_userListBox off">
-                        <div id="user-list-container"></div>sss
-                        <!-- <div class="register_userCards">
-                            <h3>user1</h3>
-                            <div>
-                                <p><span>남성</span> <span>친구</span></p>
-                                <p><span>양력</span><span>1998.04.02</span> </p>
-                            </div>
-                        </div>
-                        <div class="register_userCards">
-                            <h3>user2</h3>
-                            <div>
-                                <p><span>남성</span> <span>동생</span></p>
-                                <p><span>음력</span><span>2001.05.02</span> </p>
-                            </div>
-                        </div> -->
+                        <div id="user-list-container"></div>
                     </div>
                 </div>
             </div>
+
+            <div class="register_formOption">
+                <div class="register_optionName">
+                    <p style="text-align: center;">두 사람은 어떤 관계인가요?</p>
+                </div>
+                <div class="register_option">
+                    <div class="register_option relation_select">
+                        <input type="radio" id="op3_1" name="option3" required value="친구" >
+                        <label for="op3_1">친구</label>
+                        <input type="radio" id="op3_2" name="option3" required value="썸남 썸녀" >
+                        <label for="op3_2">썸남 썸녀</label>
+                        <input type="radio" id="op3_3" name="option3" required value="연인" >
+                        <label for="op3_3">연인</label>
+                        <input type="radio" id="op3_4" name="option3" required value="배우자" >
+                        <label for="op3_4">배우자</label>
+                        <input type="radio" id="op3_5" name="option3" required value="전연인" >
+                        <label for="op3_5">전연인</label>
+                        <input type="radio" id="op3_6" name="option3" required value="전아내 전남편" >
+                        <label for="op3_6">전아내 전남편</label>
+                        <input type="radio" id="op3_7" name="option3" required value="부모와 자녀" >
+                        <label for="op3_7">부모와 자녀</label>
+                        <input type="radio" id="op3_8" name="option3" required value="형제/자매" >
+                        <label for="op3_8">형제/자매</label>
+                        <input type="radio" id="op3_9" name="option3" required value="직장동료" >
+                        <label for="op3_9">직장동료</label>
+                        <input type="radio" id="op3_10" name="option3" required value="사업 파트너" >
+                        <label for="op3_10">사업 파트너</label>
+                        <input type="radio" id="op3_11" name="option3" required value="아이돌과 팬" >
+                        <label for="op3_11">아이돌과 팬</label>
+                        <input type="radio" id="op3_12" name="option3" required value="아이돌과 아이돌" >
+                        <label for="op3_12">아이돌과 아이돌</label>
+                        <input type="radio" id="op3_13" name="option3" required value="고양이와 집사" >
+                        <label for="op3_13">고양이와 집사</label>
+                        <input type="radio" id="op3_14" name="option3" required value="강아지와 주인" >
+                        <label for="op3_14">강아지와 주인</label>
+                        <div class="register_textInput">
+                            <input type="text" name="option3" class="js_register_userrelation_direct" placeholder="직접 입력">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="register_formOption" style="border-bottom: none;">
+                <div class="register_optionBox">
+                    <div class="register_optionName">
+                        <p style="text-align: center;">각자의 역할을 입력해주세요 <span style="opacity: 0.5;">(선택)</span></p>
+                    </div>
+                    <div class="register_option register_relation_option">
+                        <p>
+                            <span class="js_relation_user1">User1</span>의 역할
+                        </p>
+                        <input type="text" name="option4" class="user-name" placeholder="예) 엄마, 남자친구, 팬" required />
+                    </div>
+                    <div class="register_option register_relation_option">
+                        <p>
+                            <span class="js_relation_user2">User2</span>의 역할
+                        </p>
+                        <input type="text" name="option5" class="user-name" placeholder="예) 아빠, 여자친구, 아이돌" required />
+                    </div>
+                </div>
+
+                <button type="submit" class="register_saveBtn">궁합보기</button>
+            </div>
             
         </form>
+        <div class="register_formFrame">
+                <div class="register_formFrame_deco">
+                    <div style="position: absolute; top: 0; left: 0; width: 15%; transform: translate(-5%,0%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_TL.webp" alt=""></div>
+                    <div style="position: absolute; top: 0; right: 0; width: 15%; transform: translate(5%,0%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_TR.webp" alt=""></div>
+                    <div style="position: absolute; bottom: 0; left: 0; width: 15%; transform: translate(-5%,-25%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_BL.webp" alt=""></div>
+                    <div style="position: absolute; bottom: 0; right: 0; width: 15%; transform: translate(5%,-25%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_BR.webp" alt=""></div>
+                </div>
+                <div style="position: absolute; top: 0; left: 50%; width: 75%; transform: translate(-50%,0%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_T.webp" alt=""></div>
+                <div style="position: absolute; bottom: 0; left: 50%; width: 75%; transform: translate(-50%,-6.5%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_B.webp" alt=""></div>
+                <div style="position: absolute; bottom: 0; left: 0; width: 55%; transform:  scaleY(5.8) translate(-1.5%,-45%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_L.webp" alt=""></div>
+                <div style="position: absolute; bottom: 0; right: 0; width: 55%; transform: scaleY(5.8) translate(1.5%,-45%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_R.webp" alt=""></div>
+            </div>
     </section>
 
 

@@ -3,9 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/font.css" type="text/css">
+    <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/mainpage.css" type="text/css">
+    <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/register.css" type="text/css">
     <title>오늘의 운세 입력페이지</title>
 </head>
 <body>
-    
+    <header></header>
+
+    <section class="register_sec1">
+        <div class="register_backbtn"><a href="https://land.withusmk.co.kr/assets/saju/index.html"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/arrow-2.webp" alt=""></a></div>
+        <div class="register_title"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/register/daily_subTit.webp" alt=""></div>
+    </section>
+
+    <section class="register_daily_sec2">
+        <form method="post" action="apply.html" name="saju_register">
+            <div class="register_formOption">
+                <div class="register_optionBox">
+                    <div class="register_optionName">
+                        <p style="text-align: center;">운세를 확인할 사람을 선택해주세요</p>
+                    </div>
+                    <div class="register_option daily_selectUser js_daily_selectUserCard">
+                        <input type="text" name="option1" style="position: absolute; width: 1px; height: 1px; pointer-events: none; z-index: -100; left: 1000%;" required />
+                        <input type="text" name="option2" style="position: absolute; width: 1px; height: 1px; pointer-events: none; z-index: -100; left: 1000%;" required />
+                        <div class="daily_user1">
+                            <div class="daily_noneUser">
+                                <h1>?</h1>
+                                <p>선택하기</p>
+                            </div>
+                            <div class="daily_user js_daily_user">
+                                <div class="daily_user_datas">
+                                    <h1 class="js_daily_user_Name">User</h1>
+                                    <p class="js_daily_user_text"></p>
+                                    <div class="daily_change_user">교체하기</div>
+                                </div>
+                                <div class="daily_user_icon js_daily_user_icon"><img src="" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="register_userListBox js_register_userListBox off">
+                        <div id="user-list-container"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="register_formOption">
+                <div class="register_optionName">
+                    <p style="text-align: center;">현재 연애 상태</p>
+                </div>
+                <div class="register_option">
+                    <div class="register_option relation_select daily_love_select">
+                        <input type="radio" id="op2_1" name="option2" required value="솔로" >
+                        <label for="op2_1">솔로</label>
+                        <input type="radio" id="op2_2" name="option2" required value="연애중" >
+                        <label for="op2_2">연애중</label>
+                        <input type="radio" id="op2_3" name="option2" required value="결혼함" >
+                        <label for="op2_3">결혼함</label>
+                        <input type="radio" id="op2_4" name="option2" required value="이혼/사별" >
+                        <label for="op2_4">이혼/사별</label>
+                        <div class="register_textInput">
+                            <input type="text" name="option2" class="js_register_userrelation_direct" placeholder="직접 입력">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="register_formOption" style="border-bottom: none;">
+                <div class="register_optionBox">
+                    <div class="register_optionName">
+                        <p>현재 직업 상태</p>
+                    </div>
+                    <div class="register_option">
+                        <div class="register_select" style="width: 90%; margin: auto;">
+                            <select name="option4" required>
+                                <option value="" selected>선택하세요</option>
+                                <option value="직장인">직장인 (회사원, 공무원 등)</option>
+                                <option value="자영업/사업">자영업 / 사업자</option>
+                                <option value="프리랜서/계약직">프리랜서 / 계약직</option>
+                                <option value="구직중/취업 준비">구직 중 / 취업 준비</option>
+                                <option value="학생">학생</option>
+                                <option value="주부">주부</option>
+                                <option value="은퇴/무직">은퇴 / 무직</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            <button type="submit" class="register_saveBtn">운세보기</button>
+            </div>
+
+
+        </form>
+        <div class="register_formFrame">
+                <div class="register_formFrame_deco">
+                    <div style="position: absolute; top: 0; left: 0; width: 15%; transform: translate(-5%,0%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_TL.webp" alt=""></div>
+                    <div style="position: absolute; top: 0; right: 0; width: 15%; transform: translate(5%,0%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_TR.webp" alt=""></div>
+                    <div style="position: absolute; bottom: 0; left: 0; width: 15%; transform: translate(-5%,-25%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_BL.webp" alt=""></div>
+                    <div style="position: absolute; bottom: 0; right: 0; width: 15%; transform: translate(5%,-25%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_BR.webp" alt=""></div>
+                </div>
+                <div style="position: absolute; top: 0; left: 50%; width: 75%; transform: translate(-50%,0%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_T.webp" alt=""></div>
+                <div style="position: absolute; bottom: 0; left: 50%; width: 75%; transform: translate(-50%,-6.5%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_B.webp" alt=""></div>
+                <div style="position: absolute; bottom: 0; left: 0; width: 55%; transform:  scaleY(5.8) translate(-1.5%,-45%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_L.webp" alt=""></div>
+                <div style="position: absolute; bottom: 0; right: 0; width: 55%; transform: scaleY(5.8) translate(1.5%,-45%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_R.webp" alt=""></div>
+            </div>
+    </section>
+
+
+
+    <footer></footer>
+
+
+    <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"> </section>
+
+    <script src="https://land.withusmk.co.kr/assets/saju/resources/js/register_daily.js"></script>
+    <!-- 템플릿.js -->
+    <script src="https://land.withusmk.co.kr/assets/saju/resources/js/common.js"></script>
 </body>
 </html>

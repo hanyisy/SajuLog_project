@@ -3,7 +3,7 @@ let currentTarget = null;
 
 async function loadSajuData() {
     try {
-        const response = await fetch('./resources/js/userData.json');
+        const response = await fetch('https://land.withusmk.co.kr/assets/saju/resources/js/userData-%ED%99%95%EC%9D%B8%EC%9A%A9_%EC%9E%84%EC%8B%9C%ED%8C%8C%EC%9D%BC.json');
         if (!response.ok) throw new Error('파일 로드 실패');
         sajuDataList = await response.json();
         renderUserList(); 

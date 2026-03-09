@@ -23,22 +23,22 @@ const headerContent = `
 `;
 const stickyBottom = `
     <div class="sticky_Bottom_BarBox">
-            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/sticky_Bottom_Bar_frame.webp" alt="">
+            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/sticky_Bottom_Bar_frame.webp" alt="" style="pointer-events: none;">
             <div>
                 <div class="sticky_Bottom_btn">
-                    <a href="#">
+                    <a href="https://land.withusmk.co.kr/assets/saju/register.html">
                         <h1>사주</h1>
                         <p>용하다고 소문난 사주</p>
                     </a>
                 </div>
                 <div class="sticky_Bottom_btn">
-                    <a href="#">
+                    <a href="https://land.withusmk.co.kr/assets/saju/register_match.html">
                         <h1>궁합</h1>
                         <p>우리 궁합은 몇점?</p>
                     </a>
                 </div>
                 <div class="sticky_Bottom_btn">
-                    <a href="#">
+                    <a href="https://land.withusmk.co.kr/assets/saju/register_daily.html">
                         <h1>운세</h1>
                         <p>2026 신년운세</p>
                     </a>

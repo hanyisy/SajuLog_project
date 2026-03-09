@@ -10,7 +10,7 @@
     "birth_color": "red",
     "is_lunar": false,
     "zodiac": "말띠",
-    "zodiacImg": "../resources/img/animal/hor.webp"
+    "zodiacImg": "https://land.withusmk.co.kr/assets/saju/resources/img/animal/hor.webp"
   },
   "saju_analysis": {
     "day_master": "병화(丙火)",
@@ -40,7 +40,7 @@
     "birth_color": "green",
     "is_lunar": true,
     "zodiac": "호랑이띠",
-    "zodiacImg": "../resources/img/animal/tig.webp"
+    "zodiacImg": "https://land.withusmk.co.kr/assets/saju/resources/img/animal/tig.webp"
   },
   "saju_analysis": {
     "day_master": "계수(癸水)",
@@ -70,7 +70,7 @@
     "birth_color": "yellow",
     "is_lunar": false,
     "zodiac": "소띠",
-    "zodiacImg": "../resources/img/animal/cow.webp"
+    "zodiacImg": "https://land.withusmk.co.kr/assets/saju/resources/img/animal/cow.webp"
   },
   "saju_analysis": {
     "day_master": "무토(戊土)",

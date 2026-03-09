@@ -4,7 +4,7 @@ let sajuDataList = [];
 async function loadAndRenderList() {
     try {
         // 실제 경로에 맞춰 수정하세요 (예: ./resources/js/userData.json)
-        const response = await fetch('./resources/js/userData.json');
+        const response = await fetch('resources/js/userData.json');
         sajuDataList = await response.json();
         
         const container = document.querySelector('.purchase_userList');
@@ -26,13 +26,13 @@ async function loadAndRenderList() {
                         </div>
                         <div class="purchase_btnBox">
                             <div class="purchase_complateBtn">
-                                <img src="./resources/img/userList/saju_userList_com.webp" alt="완료">
+                                <img src="https://land.withusmk.co.kr/assets/saju/resources/img/purchase_userList/saju_userList_com.webp" alt="완료">
                             </div>
                             <div class="purchase_delateBtn" onclick="deleteUser(${index}, event)">
-                                <img src="./resources/img/userList/saju_userList_del.webp" alt="삭제">
+                                <img src="https://land.withusmk.co.kr/assets/saju/resources/img/purchase_userList/saju_userList_del.webp" alt="삭제">
                             </div>
                             <div class="purchase_aditBtn" onclick="goToEdit(${index}, event)">
-                                <img src="./resources/img/userList/saju_userList_adit.webp" alt="수정">
+                                <img src="https://land.withusmk.co.kr/assets/saju/resources/img/purchase_userList/saju_userList_adit.webp" alt="수정">
                             </div>
                         </div>
                     </div>

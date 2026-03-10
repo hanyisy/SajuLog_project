@@ -1,18 +1,54 @@
-let sajuDataList = [];
+const sajuDataList = [
+  {
+    "user_profile": {
+      "name": "김민준",
+      "gender": "남성",
+      "birth_date": "1990-03-22",
+      "birth_type": "양력",
+      "birth_time": "08:15",
+      "zodiac": "말띠"
+    },
+    "saju_history": [
+      {
+        "title": "2026년 병오년 신년운세",
+        "link": "./result.html?type=newyear&id=2026001",
+        "date": "2026-03-09"
+      }
+    ]
+  },
+  {
+    "user_profile": {
+      "name": "이서연",
+      "gender": "여성",
+      "birth_date": "1998-11-05",
+      "birth_type": "음력",
+      "birth_time": "23:45",
+      "zodiac": "호랑이띠"
+    }
+  },
+  {
+    "user_profile": {
+      "name": "박지현",
+      "gender": "여성",
+      "birth_date": "1985-08-30",
+      "birth_type": "양력",
+      "birth_time": "06:00",
+      "zodiac": "소띠"
+    }
+  }
+];
 
-
-async function loadAndRenderList() {
+function loadAndRenderList() {
     try {
-        // 실제 경로에 맞춰 수정하세요 (예: ./resources/js/userData.json)
-        const response = await fetch('resources/js/userData.json');
-        sajuDataList = await response.json();
-        
+        // fetch 대신 위에서 선언한 sajuDataList를 바로 사용합니다.
         const container = document.querySelector('.purchase_userList');
-        container.innerHTML = ''; // 기존 껍데기 비우기
+        if (!container) return; // 컨테이너가 없으면 실행 방지
+        
+        container.innerHTML = ''; 
 
         sajuDataList.forEach((item, index) => {
             const user = item.user_profile;
-            const history = item.saju_history || []; // 사주 기록 데이터 (없으면 빈 배열)
+            const history = item.saju_history || []; 
 
             const cardHtml = `
                 <div class="purchase_userCard" data-index="${index}">
@@ -51,9 +87,10 @@ async function loadAndRenderList() {
             container.insertAdjacentHTML('beforeend', cardHtml);
         });
     } catch (error) {
-        console.error("리스트 로드 실패:", error);
+        console.error("리스트 렌더링 실패:", error);
     }
 }
+
 
 // 2. 토글
 function toggleAccordion(index) {

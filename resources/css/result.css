@@ -125,7 +125,7 @@ section img{width: 100%; object-fit: contain;}
 }
 .result_lockBox>img{width: 100%; object-fit: fill; transform: scale(1.15);}
 .result_obBox{
-    width: 100%; position: absolute; left: 0; top: 0;
+    width: 100%; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
 }
 .result_obBox>img{
     display: block; width: 15%; margin: auto; margin-top: 5%; margin-bottom: 5%;

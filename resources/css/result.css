@@ -227,3 +227,57 @@ section img{width: 100%; object-fit: contain;}
     display: flex; justify-content: left; align-items: left; flex-direction: column;
 }
 .result_explainCard_title_monthLuck h1{font-size: 1.3em;}
+
+
+.result_usersProfBox{
+    width: 100%; height: fit-content; position: relative;
+}
+.result_usersProf{
+    width: 100%; height: 100%; position: absolute; padding: 5%; text-align: center;
+    top: 0; left: 0; display: flex; justify-content: space-between; align-items: center;
+}
+.result_usersProfBox_str{
+    width: 2px; height: 95%; background-color: white;
+}
+.result_usersProf_card{
+    width: calc(50% - 1px); padding: 0 2%;
+}
+
+.result_userProf_anim{
+    font-size: 1.3em; margin: 1em auto;
+}
+
+.result_userProf_etc{
+    font-size: 1.2em; word-break: keep-all;
+}
+.result_explainCard_match{
+    transition: 0.3s;
+}
+
+.result_explainCard_match_titleBox{
+    width: 100%; display: flex; justify-content: space-between; align-items: center;
+    padding: 1em 4%; font-size: 1.3em; background-color: #9797ff00; /* 1.8em -> 1.3em */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.result_explainCard_match_title{font-family: 'YeogiOttaeJalnanGothic';}
+.result_explain_toggleBtn{
+    width: 1em; height: 0.2em; background-color: white;
+}
+.result_explain_toggleBtn2{
+    width: 1em; height: 0.2em; background-color: white; transition: 0.3s;
+    transform: rotate(90deg);
+}
+.result_explainCard_match_txt{
+    width: 100%; height: 0; font-size: 1.1em; /* 1.5em -> 1.1em */
+    position: relative; top: 0; overflow: hidden; transition: height 0.3s ease;
+}
+.result_explainCard_match_txt>p{padding: 4%; padding-bottom: 6%; font-size: 1.1em; line-height: 1.6;} /* 줄간격 추가 및 사이즈 조정 */
+
+.result_explainCard_match.on .result_explain_toggleBtn2{
+    transform: rotate(0deg);
+}
+
+.result_explainCard_match.on .result_explainCard_match_txt{
+    height: auto;  border-bottom: 1px solid white;
+}
+.result_explainCard_match.on .result_explainCard_match_titleBox{border-bottom: 1px solid white;}

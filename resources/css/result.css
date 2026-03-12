@@ -106,7 +106,7 @@ section img{width: 100%; object-fit: contain;}
 }
 .result_explainCard_txt{
     width: 100%; height: 0; font-size: 1.1em; /* 1.5em -> 1.1em */
-    position: relative; top: 0; overflow: hidden; transition: 0.3s;
+    position: relative; top: 0; overflow: hidden; transition: height 0.3s ease;
 }
 .result_explainCard_txt>p{padding: 4%; padding-bottom: 6%; font-size: 1.1em; line-height: 1.6;} /* 줄간격 추가 및 사이즈 조정 */
 
@@ -154,3 +154,76 @@ section img{width: 100%; object-fit: contain;}
 @media (max-width: 340px) {
     body { width: 100%; font-size: 10px;}
 }
+
+.result_daily_sec2{color: white;}
+.result_dailyList_title>div:nth-child(1){
+    font-size: 1em; padding: 1em; padding-top: 1.5em; border-bottom: 2px solid white;
+}
+.result_dailyList_title>div:nth-child(2){
+    font-size: 1.5em; padding: 0.5em; border-bottom: 2px solid white;
+}
+.result_dailyList_Box .result_sajuList{
+    width: 100%; margin: auto; display: flex; justify-content: space-between; text-align: center;
+    padding: 0.5em 2.5%; padding-top: 1em; border-bottom: 1px solid white;
+}
+.result_dailyList_Box .result_sajuList>div{width: 49%; font-size: 1.1em;} /* 1.4em -> 1.1em */
+.result_dailyList_Box .result_sajuList>div>p.result_name1{margin-bottom: 3%; font-size: 1.2em;} /* 1.5em -> 1.2em */
+.result_dailyList_Box .result_sajuList>div>p{margin-bottom: 0.3em; font-size: 1em;} /* 1.2em -> 1em */
+.result_dailyList_Box .result_sajuList>div>div{
+    width: 97%; aspect-ratio: 1/0.6; margin-bottom: 3%; background-color: rgba(0, 0, 0, 0.151);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+.result_saju_kanji_ex{color: white; width: 90%; margin: auto; word-break: keep-all;}
+.result_2List>div:nth-child(1){
+    display: flex; font-size: 1.5em; gap: 2em; margin-bottom: 2%;
+}
+
+.result_daily_toggleCard{
+    width: 100%; display: flex; justify-content: start; align-items: center; flex-direction: column;
+}
+.result_daily_toggleCard.on .result_explain_toggleBtn2{
+    transform: rotate(0deg);
+}
+
+.result_daily_toggleCard.on .result_explainCard_txt{
+    height: auto;  border-bottom: 1px solid white;
+}
+.result_daily_toggleCard.on .result_explainCard_titleBox{border-bottom: 1px solid white;}
+.result_daily_toggleCard div.result_sajuList>div>div{
+    width: 97%;aspect-ratio: 1/1.2; margin-bottom: 3%; background-color: rgba(0, 0, 0, 0.151);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+
+.result_daily_sec3{color: white; margin-bottom: 5%;}
+.result_daily_sec3_tit{
+    position: relative; width: 100%; height: fit-content;
+}
+.result_daily_sec3_tit div{
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    text-align: center;
+}
+.result_daily_sec3_tit div h2{margin-top: 3%;}
+.result_daily_sec3_luckbar{
+    text-align: center; font-size: 1.5em; padding: 5% 0; border-bottom: 1px solid white;
+}
+
+.result_daily_sec3_barBox{
+    width: 90%; margin: auto; margin-bottom: 3%;
+}
+.result_daily_sec3_gageBox{
+    width: 100%; position: relative;
+    background-color: rgba(255, 255, 255, 0.2); height: 1.5em; margin-top: 3%;
+    border-radius: 3em;
+}
+.result_daily_sec3_gageBox>div{
+    height: 100%; border-radius: 3em; background-color: #ddc49b;
+    position: absolute; top: 50%; left: 0; transform: translateY(-50%);
+}
+.result_daily_sec3_barBox>div:nth-child(2){
+    width: 100%; display: flex; justify-content: space-between; margin-top: 1%;
+}
+.result_explainCard_title_monthLuck{
+    flex: 1;
+    display: flex; justify-content: left; align-items: left; flex-direction: column;
+}
+.result_explainCard_title_monthLuck h1{font-size: 1.3em;}

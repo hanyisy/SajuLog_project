@@ -11,7 +11,17 @@ const sajuDataList = [
     "saju_history": [
       {
         "title": "2026년 병오년 신년운세",
-        "link": "./result.html?type=newyear&id=2026001",
+        "link": "https://land.withusmk.co.kr/assets/saju/result_daily.html",
+        "date": "2026-03-09"
+      },
+      {
+        "title": "내 사주 결과",
+        "link": "https://land.withusmk.co.kr/assets/saju/result.html",
+        "date": "2026-03-09"
+      },
+      {
+        "title": "나와 그의 궁합은 어떨까?",
+        "link": "https://land.withusmk.co.kr/assets/saju/result_match.html",
         "date": "2026-03-09"
       }
     ]

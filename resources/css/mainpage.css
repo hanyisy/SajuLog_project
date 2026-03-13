@@ -90,7 +90,7 @@ header{
 .sticky_Bottom_BarBox img{
     position: absolute;
     width: 100%; object-fit: contain;
-    left: 0; top: 0;
+    left: 0; top: 0; pointer-events: none;
 }
 .sticky_Bottom_BarBox>div{
     display: flex; justify-content: space-between; align-items: center; color: #fff;
@@ -166,7 +166,7 @@ header{
 
 .mainMenu_menuBox_frame div{
     width: 100%; height: 100%; position: absolute;
-    pointer-events: none;
+    pointer-events: none; 
 }
 
 .mainMenu_menuBox_frame1{left: 0%; top: 0%; transform: translateX(-2%) translateY(-2%);}

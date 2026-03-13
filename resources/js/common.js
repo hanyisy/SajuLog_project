@@ -28,7 +28,7 @@ const stickyBottom = `
     </div>
 
     <div class="sticky_Bottom_BarBox">
-            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/sticky_Bottom_Bar_frame.webp" alt="">
+            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/sticky_Bottom_Bar_frame.webp" alt="" style=" pointer-events: none;">
             <div>
                 <div class="sticky_Bottom_btn">
                     <a href="https://land.withusmk.co.kr/assets/saju/register.html">
@@ -162,12 +162,6 @@ window.addEventListener('DOMContentLoaded', () => {
             );
         });
     }
-
-
-
-
-
-
 
 
 });

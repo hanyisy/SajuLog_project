@@ -40,10 +40,15 @@ font-size: 1.05em;
 }
 .main_conTxt>p:nth-child(1){font-size: 2em; text-shadow: 2px 2px 6px #000000;}
 .main_conTxt>p:nth-child(2){opacity: 0.8; text-shadow: 2px 2px 6px #000000; }
-.main_sajuBtn_box{
+.main_sajuBtn_box{position: relative;
     text-align: center; color: white;
     margin: auto; font-size: 1.7em; padding-bottom: 5%;
 }
+
+.main_sajuBtn_box::after { position: absolute; content: ""; width: 100%; height: 15em; background: linear-gradient(#00001d00 0%, #00001dd7 100%); 
+    left: 0; bottom: 0; z-index: -1;
+}
+
 .main_sajuBtn_box p{
     font-size: 1.2em; margin-bottom: 0.8em;
 }
@@ -81,9 +86,7 @@ font-size: 1.05em;
 .main_subConTxt h1{font-size: 1.8em;}
 .main_subConTxt h1:nth-child(2){font-size: 2.3em;}
 .main_subConTxt h1>span{color: #ddc49b;}
-.main_str{
-    width: 1px; height: 3em; background-color: #DDC49B; margin: 5% auto;
-}
+.main_str{ width: 1px; height: 3em; background-color: #DDC49B; margin: 5% auto; }
 .main_subConTxt p{
     font-size: 1.8em; font-weight: 300; margin-bottom: 0.5em; color: #DDC49B;
 }
@@ -91,9 +94,13 @@ font-size: 1.05em;
 .main_subConTxt h2 { font-size: 2.5em; font-weight: 700; }
 
 .main_subOb{
-    width: 80%; margin: 3% auto; padding: 5% 0; margin-bottom: 0; background-color: #00001d;
+    width: 80%; margin: 5% auto 0; padding: 5% 0; margin-bottom: 0; background-color: #00001d;
 }
 
+.main_subOb img { margin-top: -50%; }
+
+.main_wrap { position: relative; }
+.main_bg { width: 100%; object-fit: contain; position: absolute; top: 0; left: 0; z-index: -1; opacity: 0.9; }
 
 @media (max-width: 800px) {
     body { width: 100%; font-size: 18px;}

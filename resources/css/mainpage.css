@@ -226,7 +226,7 @@ footer .inner ul li { cursor: pointer; }
 /* load */
 /* ===== 로딩 섹션 (아래 레이어) ===== */
 
-.loadings_loadBox{  width: 100vw; max-width: 800px; height: 100vh; position: fixed; overflow: hidden; 
+.loadings_loadBox{  width: 100vw; max-width: 800px; height: 100vh; position: fixed; overflow: hidden; pointer-events: none;
     top: 0; left: 50%; transform: translateX(-50%); z-index: 10000; background-color: transparent;}
 
 .loadings_loading_Sec{

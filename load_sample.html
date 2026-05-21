@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/font.css" type="text/css">
-        <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/mainpage.css" type="text/css">
+    <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/font.css" type="text/css">
+    <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/mainpage.css" type="text/css">
     <title>SAJU LOG</title>
     <style>
 
@@ -15,10 +15,20 @@
             position: relative; overflow-x: hidden; font-size: 30px;
         }
 
+        /* ===== 로딩 섹션 (아래 레이어) ===== */
+        .load_loading_Sec{
+            width: 100vw; max-width: 800px; height: 100vh; position: fixed; overflow: hidden; 
+            top: 0; left: 50%; transform: translateX(-50%); z-index: 10000;
+        }
+        .load_loading_Sec.off{ display: none; }
+
+        /* ===== 문짝 섹션 (위 레이어) ===== */
         .load_change_Sec{
             width: 100vw; max-width: 800px; height: 100vh; position: fixed; overflow: hidden; 
-            top: 0; left: 50%; transform: translateX(-50%);
+            top: 0; left: 50%; transform: translateX(-50%); z-index: 10001;
+            pointer-events: none;
         }
+        .load_change_Sec.off{ display: none; }
 
         .load_Section{
             width: 100vw; max-width: 800px; height: 100vh; position: relative; overflow: hidden; margin: auto;
@@ -33,7 +43,6 @@
         }
         .load_Bg>div{position: absolute;}
 
-        /* 풀스크린 레이어들 → background로 */
         .load_back{
             width: 100%; height: 100%; top: 0; left: 0;
             background: url('https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1.webp') center/100% 100% no-repeat;
@@ -58,7 +67,7 @@
             mix-blend-mode: screen;
         }
 
-        /* 달 그룹 (img 유지) */
+        /* 달 그룹 */
         .load_moon1{
             width: 100%; z-index: 2; position: relative; top: 15%;
         }
@@ -153,11 +162,7 @@
             100% { content: ''; }
         }
 
-        /* ===== 문짝 (background로) ===== */
-        .load_changeSection{
-            width: 100%; z-index: 100; height: 100vh; position: absolute;
-            left: 0; top: 0; overflow: hidden;
-        }
+        /* ===== 문짝 ===== */
         .load_change_box{
             width: 100%; height: 100vh; display: flex; justify-content: space-between;
         }
@@ -183,13 +188,12 @@
             transform: translateX(100%);
         }
 
-        .load_change_Sec.off{z-index: -100;}
-        .load_changeSection.off{opacity: 0;}
-
     </style>
 </head>
 <body>
-    <section class="load_change_Sec">
+
+    <!-- 1) 로딩 섹션 -->
+    <section class="load_loading_Sec">
         <section class="load_Section">
             <div class="load_Box">
                 <div class="load_logo"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_7.webp" alt=""></div>
@@ -233,26 +237,27 @@
                 <div class="load_back"></div>
             </div>
         </section>
-        <section class="load_changeSection">
-            <div class="load_change_box">
-                <div class="load_change_doorL off"></div>
-                <div class="load_change_doorR off"></div>
-            </div>
-        </section>
+    </section>
+
+    <!-- 2) 문짝 섹션 (별도 분리) -->
+    <section class="load_change_Sec">
+        <div class="load_change_box">
+            <div class="load_change_doorL off"></div>
+            <div class="load_change_doorR off"></div>
+        </div>
     </section>
 
     <script>
-        // 설정값 (로딩 게이지만 1.5초로 단축)
-        const LOAD_MIN_DURATION = 1100;   // 로딩 최소 노출 시간 (1800 → 1100)
-        const LOAD_SLOW_DURATION = 1100;  // 0 → 98% 도달 시간 (1700 → 1100)
+        // 설정값
+        const LOAD_MIN_DURATION = 1100;
+        const LOAD_SLOW_DURATION = 1100;
 
         // DOM
-        const load_gage = document.querySelector('.load_gage');
-        const load_doorL = document.querySelector('.load_change_doorL');
-        const load_doorR = document.querySelector('.load_change_doorR');
-        const load_Sec = document.querySelector('.load_change_Sec');
-        const load_changeSec = document.querySelector('.load_changeSection');
-        const load_Section = document.querySelector('.load_Section');
+        const load_gage       = document.querySelector('.load_gage');
+        const load_doorL      = document.querySelector('.load_change_doorL');
+        const load_doorR      = document.querySelector('.load_change_doorR');
+        const load_changeSec  = document.querySelector('.load_change_Sec');
+        const load_loadingSec = document.querySelector('.load_loading_Sec');
 
         // 프리로드할 이미지
         const load_imageList = [
@@ -274,7 +279,7 @@
         const load_slowTimer = setInterval(() => {
             const elapsed = Date.now() - load_startTime;
             const ratio = Math.min(elapsed / LOAD_SLOW_DURATION, 1);
-            const eased = 1 - Math.pow(1 - ratio, 2);  // ease-out
+            const eased = 1 - Math.pow(1 - ratio, 2);
             load_currentPercent = eased * 98;
             load_updateUI(load_currentPercent);
             
@@ -306,45 +311,44 @@
         function load_rushToHundred() {
             const start = load_currentPercent;
             const rushStart = Date.now();
-            const DURATION = 300;  // 400 → 300
+            const DURATION = 300;
             
             const timer = setInterval(() => {
                 const elapsed = Date.now() - rushStart;
                 const ratio = Math.min(elapsed / DURATION, 1);
-                const eased = ratio * ratio;  // ease-in
+                const eased = ratio * ratio;
                 load_currentPercent = start + (100 - start) * eased;
                 load_updateUI(load_currentPercent);
                 
                 if (ratio >= 1) {
                     clearInterval(timer);
                     load_updateUI(100);
-                    setTimeout(load_startDoorSequence, 100);  // 300 → 100, 100% 보고 잠깐 뜸 들이기
+                    setTimeout(load_startDoorSequence, 100);
                 }
             }, 16);
         }
 
-        // 4. 문 시퀀스 (원본 그대로 유지)
+        // 4. 문 시퀀스
         function load_startDoorSequence() {
-            // 문 닫힘 (off 제거 → 화면 안으로)
+            // 1) 문 닫힘 (off 제거 → 화면 안으로)
             load_doorL.classList.remove('off');
             load_doorR.classList.remove('off');
             
-            // 문 완전히 닫힌 뒤 잠깐 정지 → 로딩 화면 숨기기
+            // 2) 문 완전히 닫힌 직후 → 로딩 섹션 통째로 제거
             setTimeout(() => {
-                load_Section.style.opacity = '0';
-                load_Section.style.transition = 'opacity 0.3s';
-            }, 1000);
+                load_loadingSec.classList.add('off');
+            }, 700);
             
-            // 정지 후 문 열림
+            // 3) 잠깐 뜸 들인 뒤 문 열림
             setTimeout(() => {
                 load_doorL.classList.add('off');
                 load_doorR.classList.add('off');
             }, 1500);
             
-            // 문 열리고 나면 전체 레이어 제거
+            // 4) 문 다 열리고 나면 문 섹션도 제거
             setTimeout(() => {
-                load_Sec.classList.add('off');
-            }, 2700);
+                load_changeSec.classList.add('off');
+            }, 2200);
         }
     </script>
 </body>

@@ -223,9 +223,175 @@ footer .inner ul li { cursor: pointer; }
 
 
 
+/* load */
+/* ===== 로딩 섹션 (아래 레이어) ===== */
 
+.loadings_loadBox{  width: 100vw; max-width: 800px; height: 100vh; position: fixed; overflow: hidden; 
+    top: 0; left: 50%; transform: translateX(-50%); z-index: 10000; background-color: transparent;}
 
+.loadings_loading_Sec{
+    width: 100vw; max-width: 800px; height: 100vh; position: fixed; overflow: hidden; 
+    top: 0; left: 50%; transform: translateX(-50%); z-index: 10000;
+}
+.loadings_loading_Sec.off{ display: none; }
+/* ===== 문짝 섹션 (위 레이어) ===== */
+.loadings_change_Sec{
+    width: 100vw; max-width: 800px; height: 100vh; position: fixed; overflow: hidden; 
+    top: 0; left: 50%; transform: translateX(-50%); z-index: 10001; background-color: transparent;
+    pointer-events: none;
+}
+.loadings_change_Sec.off{ display: none; }
+.loadings_Section{
+    width: 100vw; max-width: 800px; height: 100vh; position: relative; overflow: hidden; margin: auto;
+}
+.loadings_Section img{
+    width: 100%; object-fit: fill;
+}
+/* ===== 배경 합성 레이어 ===== */
+.loadings_Bg{
+    width: 100%; height: 100%; position: absolute; overflow: hidden; z-index: 1; left: 0; top: 0;
+}
+.loadings_Bg>div{position: absolute;}
+.loadings_back{
+    width: 100%; height: 100%; top: 0; left: 0;
+    background: url('https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1.webp') center/100% 100% no-repeat;
+}
+.loadings_cloud{
+    width: 100%; height: 100%; bottom: 0; left: 0; z-index: 1;
+    background: url('https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_1.webp') center bottom/100% auto no-repeat;
+    transform: translateY(5%);
+    mix-blend-mode: screen;
+}
+.loadings_star{
+    width: 100%; height: 100%; top: 0; left: 0; z-index: 10;
+    background: url('https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_5.webp') center/100% 100% no-repeat;
+    mix-blend-mode: screen;
+}
+.loadings_fill{
+    width: 100%; height: 100%; top: 0; left: 0; z-index: 11;
+    background: url('https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_6.webp') center/100% 100% no-repeat;
+    opacity: 0.5;
+}
+.loadings_fill_screen{
+    mix-blend-mode: screen;
+}
+/* 달 그룹 */
+.loadings_moon1{
+    width: 100%; z-index: 2; position: relative; top: 15%;
+}
+.loadings_moon1_1{
+    width: 85%; margin: auto;
+}
+.loadings_moon1_2{position: absolute; width: 100%; right: 0; top: 0; z-index: 3;}
+.loadings_moon2_1{mix-blend-mode: screen; z-index: 4;}
+.loadings_moon2_2{mix-blend-mode: hard-light; z-index: 5; position: absolute; top: 0; left: 0;}
+/* ===== 콘텐츠 영역 ===== */
+.loadings_Box{
+    width: 100%; height: 100vh; position: relative; z-index: 2;
+}
+.loadings_logo{color: #ddc49b; width: 25%; position: absolute; left: 50%; transform: translateX(-50%) translateY(5vh) scale(0.8); }
+.loadings_top{position: relative; top: 15vh; width: 85%; margin: auto;}
+.loadings_moon3{position: relative;}
+.loadings_moon4{
+    position: absolute; top: 50%; left: 50%; transform: translateY(-50%)  translateX(-50%);
+    width: 80%;
+}
+.loadings_moon4 div:nth-child(1){
+    position: absolute; top: 50%; left: 50%; transform: translateY(-50%) translateX(-50%);
+    width: 100%; animation: loadings_rotate_moonlight 5s ease-in-out infinite;
+    transform-origin: center center;
+    will-change: transform, opacity, filter;
+}
+.loadings_moon4 div:nth-child(2){
+    position: relative; animation: loadings_rotate_moon 85s linear infinite;
+}
+@keyframes loadings_rotate_moon {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes loadings_rotate_moonlight {
+    0% {
+        transform: translateY(-50%) translateX(-50%) scale(1);
+        opacity: 0.6;
+        filter: brightness(1) blur(0px);
+    }
+    25% {
+        transform: translateY(-50%) translateX(-50%) scale(1.08);
+        opacity: 0.75;
+        filter: brightness(1.3) blur(1px);
+    }
+    50% {
+        transform: translateY(-50%) translateX(-50%) scale(0.96);
+        opacity: 0.45;
+        filter: brightness(0.85) blur(0px);
+    }
+    75% {
+        transform: translateY(-50%) translateX(-50%) scale(1.04);
+        opacity: 0.7;
+        filter: brightness(1.15) blur(0.5px);
+    }
+    100% {
+        transform: translateY(-50%) translateX(-50%) scale(1);
+        opacity: 0.6;
+        filter: brightness(1) blur(0px);
+    }
+}
+.loadings_saju{
+    position: absolute; width: 45%; left: 50%; bottom: 0; transform: translateX(-50%) translateY(35%);
+}
+.loadings_bot{ 
+    position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 100%; color: white; text-align: center; z-index: 50; padding-bottom: 13vh;
+}
+.loadings_txtBox{ width: 40%; margin: auto; margin-top: 3%; margin-bottom: 7%; }
 
+.loadings_loadingBox{padding-bottom: 7%;}
+.loadings_loading{
+    width: 85%; margin: auto; height: 0.15em; background-color: rgba(255, 255, 255, 0.164); margin-bottom: 2%;
+    border-radius: 1em; overflow: hidden; position: relative;
+}
+.loadings_gage{
+    width: 0%; height: 100%; position: absolute; left: 0; top: 0; transition: 0.1s;
+    background: #D1AD78; background: linear-gradient(126deg, rgb(165, 135, 90) 0%, rgba(221, 196, 155, 1) 12%, rgba(242, 208, 140, 1) 50%, rgba(221, 196, 155, 1) 88%, rgba(165, 135, 90, 1) 100%);
+}
+.loadings_loadingTxt{opacity: 0.7; font-size: 0.5em; position: relative;}
+.loadings_percent{display: none;}
+.loadings_dots::after {
+    content: '';
+    animation: loadings_dots_blink 1.2s steps(4, end) infinite;
+}
+@keyframes loadings_dots_blink {
+    0%   { content: ''; }
+    25%  { content: '.'; }
+    50%  { content: '..'; }
+    75%  { content: '...'; }
+    100% { content: ''; }
+}
+/* ===== 문짝 ===== */
+.loadings_change_box{
+    width: 100%; height: 100vh; display: flex; justify-content: space-between;
+}
+.loadings_change_box>div{
+    width: 50%; height: 100%;
+    transition: transform 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+    transform: translateX(0);
+    will-change: transform;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.loadings_change_doorL{
+    background-image: url('https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts5_l.webp');
+}
+.loadings_change_doorR{
+    background-image: url('https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts5_r.webp');
+}
+.loadings_change_doorL.off{
+    transform: translateX(-100%);
+}
+.loadings_change_doorR.off{
+    transform: translateX(100%);
+}
 
 
 

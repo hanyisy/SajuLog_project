@@ -206,3 +206,169 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // // 실행!
 // loadSajuData();
+
+document.addEventListener('DOMContentLoaded', () => {
+    const load_Sec = document.querySelector('.loadings_loadBox');
+
+    // 1. 요소가 존재할 때만 실행
+    if (load_Sec) {
+        // 내부 HTML 삽입
+        load_Sec.innerHTML = `
+            <section class="loadings_loading_Sec">
+        <section class="loadings_Section">
+            <div class="loadings_Box">
+                <div class="loadings_logo"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_7.webp" alt=""></div>
+                <div class="loadings_top">
+                    <div class="loadings_moon3">
+                        <img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts2.webp" alt="">
+                    </div>
+                    <div class="loadings_moon4">
+                        <div><img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts3.webp" alt=""></div>
+                        <div><img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts3_1.webp" alt=""></div>
+                    </div>
+                    <div class="loadings_saju">
+                        <img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts4.webp" alt="">
+                    </div>
+                </div>
+                <div class="loadings_bot">
+                    <div class="loadings_txtBox">
+                        <img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_8.webp" alt="">
+                    </div>
+
+                    <div class="loadings_loadingBox">
+                        <div class="loadings_loading">
+                            <div class="loadings_gage"></div>
+                        </div>
+                        <div class="loadings_loadingTxt"><span class="loadings_percent">0%</span>오픈 준비 중 <span class="loadings_dots"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="loadings_Bg">
+                <div class="loadings_fill"></div>
+                <div class="loadings_fill loadings_fill_screen"></div>
+                <div class="loadings_star"></div>
+                <div class="loadings_moon1">
+                    <div class="loadings_moon1_2">
+                        <div class="loadings_moon2_2"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_4.webp" alt=""></div>
+                        <div class="loadings_moon2_1"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_3.webp" alt=""></div>
+                    </div>
+                    <div class="loadings_moon1_1"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_2.webp" alt=""></div>
+                </div>
+                <div class="loadings_cloud"></div>
+                <div class="loadings_back"></div>
+            </div>
+        </section>
+    </section>
+
+    <section class="loadings_change_Sec">
+        <div class="loadings_change_box">
+            <div class="loadings_change_doorL off"></div>
+            <div class="loadings_change_doorR off"></div>
+        </div>
+    </section>
+        `;
+
+        // 설정값
+        const LOADINGS_MIN_DURATION = 1100;
+        const LOADINGS_SLOW_DURATION = 1100;
+
+        // DOM
+        const loadings_gage       = document.querySelector('.loadings_gage');
+        const loadings_doorL      = document.querySelector('.loadings_change_doorL');
+        const loadings_doorR      = document.querySelector('.loadings_change_doorR');
+        const loadings_changeSec  = document.querySelector('.loadings_change_Sec');
+        const loadings_loadingSec = document.querySelector('.loadings_loading_Sec');
+
+        // 프리로드할 이미지
+        const loadings_imageList = [
+            // 'https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_7.webp',
+        ];
+
+        let loadings_currentPercent = 0;
+        let loadings_isLoadComplete = false;
+        const loadings_startTime = Date.now();
+
+        // UI 업데이트
+        function loadings_updateUI(p) {
+            const percent = Math.floor(p);
+            loadings_gage.style.width = percent + '%';
+            document.querySelector('.loadings_percent').textContent = percent + '%';
+        }
+
+        // 1. 느긋하게 0 → 98 (약 1100ms)
+        const loadings_slowTimer = setInterval(() => {
+            const elapsed = Date.now() - loadings_startTime;
+            const ratio = Math.min(elapsed / LOADINGS_SLOW_DURATION, 1);
+            const eased = 1 - Math.pow(1 - ratio, 2);
+            loadings_currentPercent = eased * 98;
+            loadings_updateUI(loadings_currentPercent);
+            
+            if (ratio >= 1) {
+                clearInterval(loadings_slowTimer);
+                if (loadings_isLoadComplete) loadings_rushToHundred();
+            }
+        }, 30);
+
+        // 2. 이미지 프리로드
+        function loadings_preload(src) {
+            return new Promise(resolve => {
+                const img = new Image();
+                img.onload = img.onerror = resolve;
+                img.src = src;
+            });
+        }
+
+        Promise.all(loadings_imageList.map(loadings_preload)).then(() => {
+            const elapsed = Date.now() - loadings_startTime;
+            const wait = Math.max(0, LOADINGS_MIN_DURATION - elapsed);
+            setTimeout(() => {
+                loadings_isLoadComplete = true;
+                if (loadings_currentPercent >= 95) loadings_rushToHundred();
+            }, wait);
+        });
+
+        // 3. 95 → 100 가속 (300ms)
+        function loadings_rushToHundred() {
+            const start = loadings_currentPercent;
+            const rushStart = Date.now();
+            const DURATION = 300;
+            
+            const timer = setInterval(() => {
+                const elapsed = Date.now() - rushStart;
+                const ratio = Math.min(elapsed / DURATION, 1);
+                const eased = ratio * ratio;
+                loadings_currentPercent = start + (100 - start) * eased;
+                loadings_updateUI(loadings_currentPercent);
+                
+                if (ratio >= 1) {
+                    clearInterval(timer);
+                    loadings_updateUI(100);
+                    setTimeout(loadings_startDoorSequence, 100);
+                }
+            }, 16);
+        }
+
+        // 4. 문 시퀀스
+        function loadings_startDoorSequence() {
+            // 1) 문 닫힘 (off 제거 → 화면 안으로)
+            loadings_doorL.classList.remove('off');
+            loadings_doorR.classList.remove('off');
+            
+            // 2) 문 완전히 닫힌 직후 → 로딩 섹션 통째로 제거
+            setTimeout(() => {
+                loadings_loadingSec.classList.add('off');
+            }, 700);
+            
+            // 3) 잠깐 뜸 들인 뒤 문 열림
+            setTimeout(() => {
+                loadings_doorL.classList.add('off');
+                loadings_doorR.classList.add('off');
+            }, 1500);
+            
+            // 4) 문 다 열리고 나면 문 섹션도 제거
+            setTimeout(() => {
+                loadings_changeSec.classList.add('off');
+            }, 2200);
+        }
+    }
+});

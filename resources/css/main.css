@@ -8,27 +8,24 @@ section{background-color: #00001d;}
     position: absolute; width: 100%; top: 0; left: 0;
 }
 .main_titBox{
-    margin-top: 10%; font-size: 1.3em; 
-    padding-top: 8em;
+     font-size: 1.3em; 
+    padding-top: 4.5em;
     color: white; text-align: center; margin-bottom: 15%;
 }
 
-.main_titBox>p{
-    font-size: 1.7em; font-weight: 300; margin-bottom: 5%; position: relative;
+.main_titBox>p{ color: #C0C0D3; text-shadow: 2px 2px 6px #00000038;
+    font-size: 1.4em; font-weight: 200; margin-bottom: 3%; position: relative;
 }
-.main_titBox>p>span{display: inline-block; position: relative;}
-.main_titBox>p>span::before{
-    content: "·"; font-weight: 500;
-    position: absolute; left: 50%; top: 0; transform: translateY(-50%) translateX(-50%);
-}
-.main_titBox>h2{font-size: 2.5em; font-weight: 800;}
+.main_titBox>p>span{display: inline-block;}
+
+.main_titBox>h2{font-size: 2.5em; font-weight: 500; font-family: 'PuradakGentleGothic'; line-height: 1.4; }
 .main_titBox>h2 span{
-    background-color: #ddc49b; padding: 0 0.2em; color: black;
+font-size: 1.05em;
 }
-.main_titBox>span{
-    display: inline-block; margin-top: 3%; font-size: 1.5em;
+.main_titBox>span{ background: #363636; padding: .1em .3em; font-weight: 200;
+    display: inline-block; margin-top: 3%; font-size: 1.3em; color: #C0C0D3;
 }
-.main_titBox>span b{color: #ddc49b;}
+.main_titBox>span b{color: #ddc49b; }
 
 .main_contentBox{
     width: 100%; margin: auto; position: relative;
@@ -41,8 +38,8 @@ section{background-color: #00001d;}
     transform: translate(-50%,-50%); text-align: center;
     color: #ddc49b; font-size: 2.5em;
 }
-.main_conTxt>p:nth-child(1){font-size: 2em;}
-.main_conTxt>p:nth-child(2){opacity: 0.8;}
+.main_conTxt>p:nth-child(1){font-size: 2em; text-shadow: 2px 2px 6px #000000;}
+.main_conTxt>p:nth-child(2){opacity: 0.8; text-shadow: 2px 2px 6px #000000; }
 .main_sajuBtn_box{
     text-align: center; color: white;
     margin: auto; font-size: 1.7em; padding-bottom: 5%;
@@ -77,7 +74,7 @@ section{background-color: #00001d;}
     position: relative;
 }
 
-.main_subConTxt{
+.main_subConTxt{ text-align: center;
     width: 100%; margin: auto; color: white; padding: 7% 0; padding-top: 9%;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
 }
@@ -85,11 +82,13 @@ section{background-color: #00001d;}
 .main_subConTxt h1:nth-child(2){font-size: 2.3em;}
 .main_subConTxt h1>span{color: #ddc49b;}
 .main_str{
-    width: 1px; height: 3em; background-color: white; margin: 5% auto;
+    width: 1px; height: 3em; background-color: #DDC49B; margin: 5% auto;
 }
 .main_subConTxt p{
-    font-size: 1.8em; font-weight: 400; margin-bottom: 0.5em;
+    font-size: 1.8em; font-weight: 300; margin-bottom: 0.5em; color: #DDC49B;
 }
+.main_subConTxt p:last-child { color: #fff; margin-bottom: 0; }
+.main_subConTxt h2 { font-size: 2.5em; font-weight: 700; }
 
 .main_subOb{
     width: 80%; margin: 3% auto; padding: 5% 0; margin-bottom: 0; background-color: #00001d;
@@ -140,3 +139,7 @@ section{background-color: #00001d;}
     .main_subConTxt{font-size: 0.7em;}
     .main_conTxt{font-size: 2em;}
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap');
+.main_titBox>p, .main_titBox>span, .main_subConTxt { font-family: 'Noto Serif KR', serif; letter-spacing: -0.05em; }

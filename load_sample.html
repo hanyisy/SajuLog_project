@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/font.css" type="text/css">
+    <title>SAJU LOG</title>
+    <style>
+
+        a{text-decoration: none;}
+        *{margin: 0; padding: 0; box-sizing: border-box; } 
+        body{
+            max-width: 800px; margin: auto;
+            position: relative; overflow-x: hidden; font-size: 30px;
+        }
+
+        .load_change_Sec{
+            width: 100vw; max-width: 800px; height: 100vh; position: fixed; overflow: hidden; 
+            top: 0; left: 50%; transform: translateX(-50%);
+        }
+
+        .load_Section{
+            width: 100vw; max-width: 800px; height: 100vh; position: relative; overflow: hidden; margin: auto;
+        }
+        .load_Section img{
+            width: 100%; object-fit: fill;
+        }
+
+        /* ===== 배경 합성 레이어 ===== */
+        .load_Bg{
+            width: 100%; height: 100%; position: absolute; overflow: hidden; z-index: 1; left: 0; top: 0;
+        }
+        .load_Bg>div{position: absolute;}
+
+        /* 풀스크린 레이어들 → background로 */
+        .load_back{
+            width: 100%; height: 100%; top: 0; left: 0;
+            background: url('https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1.webp') center/100% 100% no-repeat;
+        }
+        .load_cloud{
+            width: 100%; height: 100%; bottom: 0; left: 0; z-index: 1;
+            background: url('https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_1.webp') center bottom/100% auto no-repeat;
+            transform: translateY(5%);
+            mix-blend-mode: screen;
+        }
+        .load_star{
+            width: 100%; height: 100%; top: 0; left: 0; z-index: 10;
+            background: url('https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_5.webp') center/100% 100% no-repeat;
+            mix-blend-mode: screen;
+        }
+        .load_fill{
+            width: 100%; height: 100%; top: 0; left: 0; z-index: 11;
+            background: url('https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_6.webp') center/100% 100% no-repeat;
+            opacity: 0.5;
+        }
+        .load_fill_screen{
+            mix-blend-mode: screen;
+        }
+
+        /* 달 그룹 (img 유지) */
+        .load_moon1{
+            width: 100%; z-index: 2; position: relative; top: 20%;
+        }
+        .load_moon1_1{
+            width: 85%; margin: auto;
+        }
+        .load_moon1_2{position: absolute; width: 100%; right: 0; top: 0; z-index: 3;}
+        .load_moon2_1{mix-blend-mode: screen; z-index: 4;}
+        .load_moon2_2{mix-blend-mode: hard-light; z-index: 5; position: absolute; top: 0; left: 0;}
+
+        /* ===== 콘텐츠 영역 ===== */
+        .load_Box{
+            width: 100%; height: 100vh; position: relative; z-index: 2;
+        }
+        .load_logo{color: #ddc49b; font-size: 1.2em; position: absolute; left: 50%; transform: translateX(-50%) translateY(8vh) scale(0.8); font-family: 'PuradakGentleGothic'; font-weight: 300;}
+        .load_top{position: relative; top: 20vh; width: 85%; margin: auto;}
+        .load_moon3{position: relative;}
+        .load_moon4{
+            position: absolute; top: 50%; left: 50%; transform: translateY(-50%)  translateX(-50%);
+            width: 80%;
+        }
+        .load_moon4 div:nth-child(1){
+            position: absolute; top: 50%; left: 50%; transform: translateY(-50%) translateX(-50%);
+            width: 100%; animation: load_rotate_moonlight 5s ease-in-out infinite;
+            transform-origin: center center;
+            will-change: transform, opacity, filter;
+        }
+        .load_moon4 div:nth-child(2){
+            position: relative; animation: load_rotate_moon 85s linear infinite;
+        }
+        @keyframes load_rotate_moon {
+            0% { transform: rotate(0); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes load_rotate_moonlight {
+            0% {
+                transform: translateY(-50%) translateX(-50%) scale(1);
+                opacity: 0.6;
+                filter: brightness(1) blur(0px);
+            }
+            25% {
+                transform: translateY(-50%) translateX(-50%) scale(1.08);
+                opacity: 0.75;
+                filter: brightness(1.3) blur(1px);
+            }
+            50% {
+                transform: translateY(-50%) translateX(-50%) scale(0.96);
+                opacity: 0.45;
+                filter: brightness(0.85) blur(0px);
+            }
+            75% {
+                transform: translateY(-50%) translateX(-50%) scale(1.04);
+                opacity: 0.7;
+                filter: brightness(1.15) blur(0.5px);
+            }
+            100% {
+                transform: translateY(-50%) translateX(-50%) scale(1);
+                opacity: 0.6;
+                filter: brightness(1) blur(0px);
+            }
+        }
+
+        .load_saju{
+            position: absolute; width: 45%; left: 50%; bottom: 0; transform: translateX(-50%) translateY(35%);
+        }
+        .load_bot{ 
+            position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 100%; color: white; text-align: center; z-index: 50;
+        }
+        .load_str{ width: 15%; margin: auto; margin-bottom: 3%; height:1.5px; background-color: white;}
+        .load_txt{font-size: 1.1em; margin-bottom: 5%; font-family: 'JoseonPalace'; line-height: 130%;}
+        
+        .load_loadingBox{padding-bottom: 7%;}
+        .load_loading{
+            width: 85%; margin: auto; height: 0.2em; background-color: rgba(255, 255, 255, 0.164); margin-bottom: 2%;
+            border-radius: 1em; overflow: hidden; position: relative;
+        }
+        .load_gage{
+            width: 0%; height: 100%; position: absolute; left: 0; top: 0; transition: 0.3s;
+            background: #D1AD78; background: linear-gradient(126deg, rgba(209, 173, 120, 1) 0%, rgba(221, 196, 155, 1) 12%, rgba(242, 208, 140, 1) 50%, rgba(221, 196, 155, 1) 88%, rgba(209, 173, 120, 1) 100%);
+        }
+        .load_loadingTxt{opacity: 0.7; font-size: 0.7em; position: relative;}
+        .load_percent{display: none;}
+        .load_dots::after {
+            content: '';
+            animation: load_dots_blink 1.2s steps(4, end) infinite;
+        }
+        @keyframes load_dots_blink {
+            0%   { content: ''; }
+            25%  { content: '.'; }
+            50%  { content: '..'; }
+            75%  { content: '...'; }
+            100% { content: ''; }
+        }
+
+        /* ===== 문짝 (background로) ===== */
+        .load_changeSection{
+            width: 100%; z-index: 100; height: 100vh; position: absolute;
+            left: 0; top: 0; overflow: hidden;
+        }
+        .load_change_box{
+            width: 100%; height: 100vh; display: flex; justify-content: space-between;
+        }
+        .load_change_box>div{
+            width: 50%; height: 100%;
+            transition: transform 1.1s cubic-bezier(0.7, 0, 0.3, 1);
+            transform: translateX(0);
+            will-change: transform;
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .load_change_doorL{
+            background-image: url('https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts5_l.webp');
+        }
+        .load_change_doorR{
+            background-image: url('https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts5_r.webp');
+        }
+        .load_change_doorL.off{
+            transform: translateX(-100%);
+        }
+        .load_change_doorR.off{
+            transform: translateX(100%);
+        }
+
+        .load_change_Sec.off{z-index: -100;}
+        .load_changeSection.off{opacity: 0;}
+
+    </style>
+</head>
+<body>
+    <section class="load_change_Sec">
+        <section class="load_Section">
+            <div class="load_Box">
+                <div class="load_logo">SAJU LOG</div>
+                <div class="load_top">
+                    <div class="load_moon3">
+                        <img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts2.webp" alt="">
+                    </div>
+                    <div class="load_moon4">
+                        <div><img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts3.webp" alt=""></div>
+                        <div><img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts3_1.webp" alt=""></div>
+                    </div>
+                    <div class="load_saju">
+                        <img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts4.webp" alt="">
+                    </div>
+                </div>
+                <div class="load_bot">
+                    <div class="load_txtBox">
+                        <div class="load_str"></div>
+                        <div class="load_txt">
+                            운명을 기록하는,<br>가장 깊고 섬세한 풀이
+                        </div>
+                    </div>
+
+                    <div class="load_loadingBox">
+                        <div class="load_loading">
+                            <div class="load_gage"></div>
+                        </div>
+                        <div class="load_loadingTxt"><span class="load_percent">0%</span>풀이 준비 중 <span class="load_dots"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="load_Bg">
+                <div class="load_fill"></div>
+                <div class="load_fill load_fill_screen"></div>
+                <div class="load_star"></div>
+                <div class="load_moon1">
+                    <div class="load_moon1_2">
+                        <div class="load_moon2_2"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_4.webp" alt=""></div>
+                        <div class="load_moon2_1"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_3.webp" alt=""></div>
+                    </div>
+                    <div class="load_moon1_1"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_2.webp" alt=""></div>
+                </div>
+                <div class="load_cloud"></div>
+                <div class="load_back"></div>
+            </div>
+        </section>
+        <section class="load_changeSection">
+            <div class="load_change_box">
+                <div class="load_change_doorL off"></div>
+                <div class="load_change_doorR off"></div>
+            </div>
+        </section>
+    </section>
+
+    <script>
+        // 설정값
+        const LOAD_MIN_DURATION = 3000;   // 로딩 최소 노출 시간
+        const LOAD_SLOW_DURATION = 4000;  // 0 → 95% 도달 시간
+
+        // DOM
+        const load_gage = document.querySelector('.load_gage');
+        const load_doorL = document.querySelector('.load_change_doorL');
+        const load_doorR = document.querySelector('.load_change_doorR');
+        const load_Sec = document.querySelector('.load_change_Sec');
+        const load_changeSec = document.querySelector('.load_changeSection');
+        const load_Section = document.querySelector('.load_Section');
+
+        // 프리로드할 이미지
+        const load_imageList = [
+            'https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1.webp',
+            'https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_1.webp',
+            'https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_2.webp',
+            'https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_3.webp',
+            'https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_4.webp',
+            'https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_5.webp',
+            'https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts1_6.webp',
+            'https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts2.webp',
+            'https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts3.webp',
+            'https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts3_1.webp',
+            'https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts4.webp',
+            'https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts5_l.webp',
+            'https://land.withusmk.co.kr/assets/saju/resources/img/load/load_parts5_r.webp',
+        ];
+
+        let load_currentPercent = 0;
+        let load_isLoadComplete = false;
+        const load_startTime = Date.now();
+
+        // UI 업데이트
+        function load_updateUI(p) {
+            const percent = Math.floor(p);
+            load_gage.style.width = percent + '%';
+            document.querySelector('.load_percent').textContent = percent + '%';
+        }
+
+        // 1. 느긋하게 0 → 95
+        const load_slowTimer = setInterval(() => {
+            const elapsed = Date.now() - load_startTime;
+            const ratio = Math.min(elapsed / LOAD_SLOW_DURATION, 1);
+            const eased = 1 - Math.pow(1 - ratio, 2);  // ease-out
+            load_currentPercent = eased * 95;
+            load_updateUI(load_currentPercent);
+            
+            if (ratio >= 1) {
+                clearInterval(load_slowTimer);
+                if (load_isLoadComplete) load_rushToHundred();
+            }
+        }, 30);
+
+        // 2. 이미지 프리로드
+        function load_preload(src) {
+            return new Promise(resolve => {
+                const img = new Image();
+                img.onload = img.onerror = resolve;
+                img.src = src;
+            });
+        }
+
+        Promise.all(load_imageList.map(load_preload)).then(() => {
+            const elapsed = Date.now() - load_startTime;
+            const wait = Math.max(0, LOAD_MIN_DURATION - elapsed);
+            setTimeout(() => {
+                load_isLoadComplete = true;
+                if (load_currentPercent >= 95) load_rushToHundred();
+            }, wait);
+        });
+
+        // 3. 95 → 100 가속
+        function load_rushToHundred() {
+            const start = load_currentPercent;
+            const rushStart = Date.now();
+            const DURATION = 400;
+            
+            const timer = setInterval(() => {
+                const elapsed = Date.now() - rushStart;
+                const ratio = Math.min(elapsed / DURATION, 1);
+                const eased = ratio * ratio;  // ease-in
+                load_currentPercent = start + (100 - start) * eased;
+                load_updateUI(load_currentPercent);
+                
+                if (ratio >= 1) {
+                    clearInterval(timer);
+                    load_updateUI(100);
+                    setTimeout(load_startDoorSequence, 300);  // 100% 보고 잠깐 뜸 들이기
+                }
+            }, 16);
+        }
+
+        // 4. 문 시퀀스
+        function load_startDoorSequence() {
+            // 문 닫힘 (off 제거 → 화면 안으로)
+            load_doorL.classList.remove('off');
+            load_doorR.classList.remove('off');
+            
+            // 문 완전히 닫힌 뒤 잠깐 정지 → 로딩 화면 숨기기
+            setTimeout(() => {
+                load_Section.style.opacity = '0';
+                load_Section.style.transition = 'opacity 0.3s';
+            }, 1000);
+            
+            // 정지 후 문 열림
+            setTimeout(() => {
+                load_doorL.classList.add('off');
+                load_doorR.classList.add('off');
+            }, 1500);
+            
+            // 문 열리고 나면 전체 레이어 제거
+            setTimeout(() => {
+                load_Sec.classList.add('off');
+            }, 2700);
+        }
+    </script>
+</body>
+</html>

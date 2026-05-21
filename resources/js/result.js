@@ -16,7 +16,7 @@ const sajuResult = {
             top: { kanji: "丁", name: "정", sibseong: "비견" },
             bottom: { kanji: "巳", name: "사", sibseong: "겁재" }
         },
-        {
+        { 
             type: "월주",
             top: { kanji: "己", name: "기", sibseong: "식신" },
             bottom: { kanji: "巳", name: "사", sibseong: "겁재"}

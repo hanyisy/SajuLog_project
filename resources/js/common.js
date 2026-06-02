@@ -57,7 +57,7 @@ const mainMenuCon =`
         <div class="mainMenu_userBox">
             <h1 class="js_userName">User</h1>
             <p class="js_userData1">남성 | 1988.04.02 | 02:30 | --띠 | </p>
-            <div class="mainMenu_cashBox">
+            <div class="mainMenu_cashBox" style=" pointer-events: none; opacity: 0;">
                 <div class="mainMenu_ticket_count">
                     <p>이용권</p>
                     <p><b>0</b>개</p>

@@ -173,7 +173,7 @@ header{
 .mainMenu_menuBox_frame2{right: 0%; bottom: 0%; transform: translateX(2%);}
 
 .mainMenu_menuList{
-    width: 100%; aspect-ratio: 1/0.8; padding: 0.5em 0; position: relative;
+    width: 100%; aspect-ratio: 1/0.8; padding: 1.5em 0; position: relative;
     font-size:2em; font-weight: 300; color: white;
     display: flex; flex-direction: column; align-items: center; justify-content: top;
 }

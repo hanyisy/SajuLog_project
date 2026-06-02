@@ -31,7 +31,7 @@ const stickyBottom = `
             <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/sticky_Bottom_Bar_frame.webp" alt="" style=" pointer-events: none;">
             <div>
                 <div class="sticky_Bottom_btn">
-                    <a href="./saju/register.html">
+                    <a href="./register.html">
                         <h1>사주</h1>
                         <p>용하다고 소문난 사주</p>
                     </a>
@@ -42,7 +42,7 @@ const stickyBottom = `
                         <p>우리 궁합은 몇점?</p>
                     </a>
                 </div>
-                <div class="sticky_Bottom_btn">
+                <div class="sticky_Bottom_btn" style=" pointer-events: none; opacity: 0.5; ">
                     <a href="./register_daily.html">
                         <h1>운세</h1>
                         <p>2026 신년운세</p>
@@ -78,8 +78,6 @@ const mainMenuCon =`
             <div class="mainMenu_menuList">
                 <div><a href="./purchase.html">사주내역</a></div>
                 <p></p>
-                <div><a href="./product.html">이용권 충전</a></div>
-                <p></p>
                 <div><a href="./faq.html">문의하기</a></div>
                 <p></p>
                 <div class="mainMenu_userLogout js_mainMenu_userLogout"><a href="./login.html">로그아웃</a></div>
@@ -87,6 +85,8 @@ const mainMenuCon =`
         </div>
     </section>
 `
+
+// <div><a href="./product.html">이용권 충전</a></div><제거
 
 
 const footerCon = `

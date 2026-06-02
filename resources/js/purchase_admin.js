@@ -11,17 +11,17 @@ const sajuDataList = [
     "saju_history": [
       {
         "title": "2026년 병오년 신년운세",
-        "link": "https://land.withusmk.co.kr/assets/saju/result_daily.html",
+        "link": "./result_daily.html",
         "date": "2026-03-09"
       },
       {
         "title": "내 사주 결과",
-        "link": "https://land.withusmk.co.kr/assets/saju/result.html",
+        "link": "./result.html",
         "date": "2026-03-09"
       },
       {
         "title": "나와 그의 궁합은 어떨까?",
-        "link": "https://land.withusmk.co.kr/assets/saju/result_match.html",
+        "link": "./result_match.html",
         "date": "2026-03-09"
       }
     ]
@@ -72,13 +72,13 @@ function loadAndRenderList() {
                         </div>
                         <div class="purchase_btnBox">
                             <div class="purchase_complateBtn">
-                                <img src="https://land.withusmk.co.kr/assets/saju/resources/img/purchase_userList/saju_userList_com.webp" alt="완료">
+                                <img src="./resources/img/purchase_userList/saju_userList_com.webp" alt="완료">
                             </div>
                             <div class="purchase_delateBtn" onclick="deleteUser(${index}, event)">
-                                <img src="https://land.withusmk.co.kr/assets/saju/resources/img/purchase_userList/saju_userList_del.webp" alt="삭제">
+                                <img src="./resources/img/purchase_userList/saju_userList_del.webp" alt="삭제">
                             </div>
                             <div class="purchase_aditBtn" onclick="goToEdit(${index}, event)">
-                                <img src="https://land.withusmk.co.kr/assets/saju/resources/img/purchase_userList/saju_userList_adit.webp" alt="수정">
+                                <img src="./resources/img/purchase_userList/saju_userList_adit.webp" alt="수정">
                             </div>
                         </div>
                     </div>

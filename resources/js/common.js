@@ -3,11 +3,11 @@ const headerContent = `
     <div class="header_deco header_deco1"><div></div><div></div></div>
     <div class="header_box">
         <div class="header_logo">
-            <a href="https://land.withusmk.co.kr/assets/saju/index.html"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/logo.png" alt="로고"></a>
+            <a href="./index.html"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/logo.png" alt="로고"></a>
         </div>
         <div class="header_maenuBox">
-            <div class="header_cashBtn">
-                <a href="https://land.withusmk.co.kr/assets/saju/product.html" target="_self"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/header_btn.webp" alt="버튼"></a>
+            <div class="header_cashBtn" style="pointer>
+                <a href="./product.html" target="_self"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/header_btn.webp" alt="버튼"></a>
             </div>
             <div class="header_barBtn js_header_barBtn">
                 <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/burger_bar.webp" alt="메뉴">
@@ -31,19 +31,19 @@ const stickyBottom = `
             <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/sticky_Bottom_Bar_frame.webp" alt="" style=" pointer-events: none;">
             <div>
                 <div class="sticky_Bottom_btn">
-                    <a href="https://land.withusmk.co.kr/assets/saju/register.html">
+                    <a href="./saju/register.html">
                         <h1>사주</h1>
                         <p>용하다고 소문난 사주</p>
                     </a>
                 </div>
                 <div class="sticky_Bottom_btn">
-                    <a href="https://land.withusmk.co.kr/assets/saju/register_match.html">
+                    <a href="./register_match.html">
                         <h1>궁합</h1>
                         <p>우리 궁합은 몇점?</p>
                     </a>
                 </div>
                 <div class="sticky_Bottom_btn">
-                    <a href="https://land.withusmk.co.kr/assets/saju/register_daily.html">
+                    <a href="./register_daily.html">
                         <h1>운세</h1>
                         <p>2026 신년운세</p>
                     </a>
@@ -63,7 +63,7 @@ const mainMenuCon =`
                     <p><b>0</b>개</p>
                 </div>
                 <div class="mainMenu_mov_productBtn">
-                    <a href="https://land.withusmk.co.kr/assets/saju/product.html">
+                    <a href="./product.html">
                         <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/mainMenu_ticketbox.webp" alt="">
                     </a>
                 </div>
@@ -76,13 +76,13 @@ const mainMenuCon =`
                 <div class="mainMenu_menuBox_frame2"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/mainMenu_frameBot.webp" alt=""></div>
             </div>
             <div class="mainMenu_menuList">
-                <div><a href="https://land.withusmk.co.kr/assets/saju/purchase.html">사주내역</a></div>
+                <div><a href="./purchase.html">사주내역</a></div>
                 <p></p>
-                <div><a href="https://land.withusmk.co.kr/assets/saju/product.html">이용권 충전</a></div>
+                <div><a href="./product.html">이용권 충전</a></div>
                 <p></p>
-                <div><a href="https://land.withusmk.co.kr/assets/saju/faq.html">문의하기</a></div>
+                <div><a href="./faq.html">문의하기</a></div>
                 <p></p>
-                <div class="mainMenu_userLogout js_mainMenu_userLogout"><a href="https://land.withusmk.co.kr/assets/saju/login.html">로그아웃</a></div>
+                <div class="mainMenu_userLogout js_mainMenu_userLogout"><a href="./login.html">로그아웃</a></div>
             </div>
         </div>
     </section>

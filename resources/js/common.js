@@ -6,7 +6,7 @@ const headerContent = `
             <a href="./index.html"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/logo.png" alt="로고"></a>
         </div>
         <div class="header_maenuBox">
-            <div class="header_cashBtn" style="pointer>
+            <div class="header_cashBtn" style=" pointer-events: none; opacity: 0;">
                 <a href="./product.html" target="_self"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/header_btn.webp" alt="버튼"></a>
             </div>
             <div class="header_barBtn js_header_barBtn">

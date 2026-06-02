@@ -395,6 +395,60 @@ footer .inner ul li { cursor: pointer; }
 
 
 
+/* 프리미엄 거기 */
+.main_section3{
+    width: 100%; margin: auto; position: relative; overflow: hidden; background-color: #04041b;
+    z-index: 1;
+}
+.main_sec3_bg{
+    width: 100%; height: 100%; position: absolute;top: 0; left: 0; z-index: -1;
+}
+.main_sec3_bg>div:nth-child(1){
+    width: 100%; position: absolute; left: 0; bottom: 0; background-color: #00001d;
+}
+.main_sec3_bg>div:nth-child(2){
+    width: 100%; position: absolute; left: 0; top: 0;
+}
+.main_sec3_bg>div:nth-child(3){
+    width: 100%; position: absolute; left: 0; bottom: 0;
+}
+.main_sec3_top{
+    text-align: center; color: white; font-size: 1.8em; font-family: 'YeogiOttaeJalnanGothic';
+}
+.main_sec3_top>div{
+    width: 10%; margin: auto; padding-top: 10%; margin-bottom: 5%;
+}
+.main_sec3_top h2{font-size: 1.8em;font-weight: 100;}
+.main_sec3_top h3{margin: 6% auto; color: #D1AD78; font-size: 1.4em;font-weight: 100; margin-bottom: 10%;}
+.main_sec3_top h4{font-size: 1em; margin-bottom: 5%;font-weight: 100;}
+.main_sec3_mid{
+    width: 90%; margin: auto; height: fit-content; position: relative; z-index: 1;
+}
+.main_sec3_mid ul{
+    width: 90%; height: 95%; position: absolute; top: 50%; left: 50%; 
+    transform: translateX(-50%) translateY(-50%); display: flex; flex-direction: column;
+    justify-content: center; align-items: center; gap: 0.3em;
+}
+.main_sec3_mid li{
+    width: 100%; display: flex; align-items: center; justify-content: left;
+    color: white; font-size: 1em; height: 8%; gap: 0.5em;
+}
+.main_sec3_mid li div{
+    width: 1.5em;
+}
+.main_sec3_mid p{font-size: 1.7em;}
+.main_sec3_bot{
+    width: 90%; margin: 5% auto; margin-top: 8%;
+}
+
+.main_sec3_preSajuBtn{
+    width: 85%; margin: auto; text-align: center; margin-bottom: 8%;font-family: 'YeogiOttaeJalnanGothic';
+    padding: 0.4em 0; font-size: 2em; color: #000; background-color: #D7B783; 
+    border-radius: 0.5em; border: 1px solid #F4E9A3; font-weight: 900; display: flex; justify-content: center; align-items: center;
+}
+.main_sec3_preSajuBtn a{
+    width: 100%; height: 100%; display: block; font-weight: 100; color: #000; transform: translateY(5%);
+}
 
 
 
@@ -488,4 +542,6 @@ footer .inner ul li { cursor: pointer; }
 }
 @media (max-width: 379px) {
     body { width: 100%; font-size: 12px;}
+    .main_sec3_top{font-size: 1.3em;}
+    .main_sec3_preSajuBtn{font-size: 1.5em;}
 }

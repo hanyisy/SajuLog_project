@@ -13,7 +13,7 @@
 </head>
 <body>
     <header></header>
-    <div id="paymentContainer"></div>
+    <div id="paymentContainer" style="z-index: 10000;"></div>
     
     <section class="result_sec1" style="border: none;">
         <div class="result_backbtn"><a href="./index.html"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/arrow-2.webp" alt=""></a></div>
@@ -111,15 +111,20 @@
             <div class="result_match_sec2_bot">
                 <div><img src="./resources/img/main-img/mainpremium_botTxt.webp" alt=""></div>
             </div>
-            <div class="result_match_sec2_preSajuBtn"><a href="#"  class="openPayment">지금 프리미엄궁합 보러가기</a></div>
+            <div class="result_match_sec2_preSajuBtn"><span class="openPayment">지금 프리미엄궁합 보러가기</span></div>
         </div>
     </section>
 
 
     <footer></footer>
 
+    <!-- <section class="loadings_loadBox"></section> -->
 
     <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"> </section>
+
+    <script>
+        document.querySelector('.openPayment').addEventListener('click',()=>{console.log('클릭가능')})
+    </script>
     
     <script src="./resources/js/result_match.js"></script>
 

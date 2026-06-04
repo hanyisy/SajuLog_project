@@ -317,7 +317,7 @@ section img{width: 100%; object-fit: contain;}
 }
 
 
-.result_match_addsec2{position: relative; z-index: -1;}
+.result_match_addsec2{position: relative;}
 .result_match_addsec2_bgimg1{
     position: absolute; width: 100%; left: 0; bottom: 0;
 }

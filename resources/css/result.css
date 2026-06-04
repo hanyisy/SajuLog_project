@@ -289,3 +289,27 @@ section img{width: 100%; object-fit: contain;}
     height: auto;  border-bottom: 1px solid white;
 }
 .result_explainCard_match.on .result_explainCard_match_titleBox{border-bottom: 1px solid white;}
+
+
+.result_match_countBox{
+    width: 100%; position: relative;
+}
+.result_match_exsec{width: 100%;}
+.result_match_sec2_bg{
+    position: relative; width: 100%; height: fit-content;
+}
+.result_match_sec2_bg img:nth-last-child(1){
+    position: absolute; width: 100%; left: 0; bottom: 0;
+}
+.result_match_userCount{
+    text-align: center; color: white; font-size: 2em;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-30%);
+}
+.result_match_userCount p{
+    margin-bottom: 0.5em;
+}
+.result_match_userCount div{display: flex; justify-content: center; align-items: end; gap: 0.2em; font-size: 2.3em;}
+.result_match_userCount div h4{transform: translateY(-15%);}
+.result_match_sec2_txt{
+    width: 80%; margin: auto; padding: 5% 0;
+}

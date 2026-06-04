@@ -578,7 +578,7 @@ function renderExplains() {
                                     <span>카카오채널 친구를 추가하면 모든 항목이 오픈됩니다.</span>
                                 </a>
                             </div>
-                        </div>
+                        </div>()
                     </div>
                 </div>
             `;

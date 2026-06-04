@@ -21,10 +21,11 @@
 
     <section class="main_section1" style="z-index: 1;">
         <div class="main_wrap">
-            <video class="main_bg"  autoplay muted loop playsinline preload="auto" poster="resources/img/main-img/main_thum.webp">
+            <video class="main_bg" id="mainBgVideo" autoplay muted loop playsinline preload="auto" poster="resources/img/main-img/main_thum.webp">
                 <source src="resources/img/main-img/main_bg.mp4" type="video/mp4">
                 <source src="resources/img/main-img/main_bg.webm" type="video/webm">
-            </video>
+            </video> 
+            <img class="main_bg" id="mainBgImg" src="./resources/img/main-img/main_bg_img.webp" alt="" style="display:none;">
         </div>
 
 
@@ -223,5 +224,23 @@
 
     <!-- 템플릿.js -->
     <script src="./resources/js/common.js"></script>
+
+    <script>
+        (function() {
+            const video = document.getElementById('mainBgVideo');
+            const img   = document.getElementById('mainBgImg');
+            
+            if (!video) return;
+            
+            if (sessionStorage.getItem('mainVideoPlayed')) {
+                // 재방문 / 새로고침 / 페이지 이동 후 복귀 → 이미지
+                video.style.display = 'none';
+                img.style.display   = 'block';
+            } else {
+                // 탭 첫 진입 → 영상 무한재생 + 플래그 저장
+                sessionStorage.setItem('mainVideoPlayed', 'true');
+            }
+        })();
+    </script>
 </body>
 </html>

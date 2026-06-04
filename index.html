@@ -228,16 +228,17 @@
         (function() {
             const video = document.getElementById('mainBgVideo');
             const img   = document.getElementById('mainBgImg');
-            
-            if (!video) return;
-            
+            const loading = document.querySelector('.loadings_loadBox');
+        
             if (sessionStorage.getItem('mainVideoPlayed')) {
-                // 재방문 / 새로고침 / 페이지 이동 후 복귀 → 이미지
-                video.style.display = 'none';
-                img.style.display   = 'block';
+                // 재방문 / 새로고침 / 페이지 이동 후 복귀
+                if (video) video.style.display = 'none';
+                if (img)   img.style.display   = 'block';
+                if (loading) loading.remove(); // ← 로딩 섹션 제거
             } else {
-                // 탭 첫 진입 → 영상 무한재생 + 플래그 저장
+                // 탭 첫 진입
                 sessionStorage.setItem('mainVideoPlayed', 'true');
+                // 로딩은 그대로 존재
             }
         })();
     </script>

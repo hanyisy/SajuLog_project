@@ -372,3 +372,118 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+
+
+
+
+// 결제모달 - 배주한 작성 260604
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const container = document.getElementById("paymentContainer");
+
+    fetch("./product.html")
+    .then(res => res.text())
+    .then(html => {
+
+        container.innerHTML = html;
+
+        initPayment();
+
+    });
+
+});
+
+function initPayment(){
+
+    const choiceBoxes = document.querySelectorAll(".js_product_choice_box");
+    const productBtn = document.querySelector(".js_product_btn");
+    const policyCheck = document.querySelector(".js_product_check");
+    const closeBtn = document.querySelector(".close_btn");
+    const dim = document.querySelector(".payment_dim");
+
+    function openModal(){
+
+        const paymentModal =
+        document.getElementById('paymentModal');
+
+        if(!paymentModal){
+            console.log('modal 없음');
+            return;
+        }
+
+        paymentModal.classList.add('active');
+
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(){
+
+        const paymentModal =
+        document.getElementById('paymentModal');
+
+        if(!paymentModal) return;
+
+        paymentModal.classList.remove('active');
+
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener("click", (e) => {
+
+        const openBtn = e.target.closest(".openPayment");
+
+        if(openBtn){
+
+            e.preventDefault();
+
+            openModal();
+        }
+
+    });
+
+    choiceBoxes.forEach(box => {
+
+        box.addEventListener("click", () => {
+
+            choiceBoxes.forEach(el => el.classList.remove("active"));
+
+            box.classList.add("active");
+
+            productBtn.textContent = "결제하기";
+
+            productBtn.classList.add("active");
+
+        });
+
+    });
+
+    productBtn.addEventListener("click", () => {
+
+        if(!productBtn.classList.contains("active")){
+
+            alert("결제수단을 선택해주세요! ");
+
+            return;
+        }
+
+        if(!policyCheck.checked){
+
+            alert("이용약관에 동의해주세요!");
+
+            return;
+        }
+
+        const selectedPay =
+        document.querySelector(".js_product_choice_box.active");
+
+        console.log("결제:", selectedPay.textContent);
+
+    });
+
+    closeBtn?.addEventListener("click", closeModal);
+
+    dim?.addEventListener("click", closeModal);
+
+}

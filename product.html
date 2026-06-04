@@ -19,69 +19,35 @@
         <!-- <header></header> -->
         <!-- <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"> </section> -->
 
-        <div class="payment_modal active" id="paymentModal">
+        <div class="payment_modal" id="paymentModal">
             <div class="payment_dim"></div>
-            
+
             <section class="product">
                 <button class="close_btn">✕</button>
+
                 <div class="inner">
-                    <!-- <div class="product_menu page_menu">
-                        <button class="js_backBtn">
-                            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/product/tab.png" alt="화살표">
-                        </button>
-                        <h2>충전하기</h2>
-                    </div> -->
-    <!-- 
-                    <div class="product_con">
-                        <div class="js_product_box">
-                            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/product/product01.webp" alt="배경">
-                            <div class="product_tit_wrap">
-                                <div class="product_tit">
-                                    <h2>사주</h2>
-                                    <h3>용하다고 소문난 사주</h3>
-                                </div>
-                                <h4>2,900원</h4>
-                            </div>
-                        </div>
-    
-                        <div class="js_product_box">
-                            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/product/product02.webp" alt="배경">
-                            <div class="product_tit_wrap">
-                                <div class="product_tit">
-                                    <h2>궁합</h2>
-                                    <h3>우리 궁합은 몇점?</h3>
-                                </div>
-                                <h4>2,900원</h4>
-                            </div>
-                        </div>
-    
-                        <div class="js_product_box">
-                            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/product/product03.webp" alt="배경">
-                            <div class="product_tit_wrap">
-                                <div class="product_tit">
-                                    <h2>운세</h2>
-                                    <h3>2026 신년 운세</h3>
-                                </div>
-                                <h4>2,900원</h4>
-                            </div>
-                        </div>
-                    </div> -->
-    
-                    <h1 style="text-align: center; color: #fff; margin-bottom: 1em; font-size: 3em;">결제하기</h1>
-    
+
+                    <h1 style="text-align:center;color:#fff;margin-bottom:1em;font-size:3em;">
+                        결제하기
+                    </h1>
+
                     <div class="product_choice">
                         <div class="js_product_choice_box">신용/체크카드</div>
                         <div class="js_product_choice_box">계좌이체</div>
                         <div class="js_product_choice_box">카카오페이</div>
                     </div>
-    
+
                     <div class="product_policy">
-                        <input type="checkbox" id="policy" class="js_product_check" required checked>
-                        <label for="policy">위 주문 내용을 확인했으며, 이용약관, 개인정보 이용 및 제공, 결제에 동의합니다.</label>
+                        <input type="checkbox" id="policy" class="js_product_check" checked required>
+                        <label for="policy">
+                            위 주문 내용을 확인했으며, 이용약관, 개인정보 이용 및 제공, 결제에 동의합니다.
+                        </label>
                     </div>
-    
-                    <button type="submit" class="js_product_btn">결제수단을 선택해주세요</button>
-    
+
+                    <button class="js_product_btn">
+                        결제수단을 선택해주세요
+                    </button>
+
                 </div>
             </section>
         </div>
@@ -186,72 +152,6 @@
         <script>
             document.addEventListener('DOMContentLoaded', () => {
 
-                const choiceBoxes = document.querySelectorAll('.js_product_choice_box');
-                const productBtn = document.querySelector('.js_product_btn');
-                const policyCheck = document.querySelector('.js_product_check');
-
-                // 초기 상태
-                productBtn.textContent = '결제수단을 선택해주세요';
-                productBtn.classList.remove('active');
-                productBtn.classList.remove('ready');
-
-                // 결제수단 선택
-                choiceBoxes.forEach(box => {
-                    box.addEventListener('click', () => {
-
-                        choiceBoxes.forEach(el => el.classList.remove('active'));
-                        box.classList.add('active');
-
-                        productBtn.textContent = '결제하기';
-                        productBtn.classList.add('active');
-
-                    });
-                });
-
-                // 결제 버튼
-                productBtn.addEventListener('click', () => {
-
-                    if (!productBtn.classList.contains('active')) {
-                        alert('결제수단을 선택해주세요!');
-                        return;
-                    }
-
-                    if (!policyCheck.checked) {
-                        alert('이용약관에 동의해주세요!');
-                        return;
-                    }
-
-                    const selectedPay = document.querySelector('.js_product_choice_box.active');
-
-                    if (!selectedPay) {
-                        alert('결제수단을 선택해주세요!');
-                        return;
-                    }
-
-                    console.log('선택 결제수단:', selectedPay.textContent);
-                    console.log('결제 진행');
-
-                });
-
-            });
-
-            const backBtn = document.querySelector('.js_backBtn');
-
-            if (backBtn) {
-                backBtn.addEventListener('click', () => {
-                    if (history.length > 1) {
-                        history.back();
-                    } else {
-                        location.href = '/';
-                    }
-                });
-            }
-        </script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-
-                const paymentModal = document.getElementById('paymentModal');
                 const closeBtn = document.querySelector('.close_btn');
                 const dim = document.querySelector('.payment_dim');
 

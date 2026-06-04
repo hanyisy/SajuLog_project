@@ -17,14 +17,14 @@ font-weight: 500; }
 
 .product_choice { margin-bottom: 2em; }
 .js_product_choice_box { color: #DDC49B; text-align: center; border: 1.5px solid #DDC49B; margin-bottom: .5em; cursor: pointer;
-font-size: 2em; padding: .3em 0; transition: .3s; width: 90%; margin: 0 auto .5em; }
+font-size: 2em; padding: .3em 0; transition: .3s; margin-bottom: .5em; }
 
 .product_policy { color: #fff; display: flex; gap: .5em; align-items: center; }
 
 .js_product_check { appearance: none; width: 1em; height: 1em; border: 1.5px solid #fff; cursor: pointer; position: relative; }
-.product_policy label { font-weight: 200; cursor: pointer; }
+.product_policy label { font-weight: 200; cursor: pointer; font-size: .8em; }
 
-.js_product_btn { color: #999; font-size: 2.5em; text-align: center; display: block; border: 1.5px solid #999; border-radius: .5em; padding: .3em .8em;
+.js_product_btn { color: #999; font-size: 2.3em; text-align: center; display: block; border: 1.5px solid #999; border-radius: .5em; padding: .3em .8em;
 margin: 1.5em auto 0 auto; transition: .3s; }
 
 /* .product_choice { display: none; } */
@@ -100,10 +100,10 @@ backdrop-filter: blur(6px);
 .product{
 position:relative;
 z-index:2;
-width:95%;
+width:95%; border: 1.5px solid #7b6d55;
 max-width:800px;
 background:#00001d;
-border-radius:1.5em 1.5em 0 0;
+border-radius:1.5em;
 transform:translateY(100%);
 transition:.45s cubic-bezier(.77,0,.18,1);
 max-height:95vh;
@@ -112,7 +112,7 @@ padding:6em 0 3em;
 padding-bottom:calc(3em + env(safe-area-inset-bottom));
 }
 
-.product .inner { padding: 0; }
+.product .inner { padding: 0; width: 93%; }
 
 .payment_modal.active .product{
 transform:translateY(0);

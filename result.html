@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/font.css" type="text/css">
-    <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/mainpage.css" type="text/css"> -->
     <link rel="stylesheet" href="./resources/css/font.css" type="text/css">
     <link rel="stylesheet" href="./resources/css/mainpage.css" type="text/css">
     <link rel="stylesheet" href="./resources/css/result.css" type="text/css">
@@ -25,6 +23,7 @@
             <h2 class="js_result_userProf">생년 | 양력 | 13:25 | 남성</h2>
         </div>
     </section>
+
     <section class="result_sec2">
         <div class="result_sajuList">
             <div>
@@ -105,6 +104,7 @@
             <div class="result_saju_year_etc"></div>
         </div>
     </section>
+
     <section class="result_sec3">
         <div class="result_explainTitle">
             <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/result_subtitleFrame.webp" alt="">
@@ -114,35 +114,30 @@
             </div>
         </div>
 
-        <div class="result_explainList">
-            <div class="result_explainCard">
-                <div class="result_explainCard_titleBox">
-                    <p class="result_explainCard_title"></p>
-                    <div class="result_explain_toggleBtn">
-                        <div></div>
-                        <div class="result_explain_toggleBtn2"></div>
-                    </div>
-                </div>
-                <div class="result_explainCard_txt">
-                    <div class="result_lockBox">
-                        <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/result_lockBox.webp" alt="">
-                        <div class="result_obBox">
-                            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/result_lock.webp" alt="">
-                            <div class="result_lockBtnBox">
-                                <div style="margin-bottom: 3%;" class="js_result_allTxt">
-                                    <p>2,900원 결제 후 전부보기</p>
-                                    <span>2,900원 결제하면 모둔 항목이 오픈됩니다.</span>
-                                </div>
-                                <div class="js_result_oneShare">
-                                    <p>친구에게 공유하고 하나만 보기</p>
-                                    <span>2명의 친구에게 사주로그 공유하면 하나의 항목이 오픈됩니다.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- 맛보기 요약 섹션 -->
+        <div class="result_summaryBox">
+            <img src="./resources/img/result/result_txtBoxBg.webp" alt="">
+            <p class="result_summaryTxt js_result_summaryTxt"></p>
+        </div>
+
+        <!-- 카카오 친추 잠금 박스 -->
+        <div class="result_kakaoUnlockBox js_kakaoUnlockBox">
+            <div class="result_kakaoUnlock_inner">
+                <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/result_lock.webp" alt="">
+                <p class="result_kakaoUnlock_title">나머지 해설이 잠겨있어요</p>
+                <p class="result_kakaoUnlock_desc">카카오채널 친구추가 후<br>사주 해설 전체를 무료로 확인하세요</p>
+                <!-- 카카오채널 URL을 href="" 안에 입력 -->
+                <a href="" target="_blank" class="result_kakaoUnlock_btn js_kakaoUnlock_btn">
+                    <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/kakao_icon.webp" alt="" onerror="this.style.display='none'">
+                    카카오채널 친구추가 후 전체보기
+                </a>
+                <!-- 개발자가 친추 확인 후 unlock 처리할 버튼 (필요시 사용) -->
+                <!-- <button class="result_kakaoUnlock_confirm js_kakaoUnlock_confirm">친구추가 완료했어요</button> -->
             </div>
         </div>
+
+        <!-- 해설 리스트 (전체 잠금 → 친추 후 오픈) -->
+        <div class="result_explainList js_result_explainList" style="display:none;"></div>
         
         <div class="result_explain_claim">
             <p>문의하기</p>
@@ -214,21 +209,14 @@
         <div class="main_sec3_bot">
             <div><img src="./resources/img/main-img/mainpremium_botTxt.webp" alt=""></div>
         </div>
-        <div class="main_sec3_preSajuBtn"><a href="./result_prem.html"  class="openPayment">지금 프리미엄사주 보러가기</a></div>
+        <div class="main_sec3_preSajuBtn"><a href="./result_prem.html" class="openPayment">지금 프리미엄사주 보러가기</a></div>
     </section>
 
-
-
-
-    
     <footer></footer>
 
-
-    <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"> </section>
+    <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"></section>
 
     <script src="resources/js/result.js"></script>
-
-    <!-- 템플릿.js -->
     <script src="./resources/js/common.js"></script>
 </body>
 </html>

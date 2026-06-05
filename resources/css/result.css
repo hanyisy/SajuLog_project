@@ -72,7 +72,7 @@ section img{width: 100%; object-fit: contain;}
 }
 .result_saju_kanji_sibseong{font-size: 1em;} /* 1.2em -> 1em */
 
-.result_sec3{width: 100%; color: white; margin-bottom: 15%;}
+.result_sec3{width: 100%; color: white; margin-bottom: 5%;}
 
 .result_explainTitle{width: 100%; position: relative;}
 .result_explainTitle>div{

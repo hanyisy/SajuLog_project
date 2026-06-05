@@ -142,7 +142,7 @@ header{
     border: 1px solid white; margin-top: 3%; border-radius: 0.5em;
 }
 .mainMenu_mov_productBtn{
-    width: 25%; border-left: 1px solid white;
+    width: 5%; border-left: 1px solid white;
 }
 .mainMenu_mov_productBtn a{width: 100%; padding: 10% 15%; height: fit-content; display: inline-block;}
 .mainMenu_mov_productBtn img{pointer-events: none;}

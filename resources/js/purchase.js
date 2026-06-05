@@ -78,7 +78,7 @@ function deleteUser(index, event) {
 function goToEdit(index, event) {
     event.stopPropagation();
     const userId = sajuDataList[index].user_profile.name;
-    location.href = `./register_newUser.html?mode=edit&user=${encodeURIComponent(userId)}`;
+    location.href = `./register_aditData.html?mode=edit&user=${encodeURIComponent(userId)}`;
 }
 
 // 화면 갱신용

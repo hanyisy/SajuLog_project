@@ -27,7 +27,6 @@ font-size: 2em; padding: .3em 0; transition: .3s; margin-bottom: .5em; }
 .js_product_btn { color: #999; font-size: 2.3em; text-align: center; display: block; border: 1.5px solid #999; border-radius: .5em; padding: .3em .8em;
 margin: 1.5em auto 0 auto; transition: .3s; }
 
-/* .product_choice { display: none; } */
 .js_product_box.active img { filter: brightness(.8); }
 
 .js_product_box.active h2, .js_product_box.active h3, .js_product_box.active h4 { color: #DDC49B; text-shadow: 2px 2px 5px #00000034; }
@@ -43,6 +42,7 @@ margin: 1.5em auto 0 auto; transition: .3s; }
 .js_product_btn.ready {
     color: #DDC49B;
     border: 1.5px solid #DDC49B;
+    font-weight: 800;
 }
 
 /* 결제 가능 상태 */
@@ -93,6 +93,7 @@ font-weight:700;
 .payment_dim{
 position:absolute;
 inset:0;
+z-index:1;
 background:rgba(0,0,0,.72);
 backdrop-filter: blur(6px);
 }
@@ -123,4 +124,48 @@ overflow:hidden;
 height:100dvh;
 touch-action:none;
 overscroll-behavior:none;
+}
+
+
+
+.price_choice{
+margin-bottom:2em; display: grid; gap: .5em; grid-template-columns: repeat(2, 1fr); 
+}
+
+.js_price_box{ text-align:center;
+border:1.5px solid #DDC49B;
+border-radius:.3em;
+padding:1em 0;
+cursor:pointer;
+transition:.3s;
+color:#DDC49B;
+display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+
+.js_price_box h3 {
+display:block;
+font-size:1.4em;
+}
+
+.js_price_box span{
+display:block;
+margin-top:.2em;
+font-weight:700;
+font-size:1.1em;
+}
+
+.js_price_box img { height: 2.5em; margin-bottom: 1em; }
+
+.js_price_box.active{
+background:#DDC49B;
+color:#00001D;
+}
+
+.product_choice{
+
+    display:none;
+}
+
+.product_choice.show{
+    display:block;
 }

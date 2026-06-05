@@ -352,7 +352,7 @@ section img{width: 100%; object-fit: contain;}
 
 .result_match_sec2_preSajuBtn{
     width: 85%; margin: auto; text-align: center; margin-bottom: 8%;font-family: 'YeogiOttaeJalnanGothic';
-    padding: 0.4em 0; font-size: 2em; color: #000; background-color: #D7B783; 
+    padding: 0.4em 0; font-size: 1.9em; color: #000; background-color: #D7B783; 
     border-radius: 0.5em; border: 1px solid #F4E9A3; display: flex; justify-content: center; align-items: center;
 }
 .result_match_sec2_preSajuBtn a{

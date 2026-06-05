@@ -27,9 +27,22 @@
 
                 <div class="inner">
 
-                    <h1 style="text-align:center;color:#fff;margin-bottom:1em;font-size:3em;">
-                        결제하기
-                    </h1>
+                    <h1 style="text-align:center;color:#fff;margin-bottom:1em;font-size:3em;">결제하기</h1>
+
+                    <div class="price_choice">
+
+                        <div class="js_price_box" data-price="19900">
+                            <img src="./resources/img/ui/porduct_ico01.png" alt="공유 아이콘">
+                            <h3>19,900원에<br>결제하기</h3>
+                        </div>
+
+                        <div class="js_price_box share" data-price="9900">
+                            <img src="./resources/img/ui/porduct_ico02.png" alt="공유 아이콘">
+                            <h3>무료사주 공유하고<span>9,900원에 결제하기</span></h3>
+                        </div>
+
+                    </div>
+
 
                     <div class="product_choice">
                         <div class="js_product_choice_box">신용/체크카드</div>
@@ -45,154 +58,274 @@
                     </div>
 
                     <button class="js_product_btn">
-                        결제수단을 선택해주세요
+                        결제유형을 선택해주세요
                     </button>
 
                 </div>
             </section>
         </div>
-
-
-        <!-- <footer></footer> -->
-
-
-
-
 <!-- 
         <script>
             document.addEventListener('DOMContentLoaded', () => {
 
-                const productBoxes = document.querySelectorAll('.js_product_box');
-                const choiceBoxes = document.querySelectorAll('.js_product_choice_box');
-                const productBtn = document.querySelector('.js_product_btn');
-                const productChoice = document.querySelector('.product_choice');
+                const paymentModal =
+                    document.querySelector('#paymentModal');
 
-                let productSelected = false;
+                if (!paymentModal) return;
 
-                // 상품 선택
-                productBoxes.forEach(box => {
-                    box.addEventListener('click', () => {
+                const closeBtn =
+                    paymentModal.querySelector('.close_btn');
 
-                        productBoxes.forEach(el => el.classList.remove('active'));
-                        box.classList.add('active');
+                const dim =
+                    paymentModal.querySelector('.payment_dim');
 
-                        productChoice.style.display = 'block';
+                const productChoice =
+                    paymentModal.querySelector('.product_choice');
 
-                        productBtn.textContent = '결제수단을 선택해주세요';
+                const productBtn =
+                    paymentModal.querySelector('.js_product_btn');
 
-                        productBtn.classList.remove('active');
-                        productBtn.classList.add('ready');
+                const priceBoxes =
+                    paymentModal.querySelectorAll('.js_price_box');
 
-                        choiceBoxes.forEach(el => el.classList.remove('active'));
+                const choiceBoxes =
+                    paymentModal.querySelectorAll('.js_product_choice_box');
 
-                        productSelected = true;
-                    });
+                const policyCheck =
+                    paymentModal.querySelector('.js_product_check');
+
+                let selectedPrice = null;
+                let priceSelected = false;
+
+                function resetModal(){
+
+                    selectedPrice = null;
+                    priceSelected = false;
+
+                    productChoice.classList.remove('show');
+
+                    priceBoxes.forEach(el =>
+                        el.classList.remove('active')
+                    );
+
+                    choiceBoxes.forEach(el =>
+                        el.classList.remove('active')
+                    );
+
+                    productBtn.classList.remove(
+                        'active',
+                        'ready'
+                    );
+
+                    productBtn.textContent =
+                        '결제유형을 선택해주세요';
+                }
+
+                function openModal(){
+
+                    paymentModal.classList.add(
+                        'active'
+                    );
+
+                    document.body.classList.add(
+                        'modal_open'
+                    );
+                }
+
+                function closeModal(){
+
+                    paymentModal.classList.remove(
+                        'active'
+                    );
+
+                    document.body.classList.remove(
+                        'modal_open'
+                    );
+
+                    resetModal();
+                }
+
+                priceBoxes.forEach(box => {
+
+                    box.addEventListener(
+                        'click',
+                        async () => {
+
+                            priceBoxes.forEach(el =>
+                                el.classList.remove(
+                                    'active'
+                                )
+                            );
+
+                            box.classList.add(
+                                'active'
+                            );
+
+                            selectedPrice =
+                                box.dataset.price;
+
+                            priceSelected = true;
+
+                            if (
+                                box.classList.contains(
+                                    'share'
+                                )
+                            ){
+
+                                try{
+
+                                    await navigator
+                                    .clipboard
+                                    .writeText(
+                                        location.origin +
+                                        '/share'
+                                    );
+
+                                    alert(
+                                        '공유 링크가 복사되었습니다.'
+                                    );
+
+                                }catch{
+
+                                    alert(
+                                        '링크 복사 실패'
+                                    );
+                                }
+                            }
+
+                            productChoice.classList.add(
+                                'show'
+                            );
+
+                            choiceBoxes.forEach(el =>
+                                el.classList.remove(
+                                    'active'
+                                )
+                            );
+
+                            productBtn.classList.remove(
+                                'active'
+                            );
+
+                            productBtn.classList.add(
+                                'ready'
+                            );
+
+                            productBtn.textContent =
+                                '결제수단을 선택해주세요';
+                        }
+                    );
+
                 });
 
-                // 결제수단 선택
                 choiceBoxes.forEach(box => {
-                    box.addEventListener('click', () => {
 
-                        if (!productSelected) return;
+                    box.addEventListener(
+                        'click',
+                        () => {
 
-                        choiceBoxes.forEach(el => el.classList.remove('active'));
-                        box.classList.add('active');
+                            if(!priceSelected)
+                                return;
 
-                        productBtn.textContent = '결제하기';
+                            choiceBoxes.forEach(el =>
+                                el.classList.remove(
+                                    'active'
+                                )
+                            );
 
-                        productBtn.classList.remove('ready');
-                        productBtn.classList.add('active');
-                    });
+                            box.classList.add(
+                                'active'
+                            );
+
+                            productBtn.classList.remove(
+                                'ready'
+                            );
+
+                            productBtn.classList.add(
+                                'active'
+                            );
+
+                            productBtn.textContent =
+                            `${Number(selectedPrice)
+                            .toLocaleString()}원 결제하기`;
+                        }
+                    );
+
                 });
 
+                productBtn.addEventListener(
+                    'click',
+                    () => {
 
-                const policyCheck = document.querySelector('.js_product_check');
+                        if(!priceSelected){
 
-                productBtn.addEventListener('click', () => {
+                            alert(
+                                '결제유형 선택'
+                            );
 
-                    // 결제하기 상태가 아닐 경우 차단
-                    if (!productBtn.classList.contains('active')) return;
+                            return;
+                        }
 
-                    // 약관 미동의
-                    if (!policyCheck.checked) {
-                        alert('이용약관에 동의해주세요!');
-                        return;
+                        if(
+                            !productBtn.classList.contains(
+                                'active'
+                            )
+                        ){
+
+                            alert(
+                                '결제수단 선택'
+                            );
+
+                            return;
+                        }
+
+                        if(
+                            !policyCheck.checked
+                        ){
+
+                            alert(
+                                '약관 동의'
+                            );
+
+                            return;
+                        }
+
+                        console.log(
+                            '결제 진행'
+                        );
                     }
+                );
 
-                    // ✅ 여기서 실제 결제 로직 실행
-                    console.log('결제 진행');
-                });
+                document.addEventListener(
+                    'click',
+                    (e) => {
 
+                        const openBtn =
+                            e.target.closest(
+                                '.openPayment'
+                            );
 
+                        if(!openBtn)
+                            return;
 
-
-
-            });
-
-
-                        
-            const backBtn = document.querySelector('.js_backBtn');
-
-            if (backBtn) {
-                backBtn.addEventListener('click', () => {
-                    if (history.length > 1) {
-                        history.back();
-                    } else {
-                        location.href = '/';
-                    }
-                });
-            }
-
-
-
-
-        </script>  -->
-
-
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-
-                const closeBtn = document.querySelector('.close_btn');
-                const dim = document.querySelector('.payment_dim');
-
-                function openModal() {
-
-                    paymentModal.classList.add('active');
-
-                    document.body.classList.add('modal_open');
-
-                    document.documentElement.style.overflow = 'hidden';
-
-                }
-
-                function closeModal() {
-
-                    paymentModal.classList.remove('active');
-
-                    document.body.classList.remove('modal_open');
-
-                    document.documentElement.style.overflow = '';
-
-                }
-
-                // 동적 버튼 대응
-                document.addEventListener('click', (e) => {
-
-                    const openBtn = e.target.closest('.openPayment');
-
-                    if (openBtn) {
                         e.preventDefault();
+
                         openModal();
                     }
+                );
 
-                });
+                closeBtn?.addEventListener(
+                    'click',
+                    closeModal
+                );
 
-                closeBtn?.addEventListener('click', closeModal);
-
-                dim?.addEventListener('click', closeModal);
+                dim?.addEventListener(
+                    'click',
+                    closeModal
+                );
 
             });
-        </script>
+        </script> -->
 
     </body>
 </html>

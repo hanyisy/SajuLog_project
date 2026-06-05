@@ -215,9 +215,14 @@ function toggleExplain(index, element) {
 function unlockAll() {
     const unlockBox   = document.querySelector('.js_kakaoUnlockBox');
     const explainList = document.querySelector('.js_result_explainList');
+    const claimBox    = document.querySelector('.result_explain_claimB');
+    const premSection = document.querySelector('.main_section3');
+
 
     if (unlockBox)   unlockBox.style.display  = 'none';
     if (explainList) explainList.style.display = 'block';
+    if (claimBox)    claimBox.style.display    = 'block';
+    if (premSection) premSection.style.display = 'block';
 }
 
 document.addEventListener('DOMContentLoaded', function () {

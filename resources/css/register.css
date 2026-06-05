@@ -266,3 +266,47 @@ input:-webkit-autofill {
     text-align: center;
 }
 .daily_love_select input[type="radio"]:checked + label { background-color: #fff; color: #000; transform: scale(1.01); box-shadow: 0 0 0.35rem rgba(0, 0, 0, 0.123);}
+
+
+
+/* ── 이전 사주 사용 체크박스 영역 ── */
+.register_usePrev_wrap {
+    width: 95%; margin: 0 auto 3%;
+    position: relative; z-index: 7;
+}
+
+.register_usePrev_label {
+    display: flex; align-items: center; gap: 0.7em;
+    width: 100%; padding: 0.7em 1em;
+    border: 1px solid #ddc49b; border-radius: 0.5em;
+    background-color: #00001d; color: white;
+    font-size: 1.4em; cursor: pointer; user-select: none;
+}
+
+/* 커스텀 체크박스 박스 */
+.register_usePrev_checkbox {
+    display: inline-block; flex-shrink: 0;
+    width: 1em; height: 1em;
+    border: 2px solid #ddc49b; border-radius: 0.15em;
+    background-color: transparent; transition: 0.2s;
+    position: relative;
+}
+
+/* 체크됐을 때 체크 표시 */
+.register_usePrev_checkbox.on {
+    background-color: #ddc49b;
+}
+.register_usePrev_checkbox.on::after {
+    content: '';
+    position: absolute; top: 45%; left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 0.3em; height: 0.55em;
+    border-right: 2px solid #00001d;
+    border-bottom: 2px solid #00001d;
+}
+
+/* ── 폼 필드 disabled 상태 ── */
+.prem_fields_disabled {
+    opacity: 0.35;
+    pointer-events: none;
+}

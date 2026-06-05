@@ -3,26 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/font.css" type="text/css">
-    <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/mainpage.css" type="text/css">
-    <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/register.css" type="text/css"> -->
     <link rel="stylesheet" href="./resources/css/font.css" type="text/css">
     <link rel="stylesheet" href="./resources/css/mainpage.css" type="text/css">
     <link rel="stylesheet" href="./resources/css/register.css" type="text/css">
-    <title>사주추가 페이지</title>
+    <title>프리미엄 사주 정보입력</title>
 </head>
 <body>
     <header></header>
 
     <section class="register_sec1">
-        <div class="register_backbtn"><a href="./index.html"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/arrow-2.webp" alt=""></a></div>
-        <div class="register_title"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/register/add_sajuTit.webp" alt=""></div>
+        <div class="register_backbtn"><a href="./result.html"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/arrow-2.webp" alt=""></a></div>
+        <div class="register_title"><img src="./resources/img/register/prem_txt.webp" alt=""></div>
     </section>
 
-    <section class="register_sec2">
-        
+    <section>
+        <!-- 이전 사주 사용 체크박스 (폼 프레임 바깥 위) -->
+        <div class="register_usePrev_wrap">
+            <label class="register_usePrev_label" for="usePrevSaju">
+                <span class="register_usePrev_checkbox js_usePrev_checkbox"></span>
+                <input type="checkbox" id="usePrevSaju" class="js_usePrevSaju" style="display:none;">
+                아까 본 사주 정보로 프리미엄 사주보기
+            </label>
+        </div>
+    </section>
+
+    <section class="register_sec2" style="margin-top: 5%;">
+
         <form method="post" action="apply.html" name="saju_register">
-            <div class="register_formOption">
+            <div class="register_formOption js_prem_formFields">
                 <div class="register_optionBox">
                     <div class="register_optionName">
                         <p>이름</p>
@@ -55,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="register_formOption">
+            <div class="register_formOption js_prem_formFields">
                 <div class="register_optionBox">
                     <div class="register_optionName"><p>생년월일</p></div>
                     <div class="register_option register_birth">
@@ -75,7 +83,7 @@
                         <p>태어난 시간</p>
                         <div class="register_ckeck js_register_birthTime_no">
                             <label for="register_birthTime_nos">
-                                <input type="checkbox" class="register_birthTime_no" id="register_birthTime_nos" value="시간모름" onchange="register_birthTimeNo_ch(this)"> <span>시간 모름</span> 
+                                <input type="checkbox" class="register_birthTime_no" id="register_birthTime_nos" value="시간모름" onchange="register_birthTimeNo_ch(this)"> <span>시간 모름</span>
                             </label>
                         </div>
                     </div>
@@ -83,64 +91,62 @@
                         <div class="register_select">
                             <select name="option4" class="register_birthTime_yes js_register_birthTime_yes" onchange="register_birthTimeYes_ch()" required>
                                 <option value="" selected>선택하세요</option>
-                                <option value="자시"><b>자시 (子時)</b> | 23:30 ~ 01:30</option>
-                                <option value="축시"><b>축시 (丑時)</b> | 01:30 ~ 03:30</option>
-                                <option value="인시"><b>인시 (寅時)</b> | 03:30 ~ 05:30</option>
-                                <option value="묘시"><b>묘시 (卯時)</b> | 05:30 ~ 07:30</option>
-                                <option value="진시"><b>진시 (辰時)</b> | 07:30 ~ 09:30</option>
-                                <option value="사시"><b>사시 (巳時)</b> | 09:30 ~ 11:30</option>
-                                <option value="오시"><b>오시 (午時)</b> | 11:30 ~ 13:30</option>
-                                <option value="미시"><b>미시 (未時)</b> | 13:30 ~ 15:30</option>
-                                <option value="신시"><b>신시 (申時)</b> | 15:30 ~ 17:30</option>
-                                <option value="유시"><b>유시 (酉時)</b> | 17:30 ~ 19:30</option>
-                                <option value="술시"><b>술시 (戌時)</b> | 19:30 ~ 21:30</option>
-                                <option value="해시"><b>해시 (亥時)</b> | 21:30 ~ 23:30 </option>
+                                <option value="자시">자시 (子時) | 23:30 ~ 01:30</option>
+                                <option value="축시">축시 (丑時) | 01:30 ~ 03:30</option>
+                                <option value="인시">인시 (寅時) | 03:30 ~ 05:30</option>
+                                <option value="묘시">묘시 (卯時) | 05:30 ~ 07:30</option>
+                                <option value="진시">진시 (辰時) | 07:30 ~ 09:30</option>
+                                <option value="사시">사시 (巳時) | 09:30 ~ 11:30</option>
+                                <option value="오시">오시 (午時) | 11:30 ~ 13:30</option>
+                                <option value="미시">미시 (未時) | 13:30 ~ 15:30</option>
+                                <option value="신시">신시 (申時) | 15:30 ~ 17:30</option>
+                                <option value="유시">유시 (酉時) | 17:30 ~ 19:30</option>
+                                <option value="술시">술시 (戌時) | 19:30 ~ 21:30</option>
+                                <option value="해시">해시 (亥時) | 21:30 ~ 23:30</option>
                             </select>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="register_formOption" style="border-bottom: none;">
+            <div class="register_formOption js_prem_formFields" style="border-bottom: none;">
                 <div class="register_optionBox">
                     <div class="register_optionName"><p>성별</p></div>
                     <div class="register_option gender_select">
-                        <input type="radio" id="op5_1" name="option5" required value="여성" >
+                        <input type="radio" id="op5_1" name="option5" required value="여성">
                         <label for="op5_1">여성</label>
-                        <input type="radio" id="op5_2" name="option5" required value="남성" >
+                        <input type="radio" id="op5_2" name="option5" required value="남성">
                         <label for="op5_2">남성</label>
                     </div>
                 </div>
-                <div class="register_saveBtn" style="margin-bottom: 5%;"><a href="./result.html" style="color: black; width: 100%; height: 100%; display: block;">사주 확인하기</a></div>
-                <!-- <button type="submit" class="register_saveBtn">저장하기</button> -->
-                <div style="text-align: center; font-weight: 400; font-size: 1.2em; margin-bottom: 3%;"><a href="./purchase.html">전체 사주 목록 보러가기 →</a></div>
             </div>
-            </form>
-            <div class="register_formFrame">
-                <div class="register_formFrame_deco">
-                    <div style="position: absolute; top: 0; left: 0; width: 15%; transform: translate(-5%,0%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_TL.webp" alt=""></div>
-                    <div style="position: absolute; top: 0; right: 0; width: 15%; transform: translate(5%,0%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_TR.webp" alt=""></div>
-                    <div style="position: absolute; bottom: 0; left: 0; width: 15%; transform: translate(-5%,-25%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_BL.webp" alt=""></div>
-                    <div style="position: absolute; bottom: 0; right: 0; width: 15%; transform: translate(5%,-25%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_BR.webp" alt=""></div>
-                </div>
-                <div style="position: absolute; top: 0; left: 50%; width: 75%; transform: translate(-50%,0%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_T.webp" alt=""></div>
-                <div style="position: absolute; bottom: 0; left: 50%; width: 75%; transform: translate(-50%,-6.5%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_B.webp" alt=""></div>
-                <div style="position: absolute; bottom: 0; left: 0; width: 55%; transform:  scaleY(2.8) translate(-1.5%,-35%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_L.webp" alt=""></div>
-                <div style="position: absolute; bottom: 0; right: 0; width: 55%; transform: scaleY(2.8) translate(1.5%,-35%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_R.webp" alt=""></div>
+
+            <div class="register_saveBtn" style="margin-bottom: 5%;">
+                <a href="./result_prem.html" style="color: black; width: 100%; height: 100%; display: block;">프리미엄 사주 확인하기</a>
             </div>
-            
+            <div style="text-align: center; font-weight: 400; font-size: 1.2em; margin-bottom: 8%;">
+                <a href="./result.html">← 일반 사주 결과로 돌아가기</a>
+            </div>
+        </form>
+
+        <div class="register_formFrame">
+            <div class="register_formFrame_deco">
+                <div style="position: absolute; top: 0; left: 0; width: 15%; transform: translate(-5%,0%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_TL.webp" alt=""></div>
+                <div style="position: absolute; top: 0; right: 0; width: 15%; transform: translate(5%,0%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_TR.webp" alt=""></div>
+                <div style="position: absolute; bottom: 0; left: 0; width: 15%; transform: translate(-5%,-25%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_BL.webp" alt=""></div>
+                <div style="position: absolute; bottom: 0; right: 0; width: 15%; transform: translate(5%,-25%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_BR.webp" alt=""></div>
+            </div>
+            <div style="position: absolute; top: 0; left: 50%; width: 75%; transform: translate(-50%,0%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_T.webp" alt=""></div>
+            <div style="position: absolute; bottom: 0; left: 50%; width: 75%; transform: translate(-50%,-6.5%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_B.webp" alt=""></div>
+            <div style="position: absolute; bottom: 0; left: 0; width: 55%; transform: scaleY(2.8) translate(-1.5%,-35%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_L.webp" alt=""></div>
+            <div style="position: absolute; bottom: 0; right: 0; width: 55%; transform: scaleY(2.8) translate(1.5%,-35%);"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/saju_frameBox_R.webp" alt=""></div>
+        </div>
+
     </section>
 
-
     <footer></footer>
+    <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"></section>
 
-
-    <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"> </section>
-
-
-    <!-- 페이지.js -->
     <script src="./resources/js/register_prem.js"></script>
-
-    <!-- 템플릿.js -->
     <script src="./resources/js/common.js"></script>
 </body>
 </html>

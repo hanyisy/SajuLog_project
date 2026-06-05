@@ -1,39 +1,82 @@
+// ============================================================
+// 이전 사주 사용 체크박스
+// ============================================================
+const usePrevCheckbox = document.querySelector('.js_usePrevSaju');
+const customCheckbox  = document.querySelector('.js_usePrev_checkbox');
+const formFields      = document.querySelectorAll('.js_prem_formFields input, .js_prem_formFields select');
+
+// 커스텀 체크박스 클릭 → 실제 체크박스 토글
+document.querySelector('.register_usePrev_label').addEventListener('click', function () {
+    usePrevCheckbox.checked = !usePrevCheckbox.checked;
+    togglePrevSaju(usePrevCheckbox.checked);
+});
+
+function togglePrevSaju(isChecked) {
+    const formSections = document.querySelectorAll('.js_prem_formFields');
+
+    if (isChecked) {
+        // 체크 ON → 필드 전부 disabled + 흐리게
+        customCheckbox.classList.add('on');
+        formSections.forEach(el => el.classList.add('prem_fields_disabled'));
+        formFields.forEach(el => {
+            el.disabled = true;
+            el.removeAttribute('required');
+        });
+    } else {
+        // 체크 OFF → 필드 복구
+        customCheckbox.classList.remove('on');
+        formSections.forEach(el => el.classList.remove('prem_fields_disabled'));
+        formFields.forEach(el => {
+            el.disabled = false;
+        });
+        // required 복구 (원래 있던 것들)
+        document.querySelector('input[name="name"]').required = true;
+        document.querySelector('input[name="option5"]').required = true;
+        // 시간 선택 select — 체크박스 상태에 따라 복구
+        const timeSelect = document.querySelector('.js_register_birthTime_yes');
+        const timeCheckbox = document.querySelector('.register_birthTime_no');
+        if (!timeCheckbox.checked) {
+            timeSelect.required = true;
+        }
+    }
+}
+
+
+// ============================================================
+// 관계 직접입력 토글
+// ============================================================
 function registerUserTypeSelectChange(select) {
-    const input_op1 = document.querySelector('.js_register_userType_direct');
+    const input_op1    = document.querySelector('.js_register_userType_direct');
     const inputBox_op1 = document.querySelector('.register_hideInput');
-    const nameStr_op1 = "option1";
+    const nameStr_op1  = "option1";
 
     if (select.value === 'direct') {
-        // 직접 입력을 선택한 경우
         select.removeAttribute('name');
-        select.required = false;      // select의 필수 해제
-
+        select.required = false;
         input_op1.name = nameStr_op1;
-        input_op1.required = true;       // input을 필수로 설정
+        input_op1.required = true;
         inputBox_op1.classList.add('on');
         input_op1.focus();
     } else {
-        // 리스트 중 하나를 선택한 경우
         select.name = nameStr_op1;
-        select.required = true;      // select를 필수로 설정
-
+        select.required = true;
         input_op1.removeAttribute('name');
-        input_op1.required = false;      // input 필수 해제
+        input_op1.required = false;
         inputBox_op1.classList.remove('on');
         input_op1.value = '';
     }
 }
 
-// 초기 실행 (페이지 로드 시 select에 name 부여)
-window.onload = function() {
+window.onload = function () {
     document.querySelector('.js_register_userType').name = "option1";
 };
 
 
-//생년월일 입력시
+// ============================================================
+// 생년월일 자동 하이픈
+// ============================================================
 function autoHyphen(target) {
     let val = target.value.replace(/[^0-9]/g, '');
-    
     if (val.length <= 4) {
         target.value = val;
     } else if (val.length <= 6) {
@@ -43,65 +86,41 @@ function autoHyphen(target) {
     }
 }
 
-// 입력을 마치고 나갈 때(blur) 유효성 검사
-document.querySelector('input[name="option2"]').addEventListener('blur', function() {
+document.querySelector('input[name="option3"]').addEventListener('blur', function () {
     const val = this.value.replace(/[^0-9]/g, '');
     if (val.length === 8) {
-        const year = parseInt(val.substring(0, 4));
+        const year  = parseInt(val.substring(0, 4));
         const month = parseInt(val.substring(4, 6));
-        const day = parseInt(val.substring(6, 8));
+        const day   = parseInt(val.substring(6, 8));
 
-        // 월 체크 (1~12)
-        if (month < 1 || month > 12) {
-            alert("유효하지 않은 날짜입니다.");
-            this.value = "";
-            return;
-        }
+        if (month < 1 || month > 12) { alert("유효하지 않은 날짜입니다."); this.value = ""; return; }
+        if (day < 1 || day > 31)     { alert("유효하지 않은 날짜입니다."); this.value = ""; return; }
 
-        // 일 체크 (간단히 31일까지만 체크)
-        if (day < 1 || day > 31) {
-            alert("유효하지 않은 날짜입니다.");
-            this.value = "";
-            return;
-        }
-        
-        // 추가: 2월 30일 같은 존재하지 않는 날짜 정밀 검증 (선택사항)
         const dateCheck = new Date(year, month - 1, day);
         if (dateCheck.getFullYear() !== year || dateCheck.getMonth() !== month - 1 || dateCheck.getDate() !== day) {
-            alert("유효하지 않은 날짜입니다.");
-            this.value = "";
+            alert("유효하지 않은 날짜입니다."); this.value = "";
         }
     } else if (val.length > 0 && val.length < 8) {
-        alert("날짜 형식을 모두 입력해주세요 (yyyy-mm-dd)");
-        this.value = "";
+        alert("날짜 형식을 모두 입력해주세요 (yyyy-mm-dd)"); this.value = "";
     }
 });
 
 
-
-
-// ── 태어난 시간: checkbox ↔ select 상호 배타 로직 ──────────────────────────
-
+// ============================================================
+// 태어난 시간 체크박스 ↔ select 상호 배타
+// ============================================================
 function register_birthTimeNo_ch(checkbox) {
     const select = document.querySelector('.js_register_birthTime_yes');
-
     if (checkbox.checked) {
-        // 체크박스 ON → select 초기화 및 비활성화
-        select.value = '';                  // "선택하세요"로 초기화
-        select.removeAttribute('name');     // select name 제거 (전송 제외)
-        select.removeAttribute('required'); // select required 제거
-        //select.disabled = true;              선택 못 하게 비활성화
-
-        // 체크박스에 name, required 부여
-        checkbox.name = 'option4';
+        select.value = '';
+        select.removeAttribute('name');
+        select.removeAttribute('required');
+        checkbox.name     = 'option4';
         checkbox.required = true;
     } else {
-        // 체크박스 OFF → select 복구
         select.setAttribute('name', 'option4');
         select.setAttribute('required', 'required');
         select.disabled = false;
-
-        // 체크박스 name, required 제거
         checkbox.removeAttribute('name');
         checkbox.removeAttribute('required');
     }
@@ -110,14 +129,10 @@ function register_birthTimeNo_ch(checkbox) {
 function register_birthTimeYes_ch() {
     const select   = document.querySelector('.js_register_birthTime_yes');
     const checkbox = document.querySelector('.register_birthTime_no');
-
     if (select.value !== '') {
-        // 값 있는 option 선택 → 체크박스 해제
         checkbox.checked = false;
         checkbox.removeAttribute('name');
         checkbox.removeAttribute('required');
-
-        // select name, required 확보
         select.setAttribute('name', 'option4');
         select.setAttribute('required', 'required');
     }

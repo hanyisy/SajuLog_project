@@ -44,6 +44,18 @@ font-size: 1.05em;
     text-align: center; color: white;
     margin: auto; font-size: 1.7em; padding-bottom: 5%;
 }
+.main_sajuBtn_box_gradient_text {
+    background: linear-gradient(46deg, 
+        rgba(251, 207, 0, 1) 1%, 
+        rgba(255, 252, 209, 1) 25%, 
+        rgba(203, 155, 12, 1) 60%, 
+        rgba(243, 225, 139, 1) 87%, 
+        rgba(255, 252, 209, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
 .main_sajuBtn_box::after { position: absolute; content: ""; width: 100%; height: 15em; background: linear-gradient(#00001d00 0%, #00001dd7 100%); 
     left: 0; bottom: 0; z-index: -1;
@@ -52,9 +64,9 @@ font-size: 1.05em;
 .main_sajuBtn_box p{
     font-size: 1.2em; margin-bottom: 0.8em;
 }
-.main_sajuBtn_box span{color: #ddc49b;}
+/* .main_sajuBtn_box span{color: #ddc49b;} */
 .main_sajuBtn_box a{
-    color: white; font-size: 1.2em; font-family: 'YeogiOttaeJalnanGothic';
+    color: white; font-size: 1.5em; font-family: 'YeogiOttaeJalnanGothic';
     margin-top: 3%; display: inline-block; padding: 0.2em 0.7em; padding-top: 0.4em;
     border-radius: 0.5em; border: 1px solid white; background-color: rgba(255, 255, 255, 0.089);
 }
@@ -108,41 +120,35 @@ font-size: 1.05em;
 @media (min-width: 601px) and (max-width: 720px) {
     body { width: 100%; font-size: 18px;}
     .main_titBox{font-size: 1.1em;}
-    .main_sajuBtn_box{font-size: 1.3em;}
     .main_subConTxt{font-size: 0.7em;}
 }
 @media (min-width: 531px) and (max-width: 600px) {
     body { width: 100%; font-size: 15px;}
     .main_titBox{font-size: 1.1em;}
-    .main_sajuBtn_box{font-size: 1.3em;}
     .main_subConTxt{font-size: 0.7em;}
     .main_conTxt{font-size: 2em;}
 }
 @media (min-width: 481px) and (max-width: 530px) {
     body { width: 100%; font-size: 13px;}
     .main_titBox{font-size: 1.1em;}
-    .main_sajuBtn_box{font-size: 1.3em;}
     .main_subConTxt{font-size: 0.7em;}
     .main_conTxt{font-size: 2em;}
 }
 @media (min-width: 411px) and (max-width: 480px) {
     body { width: 100%; font-size: 12px;}
     .main_titBox{font-size: 1.1em;}
-    .main_sajuBtn_box{font-size: 1.3em;}
     .main_subConTxt{font-size: 0.7em;}
     .main_conTxt{font-size: 2em;}
 }
 @media (min-width: 380px) and (max-width: 410px) {
     body { width: 100%; font-size: 12px;}
     .main_titBox{font-size: 1em;}
-    .main_sajuBtn_box{font-size: 1.3em;}
     .main_subConTxt{font-size: 0.7em;}
     .main_conTxt{font-size: 2em;}
 }
 @media (max-width: 379px) {
     body { width: 100%; font-size: 12px;}
     .main_titBox{font-size: 0.9em;}
-    .main_sajuBtn_box{font-size: 1.3em;}
     .main_subConTxt{font-size: 0.7em;}
     .main_conTxt{font-size: 2em;}
 }

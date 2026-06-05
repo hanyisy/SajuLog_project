@@ -209,7 +209,7 @@ function toggleExplain(index, element) {
 
 // ============================================================
 // 잠금 해제
-// TODO: 카카오 친추 확인 로직은 개발자가 여기에 추가
+// 카카오 친추 확인 로직은 여기에 추가
 // 현재는 버튼 클릭 시 바로 오픈 (퍼블리싱 임시 처리)
 // ============================================================
 function unlockAll() {
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const kakaoBtn = document.querySelector('.js_kakaoUnlock_btn');
     if (kakaoBtn) {
         kakaoBtn.addEventListener('click', function (e) {
-            // TODO: 개발자가 카카오 친추 확인 후 unlockAll() 호출하도록 교체
+            // 카카오 친추 확인 후 unlockAll() 호출하도록 교체
             // 현재는 클릭 즉시 오픈
             e.preventDefault(); // href="" 빈 링크 이동 방지
             unlockAll();

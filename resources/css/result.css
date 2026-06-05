@@ -430,3 +430,9 @@ section img{width: 100%; object-fit: contain;}
     height: 1.5em;
     object-fit: contain;
 }
+
+/* ── 프리미엄 해설 아이콘 ── */
+.prem_explain_icon {
+    margin-right: 0.4em;
+    font-style: normal;
+}

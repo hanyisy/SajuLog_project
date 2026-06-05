@@ -419,7 +419,7 @@ footer .inner ul li { cursor: pointer; }
     width: 10%; margin: auto; padding-top: 10%; margin-bottom: 5%;
 }
 .main_sec3_top h2{font-size: 1.8em;font-weight: 100;}
-.main_sec3_top h3{margin: 6% auto; color: #D1AD78; font-size: 1.4em;font-weight: 100; margin-bottom: 10%;}
+.main_sec3_top h3{margin: 2% auto 5%; color: #D1AD78; font-size: 1.4em;font-weight: 100; margin-bottom: 5%;}
 .main_sec3_top h4{font-size: 1em; margin-bottom: 5%;font-weight: 100;}
 .main_sec3_mid{
     width: 90%; margin: auto; height: fit-content; position: relative; z-index: 1;
@@ -438,7 +438,7 @@ footer .inner ul li { cursor: pointer; }
 }
 .main_sec3_mid p{font-size: 1.7em;}
 .main_sec3_bot{
-    width: 90%; margin: 5% auto; margin-top: 8%;
+    width: 76%; margin: 5% auto; margin-top: 8%;
 }
 
 .main_sec3_preSajuBtn{

@@ -328,7 +328,7 @@ section img{width: 100%; object-fit: contain;}
     position: absolute; width: 95%; left: 50%; bottom: 1%; transform: translateX(-50%);
 }
 .result_match_sec2_tit{
-    width: 85%; margin: auto; padding-top: 15%; margin-bottom: 10%;
+    width: 85%; margin: auto; padding-top: 15%; margin-bottom: 5%;
 }
 .result_match_sec2_txtBox{
     width: 95%; height: fit-content; margin: auto; position: relative; z-index: 1;
@@ -347,13 +347,13 @@ section img{width: 100%; object-fit: contain;}
 }
 .result_match_sec2_txtBox p{font-size: 1.5em; width: 100%;}
 .result_match_sec2_bot{
-    width: 95%; margin: 5% auto; margin-top: 8%;
+    width: 80%; margin: 5% auto; margin-top: 8%;
 }
 
 .result_match_sec2_preSajuBtn{
     width: 85%; margin: auto; text-align: center; margin-bottom: 8%;font-family: 'YeogiOttaeJalnanGothic';
     padding: 0.4em 0; font-size: 2em; color: #000; background-color: #D7B783; 
-    border-radius: 0.5em; border: 1px solid #F4E9A3; font-weight: 900; display: flex; justify-content: center; align-items: center;
+    border-radius: 0.5em; border: 1px solid #F4E9A3; display: flex; justify-content: center; align-items: center;
 }
 .result_match_sec2_preSajuBtn a{
     width: 100%; height: 100%; display: block; font-weight: 100; color: #000; transform: translateY(5%);

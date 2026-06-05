@@ -436,7 +436,3 @@ section img{width: 100%; object-fit: contain;}
     margin-right: 0.4em;
     font-style: normal;
 }
-
-.result_explain_claimB{font-size: 1.5em; text-align: center;} 
-.result_explain_claimB p{line-height: 1.5;}
-.result_explain_claimB span{font-size: 1.2em;}

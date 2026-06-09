@@ -21,7 +21,7 @@ font-size: 2em; padding: .3em 0; transition: .3s; margin-bottom: .5em; }
 
 .product_policy { color: #fff; display: flex; gap: .5em; align-items: center; }
 
-.js_product_check { appearance: none; width: 1em; height: 1em; border: 1.5px solid #fff; cursor: pointer; position: relative; }
+.js_product_check { appearance: none; width: 1.2em; height: 1.2em; border: 1.5px solid #fff; cursor: pointer; position: relative; flex-shrink: 0; }
 .product_policy label { font-weight: 200; cursor: pointer; font-size: .8em; }
 
 .js_product_btn { color: #999; font-size: 2.3em; text-align: center; display: block; border: 1.5px solid #999; border-radius: .5em; padding: .3em .8em;
@@ -34,138 +34,42 @@ margin: 1.5em auto 0 auto; transition: .3s; }
 
 .js_product_check:checked { background: #DDC49B; border-color: #DDC49B; }
 .js_product_choice_box.active {
-    background: #DDC49B;
-    color: #00001D;
+background: #DDC49B;
+color: #00001D;
 }
+
+.js_product_check:checked::after { content: "\2713"; position: absolute; left: 50%; top: 50%;
+transform: translate(-50%, -55%); color: #00001D; font-size: .8em; font-weight: 900; }
+
+
 
 /* 기본 상태 (상품만 선택된 상태) */
-.js_product_btn.ready {
-    color: #DDC49B;
-    border: 1.5px solid #DDC49B;
-    font-weight: 800;
-}
+.js_product_btn.ready { color: #DDC49B; border: 1.5px solid #DDC49B; font-weight: 800; }
 
 /* 결제 가능 상태 */
-.js_product_btn.active {
-    background: #DDC49B;
-    color: #00001D;
-    border: 1.5px solid #DDC49B;
-    font-weight: 700;
-}
+.js_product_btn.active { background: #DDC49B; color: #00001D; border: 1.5px solid #DDC49B; font-weight: 700; }
+.close_btn{ position:absolute; top:20px; right:20px; font-weight: 800; text-align:center; width:2.5em; height:2.5em;
+border-radius:50%; background:#DDC49B; color:#000; z-index:5; font-weight:700; }
+.payment_modal{ position: fixed; inset: 0; z-index: -1; opacity: 0; visibility: hidden; pointer-events: none;
+display:flex; align-items: center; justify-content:center; transition: .25s; }
+.payment_modal.active{ opacity: 1; visibility: visible; pointer-events: auto; z-index: 9999; }
+.payment_dim{ position:absolute; inset:0; z-index:1; background:rgba(0,0,0,.72); backdrop-filter: blur(6px); }
 
-.close_btn{
-position:absolute;
-top:20px;
-right:20px; font-weight: 800;
-text-align:center;
-width:2.5em;
-height:2.5em;
-
-border-radius:50%;
-background:#DDC49B;
-color:#000;
-
-z-index:5;
-font-weight:700;
-}
-
-.payment_modal{
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    display:flex;
-    align-items: center;
-    justify-content:center;
-    transition: .25s;
-}
-
-.payment_modal.active{
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-        z-index: 9999;
-}
-
-.payment_dim{
-position:absolute;
-inset:0;
-z-index:1;
-background:rgba(0,0,0,.72);
-backdrop-filter: blur(6px);
-}
-
-.product{
-position:relative;
-z-index:2;
-width:95%; border: 1.5px solid #7b6d55;
-max-width:800px;
-background:#00001d;
-border-radius:1.5em;
-transform:translateY(100%);
-transition:.45s cubic-bezier(.77,0,.18,1);
-max-height:95vh;
-overflow-y:auto;
-padding:6em 0 3em;
-padding-bottom:calc(3em + env(safe-area-inset-bottom));
-}
-
+.product{ position:relative; z-index:2; width:95%; border: 1.5px solid #7b6d55; 
+max-width:800px; background:#00001d; border-radius:1.5em; transform:translateY(100%);
+transition:.45s cubic-bezier(.77,0,.18,1); max-height:95vh; overflow-y:auto; padding:6em 0 3em; padding-bottom:calc(3em + env(safe-area-inset-bottom)); }
 .product .inner { padding: 0; width: 93%; }
+.payment_modal.active .product{ transform:translateY(0); }
+body.modal_open{ overflow:hidden; height:100dvh; touch-action:none; overscroll-behavior:none; }
 
-.payment_modal.active .product{
-transform:translateY(0);
-}
+.price_choice{ margin-bottom:2em; display: grid; gap: .5em; grid-template-columns: repeat(2, 1fr);  }
 
-body.modal_open{
-overflow:hidden;
-height:100dvh;
-touch-action:none;
-overscroll-behavior:none;
-}
-
-
-
-.price_choice{
-margin-bottom:2em; display: grid; gap: .5em; grid-template-columns: repeat(2, 1fr); 
-}
-
-.js_price_box{ text-align:center;
-border:1.5px solid #DDC49B;
-border-radius:.3em;
-padding:1em 0;
-cursor:pointer;
-transition:.3s;
-color:#DDC49B;
-display: flex; flex-direction: column; align-items: center; justify-content: center;
-}
-
-.js_price_box h3 {
-display:block;
-font-size:1.4em;
-}
-
-.js_price_box span{
-display:block;
-margin-top:.2em;
-font-weight:700;
-font-size:1.1em;
-}
-
+.js_price_box{ text-align:center; border:1.5px solid #DDC49B; border-radius:.3em; padding:1em 0; cursor:pointer;
+transition:.3s; color:#DDC49B; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.js_price_box h3 { display:block; font-size:1.4em; }
+.js_price_box span{ display:block; margin-top:.2em; font-weight:700; font-size:1.1em; }
 .js_price_box img { height: 2.5em; margin-bottom: 1em; }
+.js_price_box.active{ background:#DDC49B; color:#00001D; }
+.product_choice{ display:none; }
+.product_choice.show{ display:block; }
 
-.js_price_box.active{
-background:#DDC49B;
-color:#00001D;
-}
-
-.product_choice{
-
-    display:none;
-}
-
-.product_choice.show{
-    display:block;
-}

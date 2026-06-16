@@ -50,11 +50,20 @@
                         <div class="js_product_choice_box">카카오페이</div>
                     </div>
 
-                    <div class="product_policy">
+                    <div class="product_policy" style="margin-bottom: 1%;">
                         <input type="checkbox" id="policy" class="js_product_check" checked required>
                         <label for="policy">
-                            위 주문 내용을 확인했으며, 이용약관, 개인정보 이용 및 제공, 결제에 동의합니다.
+                            (필수) 이용약관, 개인정보처리방침 및 환불정책 내용을 확인하고 동의합니다.
                         </label>
+                        <a href="./policy_1.html" target="_blank" style=" display: inline-block; font-size: 0.8em; opacity: 0.8; position: relative; z-index: 2;" id="go_policy1">[자세히보기]</a>
+                    </div>
+                    
+                    <div class="product_policy">
+                        <input type="checkbox" id="policy2" class="js_product_check" value="광고수신동의">
+                        <label for="policy2">
+                            (선택) 이벤트 및 혜택 안내를 위한 광고성 정보 수신에 동의합니다.
+                        </label>
+                        <a href="./policy_2.html" target="_blank" style="font-size: 0.8em; opacity: 0.8;" id="go_policy2">[자세히보기]</a>
                     </div>
 
                     <button class="js_product_btn">
@@ -64,6 +73,9 @@
                 </div>
             </section>
         </div>
+
+
+
 <!-- 
         <script>
             document.addEventListener('DOMContentLoaded', () => {

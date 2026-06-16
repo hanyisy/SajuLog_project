@@ -403,20 +403,20 @@ section img{width: 100%; object-fit: contain;}
     margin-bottom: 0.5em;
 }
 .result_kakaoUnlock_desc {
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: 300;
     line-height: 1.2;
     opacity: 0.8;
-    margin-bottom: 8%;
+    margin-bottom: 5%;
 }
 .result_kakaoUnlock_btn {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5em;
-    width: 85%;
+    width: 75%;
     margin: 0 auto;
-    /* padding: 0.8em 0; */
+    padding: 0.5em 0.5em;
     background-color: #FAE100;
     color: #3A1D1D;
     font-size: 1.5em;
@@ -434,7 +434,7 @@ section img{width: 100%; object-fit: contain;}
 .result_kakaoUnlockBoxTT{
     /* display: flex; justify-content: center; gap: 0.25em; align-items: center; height: 100%; */
     /* gap: 0.4em;  */
-    font-size: 0.8em; width: 100%; padding: 0.5em 3%;
+    font-size: 0.8em; width: 90%; padding: 0.5em 3%;
     position: relative; 
 }
 .result_kakaoUnlockBoxTT img{width: 100%; display: block; object-fit: contain;}

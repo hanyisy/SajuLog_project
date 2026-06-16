@@ -411,7 +411,7 @@ section img{width: 100%; object-fit: contain;}
 }
 .result_kakaoUnlock_btn {
     display: flex;
-    justify-content: ceenter;
+    justify-content: center;
     align-items: center;
     gap: 0.5em;
     width: 90%;
@@ -432,7 +432,7 @@ section img{width: 100%; object-fit: contain;}
 }
 
 .result_kakaoUnlockBoxTT{
-    display: flex; justify-content: space-between; align-items: center; height: 100%;
+    display: flex; justify-content: center; gap: 0.5em; align-items: center; height: 100%;
     gap: 0.4em; font-size: 0.8em; width: 100%; padding: 0.5em 2.5%; padding-left: 4%;
     position: relative;
 }

@@ -5,6 +5,7 @@
 .saju_white {
   background: linear-gradient(30deg,rgba(234, 231, 227, 1) 0%, rgba(154, 149, 154, 1) 28%, rgba(237, 237, 238, 1) 53%, rgba(154, 149, 154, 1) 78%, rgba(224, 221, 219, 1) 94%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
 }

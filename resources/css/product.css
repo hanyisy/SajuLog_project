@@ -67,9 +67,13 @@ body.modal_open{ overflow:hidden; height:100dvh; touch-action:none; overscroll-b
 .js_price_box{ text-align:center; border:1.5px solid #DDC49B; border-radius:.3em; padding:1em 0; cursor:pointer;
 transition:.3s; color:#DDC49B; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .js_price_box h3 { display:block; font-size:1.4em; }
-.js_price_box span{ display:block; margin-top:.2em; font-weight:700; font-size:1.1em; }
+.js_price_box span{ display:block; }
 .js_price_box img { height: 2.5em; margin-bottom: 1em; }
 .js_price_box.active{ background:#DDC49B; color:#00001D; }
 .product_choice{ display:none; }
 .product_choice.show{ display:block; }
 
+.share { position: relative; }
+.share::after { content: '추천'; position: absolute; top: -.7em; right: 1em; color: #00001d;
+background: linear-gradient(15deg, #FFD900, #FFEB56, #F8FF94, #FFEB56, #FFD900);
+padding: .2em .5em; border-radius: 5em; font-size: 1.2em; font-weight: 700; border: 2px solid #DDC49B; }

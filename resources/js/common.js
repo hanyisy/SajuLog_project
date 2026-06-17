@@ -458,9 +458,9 @@ function initPayment(){
             if (box.classList.contains("share")) {
                 try {
                     await navigator.clipboard.writeText(location.origin + "/share");
-                    alert("공유 링크 복사 완료");
+                    alert("공유 링크 복사가 완료되었습니다");
                 } catch {
-                    alert("링크 복사 실패");
+                    alert("링크 복사 실패되었습니다. 다시 시도해주세요!");
                 }
             }
 

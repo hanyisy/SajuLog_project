@@ -96,7 +96,6 @@ const footerCon = `
                 <p>
                     대표 이경식<br>
                     사업자등록번호 332-88-03445<br>
-                    통신판매번호 OOO-OOO-OOO<br>
                     경기도 부천시 원미구 소향로 37번길 31-7<br>
                     withusmkt@daum.net<br>
                     0507-1356-1719

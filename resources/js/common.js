@@ -94,6 +94,7 @@ const footerCon = `
             <div class="inner">
                 <img src="https://land.withusmk.co.kr/assets/saju/resources/img/logo.png" alt="로고">
                 <p>
+                    상호명 : 주식회사 위드어스<br>
                     대표 이경식<br>
                     사업자등록번호 332-88-03445<br>
                     경기도 부천시 원미구 소향로 37번길 31-7<br>

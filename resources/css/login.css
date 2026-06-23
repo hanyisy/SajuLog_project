@@ -8,7 +8,12 @@
 .login_con h2 { color: #fff;  margin-bottom: 1em; font-size: 2.5em; font-family: 'PuradakGentleGothic'; font-weight: 500; }
 .login_con ul li { margin-bottom: 1em; }
 .login_con ul li:last-child { margin-bottom: 0; color: #ccc; }
-.login_con ul li:last-child a { text-decoration: underline; color: #e9e9e9; font-weight: 600; }
+.login_con ul li:nth-child(2) a { text-decoration: underline; color: #e9e9e9; font-weight: 600; }
+
+.login_con ul li:nth-child(3) { font-size: 1.8em; color: #ccc; margin-bottom: .5em; }
+
+.login_con ul li:last-child a { font-size: 2em; display: block; border: 1px solid #fff; width: 85%;
+margin: 0 auto; padding: .4em 0; border-radius: .3em; }
 
 .login_con ul li button { color: #fff; width: 85%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: .4em .4em;
 font-size: 2em; font-weight: 700; border-radius: .3em; box-sizing: border-box; }

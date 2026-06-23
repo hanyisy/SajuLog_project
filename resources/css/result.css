@@ -153,12 +153,19 @@ section img{width: 100%; object-fit: contain;}
 }
 
 .result_explain_claim p{font-family: 'YeogiOttaeJalnanGothic'; margin-bottom: 0.5em; color: #ddc49b; font-size: 1.1em;}
-.result_explain_claim span{font-size: 0.85em; font-weight: 300; line-height: 1.5;}
+.result_explain_claim span{font-size: 0.85em; font-weight: 300; line-height: 1.3;}
 .result_explain_claim span b{color: #FF3E71;}
 
-.shareBtn{
-    display: flex;
-}
+.shareBtn{ display: flex; }
+
+.tit h2 span { position: relative; }
+.tit h2 span:before { position: absolute; content: ''; width: .2em; 
+height: .2em; background: #fff; top: -.35em; left: 50%; transform: translateX(-50%); border-radius: 50%; }
+
+.tit { color: #fff; text-align: center; margin-top: 2.5em; }
+.tit h2 {  font-family: 'YeogiOttaeJalnanGothic'; font-weight: 500; font-size: 2em; margin-bottom: .3em; }
+.tit p { color: #ccc; margin-bottom: 1em; }
+.tit h3 { color: #ddc49b; font-size: 1.7em; }
 
 @media (max-width: 340px) {
     body { width: 100%; font-size: 10px;}

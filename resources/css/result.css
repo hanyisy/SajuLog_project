@@ -559,6 +559,22 @@ height: .2em; background: #fff; top: -.35em; left: 50%; transform: translateX(-5
     width: 95%; margin: 2.5% auto; margin-bottom: 1%; word-break: keep-all; font-size: 1.1em;
 }
 
+ /* ====== ↓↓↓ 여기서부터가 실제로 옮겨야 할 CSS ↓↓↓ ====== */
+ 
+  /* 슬라이드 영역을 감싸는 래퍼 (보이는 만큼만 잘라줌) */
+  .review_slideWrap{
+    overflow:hidden;
+    position:relative;
+  }
+  /* 카드 사이 세로 간격 3% (요청사항) - 기존 review_frameBox 스타일은 안 건드림 */
+  .review_list .review_frameBox{
+    margin-bottom:3%;
+  }
+  .review_list .review_frameBox:last-child{ margin-bottom:0; }
+ 
+  /* ====== ↑↑↑ 여기까지 ↑↑↑ ====== */
+
+
 @media (max-width: 350px) {
     section{font-size: 0.9em;}
     .result_kakaoUnlockBoxTT{font-size: 0.8em;}

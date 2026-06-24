@@ -456,8 +456,8 @@ function renderReviews() {
     play();
 }
           // 마우스 올리면 잠깐 멈춤(선택사항 - 필요 없으면 두 줄 지우세요)
-          wrap.addEventListener('mouseenter', stop);
-          wrap.addEventListener('mouseleave', play);
+        //   wrap.addEventListener('mouseenter', stop);
+        //   wrap.addEventListener('mouseleave', play);
       
           // 이미지/폰트 로딩 후 높이가 정확하도록 load 시점에 시작
           if (document.readyState === 'complete') init();

@@ -145,7 +145,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (aboutBtn) {
         aboutBtn.addEventListener('click', () => {
-            window.open('https://hanyisy.github.io/SajuLog_project/policy_1.html', '회사소개', 'width=800,height=600,scrollbars=yes');
+            window.open('about.html', '회사소개', 'width=800,height=600,scrollbars=yes');
         });
     }
 

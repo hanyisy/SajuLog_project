@@ -767,6 +767,7 @@ margin-bottom:3%;
 }
 
 .result_prem_mainTxt{word-break: keep-all;}
+.resultPrem_sec10{padding-bottom: 10%; background-color: #0f0f0f;}
 
 
 /* 궁합결과 + */
@@ -790,7 +791,7 @@ margin-bottom:3%;
     width: 100%; object-fit: contain 100%;
 }
 .resultMatch_btnList{
-    width: 100%;
+    width: 100%; 
 }
 .resultMatch_btns{
     width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2%;
@@ -812,6 +813,7 @@ margin-bottom:3%;
     width: 100%; height: auto; position: absolute; left: 0; bottom: 0;
     background: #0F0F0F; background: linear-gradient(0deg, rgba(15, 15, 15, 1) 0%, rgba(15, 15, 15, 0) 100%);
 }
+.result_matTitle img{width: 90%;}
 
 @font-face {
     font-family: 'JoseonPalace';
@@ -837,3 +839,5 @@ margin-bottom:3%;
 }
 
 .result_mat_mainTxt{word-break: keep-all;}
+
+.resultMat_sec8{padding-bottom: 10%; background-color: #0f0f0f;}

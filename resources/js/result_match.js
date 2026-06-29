@@ -337,6 +337,10 @@ function setupKakaoUnlock() {
     const premSec = document.querySelector('.result_match_addsec2');
     if (explainList) explainList.style.display = '';
     if (premSec) premSec.style.display = '';
+
+    const kakaoBox = document.querySelector('.js_kakaoUnlockBox');
+    if (kakaoBox) kakaoBox.style.display = 'none';
+
     animateMatchTable(); 
   });
 }

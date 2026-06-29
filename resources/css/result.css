@@ -772,3 +772,68 @@ margin-bottom:3%;
 /* 궁합결과 + */
 .js_result_userProf_anim .kw { color: #fff; }
 .js_result_userProf_anim .kw_gold { color: #ddc49b; }
+
+.resultMatch_btnBox{
+    width: 100%; height: auto; position: fixed; z-index: 995; background-color: #00001d;
+    padding: 2% 2.5%; max-width: 800px; overflow: hidden;
+}
+
+.resultMatch_btnBox.collapsed .resultMatch_btns:not(:has(.on)) {
+    display: none;
+}
+
+.resultMatch_frame{
+    width: 100%; position: absolute; left: 0; bottom: 0; width: 100%; height: auto;
+}
+
+.resultMatch_frame img{
+    width: 100%; object-fit: contain 100%;
+}
+.resultMatch_btnList{
+    width: 100%;
+}
+.resultMatch_btns{
+    width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2%;
+}
+.resultMatch_btns div{
+    width: 24.5%;
+}
+.resultMatch_btns div a{
+    width: 100%; display: block; text-align: center; padding: 0.8em 0; 
+    border: 1px solid #ddc49b; font-size: 140%; border-radius: 0.3em; font-weight: 400;
+}
+.resultMatch_btns div.on a{
+    background-color: #000; color: #ddc49b; font-weight: 600;
+}
+.result_matTop{
+    width: 100%; position: relative; height: auto;
+}
+.result_matTitle{
+    width: 100%; height: auto; position: absolute; left: 0; bottom: 0;
+    background: #0F0F0F; background: linear-gradient(0deg, rgba(15, 15, 15, 1) 0%, rgba(15, 15, 15, 0) 100%);
+}
+
+@font-face {
+    font-family: 'JoseonPalace';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+.result_matMid{
+    font-family: 'JoseonPalace'; background-color: #0f0f0f;
+    padding: 0 2.5%; padding-top: 2%;
+}
+.result_mat_pointTxt{
+    padding: 0 1.5%; background-color: #0f0f0f;font-family: 'JoseonPalace';
+    text-align: left; color: #ff7ecc; font-weight: 100; font-size: 1.25em; line-height: 130%; padding-bottom: 0.5em;
+}
+.result_matMid>p{
+    width: 100%; height: 1px; background-color: white;
+}
+
+.reult_matBot{
+    background-color: #0f0f0f;
+    padding: 2.5% 3%; font-size: 1.2em; color: white; font-weight: 400;
+}
+
+.result_mat_mainTxt{word-break: keep-all;}

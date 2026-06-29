@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/font.css" type="text/css">
+    <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/mainpage.css" type="text/css">
+    <link rel="stylesheet" href="https://land.withusmk.co.kr/assets/saju/resources/css/result.css" type="text/css"> -->
+    <link rel="stylesheet" href="./resources/css/font.css" type="text/css">
+    <link rel="stylesheet" href="./resources/css/mainpage.css" type="text/css">
+    <link rel="stylesheet" href="./resources/css/result.css" type="text/css">
+    <title>궁합 결과</title>
+</head>
+<body>
+    <header></header>
+    
+    <section class="result_sec1">
+        <div class="result_backbtn"><a href="./index.html"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/arrow-2.webp" alt=""></a></div>
+        <div class="result_userTitle">
+            <h1>
+                <span class="js_result_userName1">user</span>님과 <span class="js_result_userName2">user</span>님의<br> 
+                <b style="font-size: 1.2em; padding-top: 0.2em; display: block;">사주궁합</b>
+            </h1>
+        </div>
+        <div class="result_usersProfBox">
+            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/result_subtitleFrame.webp" alt="">
+            <div class="result_usersProf">
+                <div class="result_usersProf_card js_result_usersProf_card ">
+                    <h1 class="result_userProf_names js_result_userProf_names"></h1>
+                    <p class="result_userProf_anim js_result_userProf_anim"></p>
+                    <span class="result_userProf_etc js_result_userProf_etc"></span>
+                </div>
+                <div class="result_usersProfBox_str"></div>
+                <div class="result_usersProf_card js_result_usersProf_card ">
+                    <h1 class="result_userProf_names js_result_userProf_names"></h1>
+                    <p class="result_userProf_anim js_result_userProf_anim"></p>
+                    <span class="result_userProf_etc js_result_userProf_etc"></span>
+                </div>
+            </div>
+        </div>
+        <p style="font-size: 1.5em; width: fit-content; padding: 0.3em 0.5em; margin: 5% auto; border: 1px solid white; border-radius: 0.3em;">각 제목을 클릭하면 해설을 볼 수 있어요!</p>
+    </section>
+
+    <section style="color: white; position: relative; z-index: 1;">
+        <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/result_bg2.webp" alt="" style="position: absolute; width: 100%; top: 0; left: 0; z-index: -1;">
+        <div class="result_explainList">
+            <div class="result_explainCard result_explainCard_match">
+                <div class="result_explainCard_match_titleBox">
+                    <p class="result_explainCard_match_title"></p>
+                    <div class="result_explain_toggleBtn">
+                        <div></div>
+                        <div class="result_explain_toggleBtn2"></div>
+                    </div>
+                </div>
+                <div class="result_explainCard_match_txt">
+                    <div class="result_lockBox">
+                        <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/result_lockBox.webp" alt="">
+                        <div class="result_obBox">
+                            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/result_lock.webp" alt="">
+                            <div class="result_lockBtnBox">
+                                <div style="margin-bottom: 3%;" class="js_result_allTxt">
+                                    <p>2,900원 결제 후 전부보기</p>
+                                    <span>2,900원 결제하면 모둔 항목이 오픈됩니다.</span>
+                                </div>
+                                <div class="js_result_oneShare">
+                                    <p>친구에게 공유하고 하나만 보기</p>
+                                    <span>2명의 친구에게 사주로그 공유하면 하나의 항목이 오픈됩니다.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="result_explain_claim" style=" margin-bottom: 10%;">
+            <p>문의하기</p>
+            <span>
+                <b>3분이 지나도</b> 결과가 보이지 않으시나요?<br>
+                먼저 <b>새로고침</b>을 해주세요.
+            </span>
+        </div>
+    </section>
+
+
+    <footer></footer>
+
+
+    <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"> </section>
+    
+    <script src="./resources/js/result_match.js"></script>
+
+    <!-- 템플릿.js -->
+    <script src="./resources/js/common.js"></script>
+</body>
+</html>

@@ -348,5 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animateMatchScore(); 
     // animateMatchTable(); 
     setupKakaoUnlock();
+
+    
 });
 

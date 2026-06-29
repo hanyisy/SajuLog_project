@@ -155,11 +155,6 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (moneyBtn) {
-        moneyBtn.addEventListener('click', () => {
-            window.open('https://hanyisy.github.io/SajuLog_project/policy_1.html', '환불정책', 'width=800,height=600,scrollbars=yes');
-        });
-    }
 
     if (policyBtn) {
         policyBtn.addEventListener('click', () => {
@@ -168,6 +163,13 @@ window.addEventListener('DOMContentLoaded', () => {
                 '개인정보이용동의',
                 'width=800,height=600,scrollbars=yes'
             );
+        });
+    }
+
+    
+    if (moneyBtn) {
+        moneyBtn.addEventListener('click', () => {
+            window.open('https://hanyisy.github.io/SajuLog_project/policy_1.html', '환불정책', 'width=800,height=600,scrollbars=yes');
         });
     }
 

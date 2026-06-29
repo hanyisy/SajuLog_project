@@ -230,3 +230,184 @@ function toggleExplain(index, element) {
 }
 
 document.addEventListener('DOMContentLoaded', renderPremExplains);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const loadBox   = document.querySelector('.result_loadBox');
+  const gage      = document.querySelector('.result_gage');
+  const loadTxt   = document.querySelector('.result_loadTxt');
+  const loadingP  = document.querySelector('.result_loadingBox > p');
+
+  const DURATION  = 6500;
+  const INTERVAL  = 30;
+  const STEPS     = DURATION / INTERVAL;
+
+  // 점 애니메이션
+  const texts = ['사주 분석 중', '풀이 준비 중'];
+  let current = 0;
+  let dotStep = 0;
+  let textIndex = 0;
+
+  // 점 업데이트 (400ms마다)
+  const dotTimer = setInterval(() => {
+    dotStep = (dotStep + 1) % 4; // 0,1,2,3 → '','.','..','..'
+    const dots = '.'.repeat(dotStep);
+    loadingP.textContent = texts[textIndex] + ' ' + dots;
+  }, 400);
+
+  // 게이지
+  const gageTimer = setInterval(() => {
+    current++;
+    const progress = (current / STEPS) * 100;
+
+    gage.style.width = progress + '%';
+
+    // 50%에서 텍스트 + 이미지 전환
+    if (progress >= 50 && textIndex === 0) {
+      textIndex = 1;
+      dotStep = 0;
+      loadTxt.classList.add('on');
+    }
+
+    if (current >= STEPS) {
+      clearInterval(gageTimer);
+      clearInterval(dotTimer);
+      gage.style.width = '100%';
+      loadingP.textContent = '풀이 준비 중 ...';
+      loadBox.classList.add('on');
+
+      const header = document.querySelector('header');
+    const btnBox = document.querySelector('.resultPrem_btnBox');
+    if (header && btnBox) {
+        btnBox.style.top = header.getBoundingClientRect().height + 'px';
+        syncPadding(); 
+        window.addEventListener('resize', () => {
+            btnBox.style.top = header.getBoundingClientRect().height + 'px';
+            syncPadding(); 
+        });
+    }
+
+    }
+  }, INTERVAL);
+
+  // btnBox 높이에 따라 sec1 padding-top 동기화
+    const btnBox = document.querySelector('.resultPrem_btnBox');
+const sec1   = document.querySelector('.resultPrem_sec1');
+const header = document.querySelector('header');
+
+let lastScrollY = window.scrollY;
+let isCollapsed = false;
+let ticking = false;
+let locked = false;          // 토글 직후 재진입 차단
+const DELTA = 8;
+
+function syncPadding() {
+  if (!btnBox || !sec1) return;
+  const headerH = header ? header.getBoundingClientRect().height : 0;
+  const btnBoxH = btnBox.getBoundingClientRect().height;
+  sec1.style.paddingTop = (headerH + btnBoxH) + 'px';
+}
+
+function setCollapsed(next) {
+  if (next === isCollapsed) return;
+  isCollapsed = next;
+  btnBox.classList.toggle('collapsed', next);
+  syncPadding();
+
+  // ★ 핵심: padding 변경으로 scrollY가 튕긴 값을 다시 읽어 기준점으로.
+  //    이게 무한 토글 루프를 끊어줌
+  lastScrollY = window.scrollY;
+
+  // 직후 한 박자는 토글 금지 (비동기 clamp 대비)
+  locked = true;
+  setTimeout(() => { locked = false; }, 200);
+}
+
+function onScroll() {
+  ticking = false;
+  const currentY = window.scrollY;
+
+  if (locked) { lastScrollY = currentY; return; }
+
+  const diff = currentY - lastScrollY;
+  if (Math.abs(diff) < DELTA) return;        // 미세 움직임은 기준점 유지하며 무시
+
+  if (diff > 0 && currentY > 50 && !isCollapsed) {
+    setCollapsed(true);  return;             // setCollapsed가 lastScrollY 재설정
+  }
+  if (diff < 0 && isCollapsed) {
+    setCollapsed(false); return;
+  }
+  lastScrollY = currentY <= 0 ? 0 : currentY;
+}
+
+window.addEventListener('scroll', () => {
+  if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+}, { passive: true });
+
+btnBox?.addEventListener('click', (e) => {
+  if (e.target.closest('a')) return;   // ← a를 누른 거면 무시 (빈 영역만 펼치기)
+  setCollapsed(false);
+});
+window.addEventListener('resize', syncPadding);
+
+
+// 메뉴 a 클릭 → 기본 점프 막고, 가려지는 만큼 위로 보정
+const btnList = document.querySelector('.resultPrem_btnList');
+
+const allBtnDivs = document.querySelectorAll('.resultPrem_btns > div');
+
+// href(#res_preN) → 버튼 div 매핑
+function setActiveByHash(hash) {
+  allBtnDivs.forEach(div => {
+    const a = div.querySelector('a');
+    div.classList.toggle('on', a && a.getAttribute('href') === hash);
+  });
+}
+
+btnList?.addEventListener('click', (e) => {
+  const link = e.target.closest('a');
+  if (!link) return;
+  e.preventDefault();
+
+  const target = document.querySelector(link.getAttribute('href'));
+  if (!target) return;
+  setActiveByHash(link.getAttribute('href'));
+  setCollapsed(true);
+
+  // 간략화가 끝난 높이로 계산해야 정확 → 다음 프레임에
+  requestAnimationFrame(() => {
+    const headerH = header ? header.getBoundingClientRect().height : 0;
+    const btnBoxH = btnBox ? btnBox.getBoundingClientRect().height : 0;
+    const GAP = 16; // 섹션 위쪽을 얼마나 더 보여줄지 (키울수록 위가 더 보임)
+
+    const y = target.getBoundingClientRect().top + window.scrollY - headerH - btnBoxH - GAP;
+
+    locked = true;                                          // ← 추가
+    window.scrollTo({ top: Math.max(y, 0) });
+    setTimeout(() => { lastScrollY = window.scrollY; locked = false; }, 300);  // ← 추가
+  });
+});
+const premSections = document.querySelectorAll('[id^="res_pre"]');
+const headerH0 = header ? header.getBoundingClientRect().height : 0;
+const btnBoxH0 = btnBox ? btnBox.getBoundingClientRect().height : 0;
+
+const io = new IntersectionObserver((entries) => {
+  // 화면에 들어온 섹션 중 가장 위에 있는 걸 active로
+  const visible = entries
+    .filter(en => en.isIntersecting)
+    .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+  if (visible[0]) setActiveByHash('#' + visible[0].target.id);
+}, {
+  // 고정바(header+btnBox) 높이만큼 위쪽 감지선을 내려서, 바 밑에 온 섹션을 잡음
+  rootMargin: `-${headerH0 + btnBoxH0 + 20}px 0px -60% 0px`,
+  threshold: 0
+});
+
+premSections.forEach(sec => io.observe(sec));
+
+syncPadding();
+
+
+});
+

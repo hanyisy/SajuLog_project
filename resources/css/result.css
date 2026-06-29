@@ -595,3 +595,114 @@ margin-bottom:3%;
 @media (max-width: 300px) {
     .result_kakaoUnlockBoxTT{font-size: 0.5em;}
 }
+
+.result_loadBox{
+    width: 100%; max-width: 800px; background-color: #00001d;
+    position: fixed;  height: 100vh; z-index: 1200;
+    top: 0; left: 50%; transform: translateX(-50%);
+}
+.result_bgMovie{
+    position: absolute; width: 100%; height: 100%;  background-color: #00001d;
+    top: 0; left: 50%; transform: translateX(-50%); max-width: 800px;
+}
+.result_bgMovie video{
+    width: 100%; object-fit: cover;
+}
+.result_prem_load{
+    width: 100%; height: 100%; position: relative; z-index: 1;
+}
+.result_load_top{
+    width: 18%; padding: 2.5%;
+}
+.result_loadingBox{
+    width: 100%; position: absolute; padding-bottom: 8%; color: white;
+    left: 0; bottom: 0; background: #00001D; background: linear-gradient(0deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 29, 0.65) 50%, rgba(0, 0, 29, 0) 100%);
+}
+.result_loadTxt{
+    width: 95%; margin: auto; padding-top: 5%; margin-bottom: 1%;
+}
+.result_loadTxt img:nth-last-child(1){display: none;}
+.result_loadTxt.on img:nth-child(1){display: none;}
+.result_loadTxt.on img:nth-child(2){display: block;}
+.result_loadingBox>p{text-align: center; font-size: 1.2em;}
+.result_load{
+    width: 90%; margin: auto; height: 0.4em; background-color: rgba(255, 255, 255, 0.568); border-radius: 1em;
+    margin-bottom: 2%; position: relative;
+}
+.result_gage{
+    width: 0%; height: 100%; position: absolute; border-radius: 1em;
+    top: 0; left: 0; background-color: #D7B783; 
+}
+
+.result_loadBox.on{display: none;}
+
+.resultPrem_btnBox{
+    width: 100%; height: auto; position: fixed; z-index: 995; background-color: #00001d;
+    padding: 2% 2.5%; max-width: 800px; overflow: hidden;
+}
+
+.resultPrem_btnBox.collapsed .resultPrem_btns:not(:has(.on)) {
+    display: none;
+}
+
+.resultPrem_frame{
+    width: 100%; position: absolute; left: 0; bottom: 0; width: 100%; height: auto;
+}
+
+.resultPrem_frame img{
+    width: 100%; object-fit: contain 100%;
+}
+.resultPrem_btnList{
+    width: 100%;
+}
+.resultPrem_btns{
+    width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2%;
+}
+.resultPrem_btns div{
+    width: 33%;
+}
+.resultPrem_btns2 div{width: 24.5%;}
+.resultPrem_btns div a{
+    width: 100%; display: block; text-align: center; padding: 0.8em 0; 
+    border: 1px solid #ddc49b; font-size: 140%; border-radius: 0.3em; font-weight: 400;
+}
+.resultPrem_btns div.on a{
+    background-color: #000; color: #ddc49b; font-weight: 600;
+}
+
+/* .resultPrem_sec1 {
+    transition: padding-top 0.3s ease;
+} */
+
+.result_premTop{
+    width: 100%; position: relative; height: auto;
+}
+.result_premTitle{
+    width: 100%; height: auto; position: absolute; left: 0; bottom: 0;
+    background: #0F0F0F; background: linear-gradient(0deg, rgba(15, 15, 15, 1) 0%, rgba(15, 15, 15, 0) 100%);
+}
+
+@font-face {
+    font-family: 'JoseonPalace';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+.result_premMid{
+    font-family: 'JoseonPalace'; background-color: #0f0f0f;
+    padding: 0 2.5%; padding-top: 2%;
+}
+.result_prem_pointTxt{
+    padding: 0 1.5%;
+    text-align: left; color: #a8b9ff; font-weight: 100; font-size: 1.25em; line-height: 130%; padding-bottom: 0.5em;
+}
+.result_premMid>p{
+    width: 100%; height: 1px; background-color: white;
+}
+
+.reult_premBot{
+    background-color: #0f0f0f;
+    padding: 2.5% 3%; font-size: 1.2em; color: white; font-weight: 400;
+}
+
+.result_prem_mainTxt{word-break: keep-all;}

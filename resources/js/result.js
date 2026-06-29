@@ -322,7 +322,7 @@ function renderReviews() {
             starHtml += `<div><img src="./resources/img/result/review_star0.5.webp" alt="½"></div>`;
         }
 
-        // 전체 마크업 조립 (기존 디자인 가이드라인 100% 반영)
+        // 전체 마크업 조립 (기존 디자인 가이드라인 100% 반영) 
         frameBox.innerHTML = `
             <div class="review_box">
                 <div class="review_userBox">

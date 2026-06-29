@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/css/font.css" type="text/css">
+    <link rel="stylesheet" href="./resources/css/mainpage.css" type="text/css">
+    <link rel="stylesheet" href="./resources/css/result.css" type="text/css">
+    <title>프리미엄 사주결과페이지</title>
+</head>
+<body>
+    <header></header>
+
+    <section class="result_sec1">
+        <div class="result_backbtn"><a href="./index.html"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/arrow-2.webp" alt=""></a></div>
+        <div class="result_titleBox">
+            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/result_titleFrame.webp" alt="">
+            <div class="js_result_userAnimal">갑술 (푸른 개)</div>
+        </div>
+        <div class="result_userTitle">
+            <h1><span class="js_result_userName">user</span>님의 프리미엄 사주해설</h1>
+            <h2 class="js_result_userProf">생년 | 양력 | 13:25 | 남성</h2>
+        </div>
+    </section>
+
+    <section class="result_sec2">
+        <div class="result_sajuList">
+            <div>
+                <p class="result_name1">시주</p>
+                <div class="result_saju_time1">
+                    <h1 class="result_saju_kanji">丁</h1>
+                    <span class="result_saju_kanji_name">정</span>
+                    <p class="result_saju_kanji_sibseong">비견</p>
+                </div>
+                <div class="result_saju_time2">
+                    <h1 class="result_saju_kanji"></h1>
+                    <span class="result_saju_kanji_name"></span>
+                    <p class="result_saju_kanji_sibseong"></p>
+                </div>
+            </div>
+            <div>
+                <p class="result_name1">일주</p>
+                <div class="result_saju_day1">
+                    <h1 class="result_saju_kanji"></h1>
+                    <span class="result_saju_kanji_name"></span>
+                    <p class="result_saju_kanji_sibseong"></p>
+                </div>
+                <div class="result_saju_day2">
+                    <h1 class="result_saju_kanji"></h1>
+                    <span class="result_saju_kanji_name"></span>
+                    <p class="result_saju_kanji_sibseong"></p>
+                </div>
+            </div>
+            <div>
+                <p class="result_name1">월주</p>
+                <div class="result_saju_month1">
+                    <h1 class="result_saju_kanji"></h1>
+                    <span class="result_saju_kanji_name"></span>
+                    <p class="result_saju_kanji_sibseong"></p>
+                </div>
+                <div class="result_saju_month2">
+                    <h1 class="result_saju_kanji"></h1>
+                    <span class="result_saju_kanji_name"></span>
+                    <p class="result_saju_kanji_sibseong"></p>
+                </div>
+            </div>
+            <div>
+                <p class="result_name1">연주</p>
+                <div class="result_saju_year1">
+                    <h1 class="result_saju_kanji"></h1>
+                    <span class="result_saju_kanji_name"></span>
+                    <p class="result_saju_kanji_sibseong"></p>
+                </div>
+                <div class="result_saju_year2">
+                    <h1 class="result_saju_kanji"></h1>
+                    <span class="result_saju_kanji_name"></span>
+                    <p class="result_saju_kanji_sibseong"></p>
+                </div>
+            </div>
+        </div>
+        <div class="result_sajuList">
+            <div class="result_saju_time_jijanggan"></div>
+            <div class="result_saju_day_jijanggan"></div>
+            <div class="result_saju_month_jijanggan"></div>
+            <div class="result_saju_year_jijanggan"></div>
+        </div>
+        <div class="result_sajuList">
+            <div class="result_saju_time_unseong"></div>
+            <div class="result_saju_day_unseong"></div>
+            <div class="result_saju_month_unseong"></div>
+            <div class="result_saju_year_unseong"></div>
+        </div>
+        <div class="result_sajuList">
+            <div class="result_saju_time_shinsal"></div>
+            <div class="result_saju_day_shinsal"></div>
+            <div class="result_saju_month_shinsal"></div>
+            <div class="result_saju_year_shinsal"></div>
+        </div>
+        <div class="result_sajuList">
+            <div class="result_saju_time_etc"></div>
+            <div class="result_saju_day_etc"></div>
+            <div class="result_saju_month_etc"></div>
+            <div class="result_saju_year_etc"></div>
+        </div>
+    </section>
+
+    <section class="result_sec3">
+        <div class="result_explainTitle">
+            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/result_subtitleFrame.webp" alt="">
+            <div>
+                <h1>프리미엄 사주해설</h1>
+                <p>각 제목을 클릭하면 해설을 볼 수 있어요!</p>
+            </div>
+        </div>
+
+        <!-- 프리미엄 해설 리스트 (전체 오픈) -->
+        <div class="result_explainList js_result_prem_explainList"></div>
+
+        <!-- <div class="result_explain_claim">
+            <p>문의하기</p>
+            <span>
+                <b>결과가 보이지 않으시나요?</b><br>
+                먼저 <b>새로고침</b>을 해주세요.
+            </span>
+        </div> -->
+    </section>
+
+    <footer></footer>
+
+    <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"></section>
+
+    <script src="resources/js/result_prem.js"></script>
+    <script src="./resources/js/common.js"></script>
+</body>
+</html>

@@ -104,7 +104,8 @@ const footerCon = `
                 <ul>
                     <li><span id="aboutBtn" class="js_policy_btn">회사소개 |</span></li>
                     <li><span id="termsBtn" class="js_policy_btn">이용약관 |</span></li>
-                    <li><span id="policyBtn" class="js_policy_btn" style="font-weight: bolder;">개인정보 처리방침</span></li>
+                    <li><span id="policyBtn" class="js_policy_btn" style="font-weight: bolder;">개인정보 처리방침 |</span></li>
+                    <li><span id="moneyBtn" class="js_policy_btn">이용약관</span></li>
                 </ul>
             </div>
         </footer>
@@ -140,23 +141,30 @@ window.addEventListener('DOMContentLoaded', () => {
     const aboutBtn = document.getElementById('aboutBtn');
     const termsBtn = document.getElementById('termsBtn');
     const policyBtn = document.getElementById('policyBtn');
+    const moneyBtn = document.getElementById('moneyBtn');
 
     if (aboutBtn) {
         aboutBtn.addEventListener('click', () => {
-            window.open('about.html', '회사소개', 'width=800,height=600,scrollbars=yes');
+            window.open('https://hanyisy.github.io/SajuLog_project/policy_1.html', '회사소개', 'width=800,height=600,scrollbars=yes');
         });
     }
 
     if (termsBtn) {
         termsBtn.addEventListener('click', () => {
-            window.open('terms.html', '이용약관', 'width=800,height=600,scrollbars=yes');
+            window.open('https://hanyisy.github.io/SajuLog_project/policy_1.html', '이용약관', 'width=800,height=600,scrollbars=yes');
+        });
+    }
+
+    if (moneyBtn) {
+        moneyBtn.addEventListener('click', () => {
+            window.open('https://hanyisy.github.io/SajuLog_project/policy_1.html', '이용약관', 'width=800,height=600,scrollbars=yes');
         });
     }
 
     if (policyBtn) {
         policyBtn.addEventListener('click', () => {
             window.open(
-                'policy.html',
+                'https://hanyisy.github.io/SajuLog_project/policy_1.html',
                 '개인정보이용동의',
                 'width=800,height=600,scrollbars=yes'
             );

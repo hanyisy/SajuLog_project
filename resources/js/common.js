@@ -105,7 +105,7 @@ const footerCon = `
                     <li><span id="aboutBtn" class="js_policy_btn">회사소개 |</span></li>
                     <li><span id="termsBtn" class="js_policy_btn">이용약관 |</span></li>
                     <li><span id="policyBtn" class="js_policy_btn" style="font-weight: bolder;">개인정보 처리방침 |</span></li>
-                    <li><span id="moneyBtn" class="js_policy_btn">이용약관</span></li>
+                    <li><span id="moneyBtn" class="js_policy_btn">환불정책</span></li>
                 </ul>
             </div>
         </footer>
@@ -157,7 +157,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (moneyBtn) {
         moneyBtn.addEventListener('click', () => {
-            window.open('https://hanyisy.github.io/SajuLog_project/policy_1.html', '이용약관', 'width=800,height=600,scrollbars=yes');
+            window.open('https://hanyisy.github.io/SajuLog_project/policy_1.html', '환불정책', 'width=800,height=600,scrollbars=yes');
         });
     }
 

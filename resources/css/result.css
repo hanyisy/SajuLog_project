@@ -321,9 +321,68 @@ height: .2em; background: #fff; top: -.35em; left: 50%; transform: translateX(-5
 .result_match_userCount div{display: flex; justify-content: center; align-items: end; gap: 0.2em; font-size: 2.3em;}
 .result_match_userCount div h4{transform: translateY(-15%);}
 .result_match_sec2_txt{
-    width: 80%; margin: auto; padding: 5% 0;
+    width:95%; margin: auto; padding: 5% 0; color: white; text-align: center;
+}
+.result_match_sec2_txtTop{
+    width: 100%; font-size: 1.5em; line-height: 200%; border-bottom: 1px solid white; padding-bottom: 3%;
+}
+.result_match_sec3_exTxt{
+    text-align: center; font-size: 1.2em; line-height: 150%; margin-bottom: 1.5em;
 }
 
+.result_match_sec3_exTxtadd{
+    font-weight: 700; font-size: 1.3em;
+}
+
+.result_match_sec3_table{
+    width: 95%; margin: auto; margin-top: 5%;
+    border: 1px solid white; border-radius: 1em;
+    padding: 2.5%; margin-bottom: 5%;
+}
+.result_match_sec3_tableList>div{
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 3%; overflow: hidden;
+}
+.result_match_table_gage{
+    position: absolute; left: 0; top: 0; border-radius: 5em;
+    width: 0%; height: 100%; border: 1px solid #fff; z-index: 1;
+} 
+.result_bgy{
+    background-color: #ffda0040;
+    border-color: #ffda00;
+}
+.result_bgp{
+    background-color: #fb78ff40;
+    border-color: #fb78ff;
+}
+.result_bgg{
+    background-color: #00d62340;
+    border-color: #00d623;
+}
+.result_bgr{
+    background-color: #ff3e7140;
+    border-color: #ff3e71;
+}
+
+.result_match_sec3_userKeywordBox{
+    display: flex; justify-content: center; align-items: center; gap: 0.5em;
+    flex-wrap: wrap; color: white; font-size: 1.1em; border-top: 1px solid #fff; padding-top: 1em;
+}
+.result_match_table_tit{
+    width: 20%; font-size: 1.3em;
+}
+.result_match_table_gageBox{
+    width: 78%; height: 2em; position: relative;
+    border: 1px solid #fff; border-radius: 5em; overflow: hidden;
+}
+
+.result_match_table_num{
+    position: absolute; right: 0; top: 50%; transform: translateY(-55%) translateX(-0.8em);
+    display: flex; align-items: end; text-align: right;
+}
+
+.result_match_table_num p{font-size: 1.7em; padding-right: 0.2em; transform: translateY(5%);}
+
+.result_match_sec3_userKeywordBox span{ color:  #ff00ff;}
 
 .result_match_addsec2{position: relative;}
 .result_match_addsec2_bgimg1{
@@ -589,11 +648,13 @@ margin-bottom:3%;
 .score_low h3 { color: #B7B7B7; } 
 
 @media (max-width: 350px) {
-    section{font-size: 0.9em;}
+    section{font-size: 0.7em;}
     .result_kakaoUnlockBoxTT{font-size: 0.8em;}
+    .result_match_exsec{font-size: 0.9em;}
 }
 @media (max-width: 300px) {
     .result_kakaoUnlockBoxTT{font-size: 0.5em;}
+    .result_match_exsec{font-size: 0.7em;}
 }
 
 .result_loadBox{
@@ -706,3 +767,8 @@ margin-bottom:3%;
 }
 
 .result_prem_mainTxt{word-break: keep-all;}
+
+
+/* 궁합결과 + */
+.js_result_userProf_anim .kw { color: #fff; }
+.js_result_userProf_anim .kw_gold { color: #ddc49b; }

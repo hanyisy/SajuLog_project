@@ -559,21 +559,34 @@ height: .2em; background: #fff; top: -.35em; left: 50%; transform: translateX(-5
     width: 95%; margin: 2.5% auto; margin-bottom: 1%; word-break: keep-all; font-size: 1.1em;
 }
 
- /* ====== ↓↓↓ 여기서부터가 실제로 옮겨야 할 CSS ↓↓↓ ====== */
- 
-  /* 슬라이드 영역을 감싸는 래퍼 (보이는 만큼만 잘라줌) */
-  .review_slideWrap{
-    overflow:hidden;
-    position:relative;
-  }
-  /* 카드 사이 세로 간격 3% (요청사항) - 기존 review_frameBox 스타일은 안 건드림 */
-  .review_list .review_frameBox{
-    margin-bottom:3%;
-  }
-  .review_list .review_frameBox:last-child{ margin-bottom:0; }
- 
-  /* ====== ↑↑↑ 여기까지 ↑↑↑ ====== */
+/* ====== ↓↓↓ 여기서부터가 실제로 옮겨야 할 CSS ↓↓↓ ====== */
 
+/* 슬라이드 영역을 감싸는 래퍼 (보이는 만큼만 잘라줌) */
+.review_slideWrap{
+overflow:hidden;
+position:relative;
+}
+/* 카드 사이 세로 간격 3% (요청사항) - 기존 review_frameBox 스타일은 안 건드림 */
+.review_list .review_frameBox{
+margin-bottom:3%;
+}
+.review_list .review_frameBox:last-child{ margin-bottom:0; }
+
+/* ====== ↑↑↑ 여기까지 ↑↑↑ ====== */
+
+.result_score { padding: 8% 2.5%; }
+.score_con { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6em; }
+.score_box { border: .15em solid #DDC49B; border-radius: .3em; padding: 1.5em 1em; }
+.score_box p, .score_box h3 { color: #DDC49B; }
+.score_box > p { font-size: 1.5em; margin-bottom: .5em; }
+.score_box h3 { font-size: 3.5em; line-height: 80%; }
+.score_btm { display: flex; align-items: flex-end; gap: .5em; }
+.score_btm p { background: #DDC49B; color: #000; padding: .3em .6em; border-radius: 5em; }
+
+.score_high h3 { color: #E2B00F; }
+.score_high p { background: #593A00; color: #E2B00F; }
+
+.score_low h3 { color: #B7B7B7; } 
 
 @media (max-width: 350px) {
     section{font-size: 0.9em;}

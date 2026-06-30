@@ -92,13 +92,13 @@ input:-webkit-autofill {
 }
 
 .register_optionName .register_ckeck{
-    display: inline-flex; width: fit-content; justify-content: right; padding-right: 1em; font-size: 1.2em;
+    display: inline-flex; width: fit-content; justify-content: right; padding-right: 1em; font-size: 1.1em;
 }
 .register_optionName .register_ckeck label{
     display: flex; align-items: center; gap: 0.5em;
 }
 .register_optionName .register_ckeck input[type="checkbox"]{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .gender_select{width: 100%; display: flex; justify-content: space-between; align-items: center; transition: 0.3s;}

@@ -295,6 +295,9 @@ function closeNewUserPopup() {
 
     const form = document.querySelector('form[name="saju_register_match_new"]');
     if (form) form.reset();
+
+    const listBox = document.querySelector('.js_register_userListBox');
+    listBox.classList.add('off');
 }
 
 // =============================
@@ -358,6 +361,8 @@ document.querySelector('.js_openNewUserPop')?.addEventListener('click', () => op
 document.querySelectorAll('.js_match_closePop').forEach(el => {
     el.addEventListener('click', closeNewUserPopup);
 });
+
+document.querySelector('.js_match_listClose').addEventListener('click', closeNewUserPopup);
 
 // 저장 버튼
 document.querySelector('.js_match_savePop')?.addEventListener('click', addNewUser);

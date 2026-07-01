@@ -4,18 +4,35 @@ const sajuResult = {
     user1: {
         userName:"user1",
         userPart:"친구",
-        userAni:"갑술(푸른개)",
+        userAni:"dog",
+        userAnicolor:"blue",
         userKeywords:['계사', '을유', '계미', '무오'],
         userProf:"1994년 05월 31일 | 양력 | 13:35 | 남성"
     },
     user2: {
         userName:"user2",
         userPart:"친구",
-        userAni:"갑술(푸른개)",
+        userAni:"dog",
+        userAnicolor:"blue",
         userKeywords:['계사', '을미', '계오', '무유'],
         userProf:"1994년 05월 31일 | 양력 | 13:35 | 여성"
     }
 };
+
+const sajuAniImg = {
+  mouse: "w_mou.webp",
+  cow: "w_cow.webp",
+  tiger: "w_tig.webp",
+  rabbit: "w_rab.webp",
+  dragon: "w_dra.webp",
+  snake: "w_sna.webp",
+  horse: "w_hor.webp",
+  sheep: "w_goa.webp",
+  monkey: "w_mon.webp",
+  chicken: "w_che.webp",
+  dog: "w_dog.webp",
+  pig: "w_pig.webp",
+}
 
 // const sajuExplains = [
 //     {
@@ -95,6 +112,15 @@ function renderSaju() {
             return `<span class="kw${isOverlap ? ' kw_gold' : ''}">#${k}</span>`;
         }).join(' ');
         card.querySelector('.js_result_userProf_etc').textContent = user.userProf;
+
+        // ── 동물 이미지 + 오행 색상 필터 적용 ──
+        const aniEl = card.querySelector('.js_result_userAni');
+        if (aniEl) {
+            const imgFile = sajuAniImg[user.userAni];
+            if (imgFile) {
+                aniEl.innerHTML = `<img src="./resources/img/animal/${imgFile}" alt="${user.userAni}" class="ani_saju_${user.userAnicolor}">`;
+            }
+        }
     });
 
     // ── 공통 텍스트 (forEach 밖, 1번만) ──

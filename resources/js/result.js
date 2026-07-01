@@ -213,19 +213,59 @@ function toggleExplain(index, element) {
 // 현재는 버튼 클릭 시 바로 오픈 (퍼블리싱 임시 처리)
 // ============================================================
 function unlockAll() {
-    const unlockBox   = document.querySelector('.js_kakaoUnlockBox');
+    const unlockBox = document.querySelector('.js_kakaoUnlockBox');
     const explainList = document.querySelector('.js_result_explainList');
-    const claimBox    = document.querySelector('.result_explain_claimB');
     const premSection = document.querySelector('.main_section3');
-	const reviewSection = document.querySelector('.result_reviewBox');
+    const reviewSection = document.querySelector('.result_reviewBox');
+    const sec3 = document.querySelector('.result_sec3');
+    const claimBox = document.querySelector('.result_explain_claimB');
+
+    if (unlockBox) unlockBox.style.setProperty('display', 'none', 'important');
+    if (explainList) explainList.style.setProperty('display', 'block', 'important');
+    if (premSection) premSection.style.setProperty('display', 'block', 'important');
+    if (reviewSection) reviewSection.style.setProperty('display', 'block', 'important');
+    if (sec3) sec3.style.setProperty('display', 'block', 'important');
 
 
-    if (unlockBox)   unlockBox.style.display  = 'none';
-    if (explainList) explainList.style.display = 'block';
-    if (claimBox)    claimBox.style.display    = 'block';
-    if (premSection) premSection.style.display = 'block';
-    if (reviewSection) reviewSection.style.display = 'block';
 }
+
+
+// ============================================================
+document.addEventListener('DOMContentLoaded', function () {
+    const unlockBox = document.querySelector('.js_kakaoUnlockBox');
+    const claimBox  = document.querySelector('.result_explain_claimB');
+
+    if (!unlockBox || !claimBox) return;
+
+    // 이미 결제완료 상태로 로드된 경우 (새로고침 등) 즉시 체크
+    function checkAndReveal() {
+        if (unlockBox.style.display === 'none') {
+            claimBox.style.setProperty('display', 'block', 'important');
+            return true;
+        }
+        return false;
+    }
+
+    if (checkAndReveal()) return;
+
+    // common.js의 결제완료 로직이 unlockBox.style.display = "none" 을
+    // 실행하는 순간을 감지 (MutationObserver로 style 속성 변화만 관찰)
+    const observer = new MutationObserver(function (mutations) {
+        for (const m of mutations) {
+            if (m.attributeName === 'style') {
+                if (checkAndReveal()) {
+                    observer.disconnect();
+                    break;
+                }
+            }
+        }
+    });
+
+    observer.observe(unlockBox, { attributes: true, attributeFilter: ['style'] });
+});
+
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
     renderExplains();

@@ -154,7 +154,7 @@ input:-webkit-autofill {
 }
 
 .match_selectUser>div{
-    width: 48%; aspect-ratio: 1/1.2; overflow: hidden; border: 1px solid #DDC49B; border-radius: 2em; cursor: pointer;
+    width: 48%; aspect-ratio: 1/1.3; overflow: hidden; border: 1px solid #DDC49B; border-radius: 2em; cursor: pointer;
 }
 .match_selectUser>div.on .match_noneUser{display: none;}
 .match_noneUser{
@@ -244,7 +244,7 @@ input:-webkit-autofill {
 .register_adduserCards{border: 1px solid #DDC49B; padding: 0.5em 2.5%; background-color: #ddc49b20; border-radius: 0.3em;}
 
 .match_user_icon{
-    width: 65%; height: 40%; filter: invert(); margin-top: 7%; aspect-ratio: 1/0.7; position: relative; margin-bottom: 8%;
+    width: 65%; height: 40%; filter: invert(); margin-top: 15%; aspect-ratio: 1/0.7; position: relative; margin-bottom: 8%;
 }
 
 .match_user_icon img{

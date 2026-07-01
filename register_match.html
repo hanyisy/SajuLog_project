@@ -16,6 +16,93 @@
         <div class="register_title"><img src="./resources/img/register/match_subTit.webp" alt=""></div>
     </section>
 
+    <section class="register_match_addUserPopup_sec off">
+        <div class="register_match_addUserPopup">
+            <div class="register_match_closeBtn js_match_closePop"><p>&#215;</p></div>
+            <div class="register_match_addUserTop">
+                <h2>새 사주 입력</h2>
+                <p>저장해두면 다음 궁합에서 바로 불러올 수 있어요</p>
+            </div>
+            <form method="post" action="apply.html" name="saju_register_match_new">
+                <div class="register_match_addUserMid">
+                    <div class="register_formOption">
+                        <div class="register_optionBox">
+                            <div class="register_optionName">
+                                <p>이름</p>
+                                <span>초성으로만 입력하지 마시고, 전체 이름을 작성해주세요</span>
+                            </div>
+                            <div class="register_option">
+                                <input type="text" name="name" class="user-name" placeholder="이름" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="register_formOption">
+                        <div class="register_optionBox">
+                            <div class="register_optionName"><p>생년월일</p></div>
+                            <div class="register_option register_birth">
+                                <div class="register_select">
+                                    <select name="option2" required>
+                                        <option value="양력" selected>양력</option>
+                                        <option value="음력">음력</option>
+                                    </select>
+                                </div>
+                                <div class="register_input">
+                                    <input type="text" name="option3" maxlength="10" placeholder="YYYY-MM-DD" oninput="autoHyphen(this)" inputmode="numeric">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="register_optionBox">
+                            <div class="register_optionName register_birthTime_name">
+                                <p>태어난 시간</p>
+                            </div>
+                            <div class="register_option">
+                                <div class="register_select">
+                                    <select name="option4" class="register_birthTime_yes js_register_birthTime_yes" onchange="register_birthTimeYes_ch()" required>
+                                        <option value="" selected>선택하세요</option>
+                                        <option value="자시"><b>자시 (子時)</b> | 23:30 ~ 01:30</option>
+                                        <option value="축시"><b>축시 (丑時)</b> | 01:30 ~ 03:30</option>
+                                        <option value="인시"><b>인시 (寅時)</b> | 03:30 ~ 05:30</option>
+                                        <option value="묘시"><b>묘시 (卯時)</b> | 05:30 ~ 07:30</option>
+                                        <option value="진시"><b>진시 (辰時)</b> | 07:30 ~ 09:30</option>
+                                        <option value="사시"><b>사시 (巳時)</b> | 09:30 ~ 11:30</option>
+                                        <option value="오시"><b>오시 (午時)</b> | 11:30 ~ 13:30</option>
+                                        <option value="미시"><b>미시 (未時)</b> | 13:30 ~ 15:30</option>
+                                        <option value="신시"><b>신시 (申時)</b> | 15:30 ~ 17:30</option>
+                                        <option value="유시"><b>유시 (酉時)</b> | 17:30 ~ 19:30</option>
+                                        <option value="술시"><b>술시 (戌時)</b> | 19:30 ~ 21:30</option>
+                                        <option value="해시"><b>해시 (亥時)</b> | 21:30 ~ 23:30 </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="register_birthtime_checkBox">
+                                <div class="register_ckeck js_register_birthTime_no">
+                                    <label for="register_birthTime_nos">
+                                        <input type="checkbox" class="register_birthTime_no" id="register_birthTime_nos" value="시간모름" onchange="register_birthTimeNo_ch(this)"> <span>시간 모름</span> 
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="register_formOption" style="border-bottom: none;">
+                        <div class="register_optionBox">
+                            <div class="register_optionName"><p>성별</p></div>
+                            <div class="register_option gender_select">
+                                <input type="radio" id="op5_1" name="option5" required value="여성" >
+                                <label for="op5_1">여성</label>
+                                <input type="radio" id="op5_2" name="option5" required value="남성" >
+                                <label for="op5_2">남성</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="register_match_addUserBot">
+                    <div class="register_match_closePop js_match_closePop">취소</div>
+                    <div class="register_match_savePop js_match_savePop">저장하고 선택</div>
+                </div>
+            </form>
+        </div>
+    </section>
+
     <section class="register_match_sec2">
         <form method="post" action="apply.html" name="saju_register">
             <div class="register_formOption">
@@ -29,30 +116,32 @@
                         <div class="match_user1">
                             <div class="match_noneUser">
                                 <h1>?</h1>
-                                <p>선택하기</p>
+                                <div class="js_match_choose_type1 match_chooseUser1">&#10003; 선택하기</div>
+                                <div class="js_match_choose_type2" onclick="open_newUserpop('option1')">+ 신규입력</div>
                             </div>
                             <div class="match_user js_match_user">
                                 <div class="match_user_icon js_match_user_icon"><img src="" alt=""></div>
                                 <h1 class="js_match_user_Name">User</h1>
-                                <div class="match_change_user">교체하기</div>
+                                <div class="match_change_user match_chooseUser1">교체하기</div>
                             </div>
                         </div>
                         <div class="match_user2">
                             <div class="match_noneUser">
                                 <h1>?</h1>
-                                <p>선택하기</p>
+                                <div class="js_match_choose_type1 match_chooseUser2">&#10003; 선택하기</div>
+                                <div class="js_match_choose_type2" onclick="open_newUserpop('option2')">+ 신규입력</div>
                             </div>
                             <div class="match_user js_match_user">
                                 <div class="match_user_icon js_match_user_icon"><img src="" alt=""></div>
                                 <h1 class="js_match_user_Name">User</h1>
-                                <div class="match_change_user">교체하기</div>
+                                <div class="match_change_user match_chooseUser2">교체하기</div>
                             </div>
                         </div>
                     </div>
                     <div class="register_userListBox js_register_userListBox off">
                         <div id="user-list-container" style="color: black;"></div>
                     </div>
-                    <div class="register_saveBtn" style="margin-bottom: 5%;"><a href="./register_newUser_match.html" style="color: black; width: 100%; height: 100%; display: block;"> ← 새로운 사주 추가하기</a></div>
+                    <div class="register_saveBtn js_openNewUserPop" style="margin-bottom: 5%;"> ← 새로운 사주 추가하기</div>
                 </div>
             </div>
 

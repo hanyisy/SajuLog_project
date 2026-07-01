@@ -158,23 +158,82 @@ input:-webkit-autofill {
 }
 .match_selectUser>div.on .match_noneUser{display: none;}
 .match_noneUser{
-    width: 100%; height: 100%; color: #DDC49B;
-    display: flex; justify-content: center; align-items: center; flex-direction: column;
+    width: 100%; height: 100%; color: #DDC49B; padding-bottom: 5%;
+    display: flex; justify-content: end; align-items: center; flex-direction: column;
 }
 .match_user { display: none; background-color: white;} 
 /* .on이 붙으면 정보 보여주기 */
 .match_selectUser > div.on .match_user { 
     display: flex; flex-direction: column; align-items: center;  height: 100%; 
 }
-.match_noneUser h1{font-size: 4em; pointer-events: none;}
+.match_noneUser h1{font-size: 4em; pointer-events: none; margin-bottom: 10%;}
 .match_noneUser p{font-size: 1.5em; pointer-events: none;}
+.match_noneUser div{ 
+    font-size: 1.3em; width: 90%; text-align: center; border:1px solid #DDC49B; 
+    border-radius: 5em; margin-top: 3%; padding: 0.2em 0;
+}
+
+.register_match_addUserPopup_sec{
+    position: fixed; z-index: 10000; width: 100%; height: 100vh; backdrop-filter: blur(5px);
+    top: 50%; left: 50%; transform: translate(-50%,-50%); background-color: #0f0e0f9c;
+}
+.register_match_addUserPopup_sec.off{display: none;}
+.register_match_addUserPopup{
+    position: fixed; z-index: 100; width: 90%; max-width: 720px; border:1px solid #DDC49B; color: white;
+    top: 50%; left: 50%; transform: translate(-50%,-50%); background-color: #00001d;
+    max-height: 70vh; border-radius: 1em; padding: 2% 2.5%; overflow-y: scroll; padding-top: 5%;
+    -ms-overflow-style: none;  /* IE, Edge */
+    scrollbar-width: none;     /* Firefox */
+    box-shadow: 0 0 1em #000;
+}
+.register_match_addUserPopup::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
+.register_match_closeBtn{
+    position: absolute; z-index: 1; color: #DDC49B; border: 1px solid #DDC49B; aspect-ratio: 1/1;
+    width: 1.3em; text-align: center; border-radius: 50%; font-size: 2em;
+    display: flex; justify-content: center; align-items: center; top: 0; right: 0;
+    transform: translate(-50%,50%);
+}
+.register_match_addUserTop{
+    text-align: center; line-height: 180%; font-size: 1.2em; border-bottom: 2px solid #fff; padding-bottom: 2%;
+}
+.register_match_addUserTop p{color: #DDC49B;}
+.register_match_addUserBot{
+    width: 90%; margin: auto; display: flex; justify-content: space-between; align-items: center; margin-top: 5%; padding-bottom: 2%;
+}
+.register_match_addUserBot>div{
+    border: 1px solid #fff; font-size: 1.2em; border-radius: 0.5em; padding: 0.8em 0; text-align: center;
+    font-weight: 700;
+}
+.register_match_addUserBot>div:nth-child(1){
+    width: 25%; color: #fff; opacity: 0.7; background-color: #ffffff10;
+}
+.register_match_addUserBot>div:nth-child(2){
+    width: 73%; color: #DDC49B; border-color: #DDC49B; background-color: #DDC49B10;
+}
+
+.register_match_addUserMid{
+    width: 100%; margin-top: 5%; font-size: 1.2em;
+}
+.register_match_addUserMid div.register_formOption{
+    border-bottom: 1px solid #ffffff40; padding: 0 2.5%; padding-bottom: 0.5em; margin-bottom: 2%;
+}
 
 .js_register_userListBox.off{display: none;}
 .js_register_userListBox{
-    background-color: white; z-index: 10; display: block; border-radius: 0.5em;
-    width: 90%; position: absolute; left: 50%; top: 0; transform: translateX(-50%) translateY(-10%); z-index: 1;
-    max-height: 60vh; overflow-y: scroll;
+    background-color: #00001d; z-index: 10; display: block; border-radius: 0.5em;
+    width: 90%; position: fixed; left: 50%; top: 50%; max-width: 760px;
+    z-index: 1; transform: translateX(-50%) translateY(-50%); 
+    max-height: 60vh; overflow-y: scroll; padding: 0.5em; border: 1px solid #DDC49B; padding-bottom: 2em;
 }
+
+.register_userCards{
+    width: 100%; padding: 0.5em 2.5%; border-bottom: 1px solid #DDC49B; color: #fff;
+}
+.register_userCards:nth-last-child(2){margin-bottom: 2%;}
+.register_userCards h3{ color: #ddc49b;}
+.register_adduserCards{border: 1px solid #DDC49B; padding: 0.5em 2.5%; background-color: #ddc49b20; border-radius: 0.3em;}
 
 .match_user_icon{
     width: 65%; height: 40%; filter: invert(); margin-top: 7%; aspect-ratio: 1/0.7; position: relative; margin-bottom: 8%;

@@ -264,21 +264,52 @@ function renderUserList() {
         `;
         container.insertAdjacentHTML('beforeend', cardHtml);
     });
+    container.innerHTML += `
+            <div class="register_userCards register_adduserCards" onclick="open_newUserpop()">
+                <h3>+ 신규입력</h3>
+                <p>리스트에 없는 인물 추가하기</p>
+            </div>
+        `;
+}
+
+// =============================
+// 리스트 유저 추가 및 팝업관련 js
+// =============================
+
+function open_newUserpop(target) {
+    const popupSec = document.querySelector('.register_match_addUserPopup_sec');
+    if (!popupSec) return;
+
+    if (target) {
+        currentTarget = target; // 'option1' or 'option2'
+    } else {
+        currentTarget = null; // 리스트 추가 전용 모드
+    }
+
+    popupSec.classList.remove('off');
+}
+
+function closeNewUserPopup() {
+    const popupSec = document.querySelector('.register_match_addUserPopup_sec');
+    if (popupSec) popupSec.classList.add('off');
+
+    const form = document.querySelector('form[name="saju_register_match_new"]');
+    if (form) form.reset();
 }
 
 // =============================
 // 사주 추가하기 버튼
 // =============================
 function addNewUser() {
-    const name      = document.querySelector('input[name="name"]')?.value.trim();
-    const birthType = document.querySelector('select[name="option2"]')?.value;
-    const birthDate = document.querySelector('input[name="option3"]')?.value.trim();
-    const birthTime = document.querySelector('select[name="option4"]')?.value;
-    const gender    = document.querySelector('input[name="option5"]:checked')?.value;
-    const relation  = document.querySelector('.js_register_userType')?.value;
+    const form = document.querySelector('form[name="saju_register_match_new"]');
+    const name      = form.querySelector('input[name="name"]')?.value.trim();
+    const birthType = form.querySelector('select[name="option2"]')?.value;
+    const birthDate = form.querySelector('input[name="option3"]')?.value.trim();
+    const birthTime = form.querySelector('select[name="option4"]')?.value;
+    const gender    = form.querySelector('input[name="option5"]:checked')?.value;
 
-    if (!name || !birthDate || !gender || !relation || relation === '') {
-        alert('이름, 생년월일, 성별, 관계는 필수입력입니다.');
+    if (!name || !birthDate || !gender) {
+        alert('이름, 생년월일, 성별은 필수입력입니다.');
         return;
     }
 
@@ -296,9 +327,19 @@ function addNewUser() {
 
     sajuDataList.push(newUser);
     localStorage.setItem('sajuDataList', JSON.stringify(sajuDataList));
+    renderUserList();
 
-    alert(`${name} 사주가 추가되었습니다!`);
-    renderUserList(); // 같은 페이지면 바로 갱신
+    const newIndex = sajuDataList.length - 1;
+
+    if (currentTarget) {
+        // + 신규입력으로 들어온 경우 → 바로 슬롯에 선택
+        handleUserSelect(newIndex);
+    } else {
+        // 하단 버튼으로 들어온 경우 → 리스트 추가만
+        alert(`${name}님이 추가되었습니다.`);
+    }
+
+    closeNewUserPopup();
 }
 
 // =============================
@@ -308,11 +349,24 @@ document.addEventListener('DOMContentLoaded', () => {
     renderUserList();
 
     // 사주 추가 버튼
-    const addBtn = document.querySelector('.register_adduser');
-    if (addBtn) addBtn.addEventListener('click', addNewUser);
+    // const addBtn = document.querySelector('.register_adduser');
+    // if (addBtn) addBtn.addEventListener('click', addNewUser);
+    // 팝업 열기 (하단 버튼)
+document.querySelector('.js_openNewUserPop')?.addEventListener('click', () => open_newUserpop());
+
+// 팝업 닫기 (X, 취소 둘 다)
+document.querySelectorAll('.js_match_closePop').forEach(el => {
+    el.addEventListener('click', closeNewUserPopup);
+});
+
+// 저장 버튼
+document.querySelector('.js_match_savePop')?.addEventListener('click', addNewUser);
+
+// 팝업 기본은 닫힌 상태로 시작
+document.querySelector('.register_match_addUserPopup_sec')?.classList.add('off');
 
     // 유저 슬롯 클릭 → 리스트 열기
-    document.querySelectorAll('.match_user1, .match_user2').forEach((slot, index) => {
+    document.querySelectorAll('.match_chooseUser1, .match_chooseUser2').forEach((slot, index) => {
         slot.addEventListener('click', () => {
             currentTarget = `option${index + 1}`;
             const listBox = document.querySelector('.js_register_userListBox');

@@ -596,3 +596,64 @@ function initPayment(){
     closeBtn?.addEventListener("click", closeModal);
     dim?.addEventListener("click", closeModal);
 }
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+ 
+    // common.js는 productBtn에 붙인 js_kakaoUnlock_btn 클래스를
+    // 모달을 닫을 때 제거하지 않아서(resetModal 미제거), 한 번이라도
+    // 990원 체험판 모달을 열면 이후 정상 결제(25,900원 등)에서도
+    // 클래스가 남아있게 됩니다. 그래서 클래스 대신, openPayment 클릭
+    // 시점의 data-type을 이 스크립트가 직접 별도로 추적합니다.
+    let trackedPaymentType = "normal";
+ 
+    document.addEventListener("click", (e) => {
+        const openBtn = e.target.closest(".openPayment");
+        if (!openBtn) return;
+        trackedPaymentType = openBtn.dataset.type || "normal";
+    });
+ 
+    // common.js의 productBtn 클릭 리스너보다 나중에 실행되도록
+    // 캡처링 단계가 아닌 버블링 단계에서, 그리고 즉시 실행이 아니라
+    // 별도의 독립 리스너로 동일 클릭 이벤트를 한 번 더 관찰합니다.
+    document.addEventListener("click", (e) => {
+ 
+        const productBtn = e.target.closest(".js_product_btn");
+        if (!productBtn) return;
+ 
+        // 990원 체험판(trial) 케이스는 common.js의 unlock 로직이 담당하므로 제외
+        if (trackedPaymentType === "trial") return;
+ 
+        const modal = document.getElementById("paymentModal");
+        if (!modal) return;
+ 
+        const priceSelectedBox = modal.querySelector(".js_price_box.active");
+        const choiceSelectedBox = modal.querySelector(".js_product_choice_box.active");
+        const policyCheck = modal.querySelector(".js_product_check");
+ 
+        // common.js와 동일한 유효성 조건을 모두 통과했는지 확인
+        // (유효성 실패 시 common.js의 alert만 뜨고 결제/이동은 진행되면 안 됨)
+        if (!priceSelectedBox || !choiceSelectedBox || !policyCheck || !policyCheck.checked) {
+            return;
+        }
+ 
+        // 여기부터는 일반 결제(25,900원 등) 완료로 간주
+        const currentPage = location.pathname.split("/").pop().toLowerCase();
+ 
+        let target = null;
+        if (currentPage === "result.html" || currentPage === "result_again.html") {
+            target = "./result_prem.html";
+        } else if (currentPage === "result_match.html") {
+            target = "./result_match_full.html";
+        }
+ 
+        if (target) {
+            // common.js 쪽 처리(닫기/알림 등)가 먼저 실행되도록 약간 지연 후 이동
+            setTimeout(() => {
+                window.location.href = target;
+            }, 50);
+        }
+    });
+ 
+});

@@ -233,9 +233,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const kakaoBtn = document.querySelector('.js_kakaoUnlock_btn');
     if (kakaoBtn) {
         kakaoBtn.addEventListener('click', function (e) {
-            // 카카오 친추 확인 후 unlockAll() 호출하도록 교체
-            // 현재는 클릭 즉시 오픈
-            e.preventDefault(); // href="" 빈 링크 이동 방지
+            e.preventDefault(); // 링크 이동 방지
+
+            alert('잠금이 해제되었습니다.');
+
             unlockAll();
         });
     }

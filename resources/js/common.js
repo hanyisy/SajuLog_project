@@ -422,10 +422,14 @@ function initPayment(){
     const productBtn = modal.querySelector(".js_product_btn");
     const policyCheck = modal.querySelector(".js_product_check");
     const productChoice = modal.querySelector(".product_choice");
+    const modalTitle = modal.querySelector(".inner h1");
+
+    
 
     // STATE (단일화)
     let selectedPrice = null;
     let priceSelected = false;
+    let paymentType = "normal";
 
     // OPEN / CLOSE
     function openModal(){
@@ -529,6 +533,18 @@ function initPayment(){
             price: selectedPrice,
             method: selectedPay?.textContent
         });
+        if (paymentType === "trial") {
+
+            document.querySelector(".js_result_explainList").style.display = "";
+            document.querySelector(".result_match_addsec2").style.display = "";
+            document.querySelector(".js_kakaoUnlockBox").style.display = "none";
+
+            if (typeof animateMatchTable === "function") {
+                animateMatchTable();
+            }
+
+            closeModal();
+        }
 
     });
 
@@ -539,6 +555,30 @@ function initPayment(){
         if (!openBtn) return;
 
         e.preventDefault();
+
+        paymentType = openBtn.dataset.type || "normal";
+        modalTitle.textContent = "결제하기";
+
+        // 기본 UI
+        modal.querySelector(".price_choice").style.display = "";
+        productChoice.classList.remove("show");
+
+        if (paymentType === "trial") {
+            modalTitle.textContent = "990원 결제하기";
+            productBtn.classList.add("js_kakaoUnlock_btn");
+
+            modal.querySelector(".price_choice").style.display = "none";
+
+            selectedPrice = 990;
+            priceSelected = true;
+
+            productChoice.classList.add("show");
+
+            productBtn.classList.remove("active");
+            productBtn.classList.add("ready");
+            productBtn.textContent = "결제수단을 선택해주세요";
+        }
+
         openModal();
 
     });

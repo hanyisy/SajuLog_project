@@ -20,11 +20,11 @@
 
 
 /* 오행별 동물색상 설정 */
-.ani_saju_green  { filter: invert(49%) sepia(85%) saturate(1382%) hue-rotate(90deg) brightness(104%) contrast(106%);}
-.ani_saju_red    { filter: invert(53%) sepia(86%) saturate(5028%) hue-rotate(321deg) brightness(100%) contrast(102%);}
-.ani_saju_yellow { filter: invert(82%) sepia(31%) saturate(2301%) hue-rotate(358deg) brightness(105%) contrast(106%);}
-.ani_saju_blue   { filter: invert(74%) sepia(91%) saturate(2576%) hue-rotate(132deg) brightness(99%) contrast(100%);}
-.ani_saju_white  { filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(105%) contrast(102%);}
+.ani_saju_green  { filter:brightness(0) invert(49%) sepia(85%) saturate(1382%) hue-rotate(90deg) brightness(104%) contrast(106%);}
+.ani_saju_red    { filter:brightness(0) invert(53%) sepia(86%) saturate(5028%) hue-rotate(321deg) brightness(100%) contrast(102%);}
+.ani_saju_yellow { filter:brightness(0) invert(82%) sepia(31%) saturate(2301%) hue-rotate(358deg) brightness(105%) contrast(106%);}
+.ani_saju_blue   { filter:brightness(0) invert(74%) sepia(91%) saturate(2576%) hue-rotate(132deg) brightness(99%) contrast(100%);}
+.ani_saju_white  { filter:brightness(0) invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(105%) contrast(102%);}
 
 .header_deco_obj>div:nth-child(2){display: none;}
 
@@ -272,7 +272,7 @@ height: .2em; background: #fff; top: -.35em; left: 50%; transform: translateX(-5
 }
 
 .result_userAni1{
-    opacity: 0.3; position: absolute; width: 80%; z-index: -1;
+    opacity: 0.1; position: absolute; width: 80%; z-index: -1;
     left: 0; top: 0; overflow: hidden; transform: translateX(-8%);
     height: 150%;
 }
@@ -280,11 +280,11 @@ height: .2em; background: #fff; top: -.35em; left: 50%; transform: translateX(-5
 .result_userAni1 img{
     width: 100%; object-fit: contain;
     display: block; position: absolute;
-    left: 0; bottom: 0; transform: translateX(-60%) translateY(50%); 
+    left: 0; top: 0;
 }
 
 .result_userAni2{
-    opacity: 0.3; position: absolute; width: 80%; z-index: -1;
+    opacity: 0.1; position: absolute; width: 80%; z-index: -1;
     right: 0; top: 0; overflow: hidden; transform: translateX(8%);
     height: 150%;
 }
@@ -292,7 +292,7 @@ height: .2em; background: #fff; top: -.35em; left: 50%; transform: translateX(-5
 .result_userAni2 img{
     width: 100%; object-fit: contain;
     display: block; position: absolute;
-    right: 0; bottom: 0; transform: translateX(60%) translateY(50%); 
+    right: 0; top: 0; transform: scaleX(-1); 
 }
 
 .result_userProf_etc{
@@ -363,7 +363,7 @@ height: .2em; background: #fff; top: -.35em; left: 50%; transform: translateX(-5
 }
 
 .result_match_sec3_exTxtadd{
-    font-weight: 700; font-size: 1.3em;
+    font-weight: 700; font-size: 1.3em; color: #fdc7ff;
 }
 
 .result_match_sec3_table{

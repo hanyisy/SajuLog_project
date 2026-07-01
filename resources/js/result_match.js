@@ -12,7 +12,7 @@ const sajuResult = {
     user2: {
         userName:"user2",
         userPart:"친구",
-        userAni:"dog",
+        userAni:"dragon",
         userAnicolor:"blue",
         userKeywords:['계사', '을미', '계오', '무유'],
         userProf:"1994년 05월 31일 | 양력 | 13:35 | 여성"
@@ -371,6 +371,18 @@ function setupKakaoUnlock() {
   });
 }
 
+function setupUnlockMat(){
+    const explainList = document.querySelector('.js_result_explainList');
+    const premSec = document.querySelector('.result_match_addsec2');
+    if (explainList) explainList.style.display = '';
+    if (premSec) premSec.style.display = '';
+
+    const kakaoBox = document.querySelector('.js_kakaoUnlockBox');
+    if (kakaoBox) kakaoBox.style.display = 'none';
+
+    animateMatchTable(); 
+}
+
 // 모든 렌더링이 끝난 후 실행
 document.addEventListener('DOMContentLoaded', () => {
     renderSaju();      // 만세력 데이터 렌더링
@@ -378,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animateMatchScore(); 
     // animateMatchTable(); 
     setupKakaoUnlock();
-
+  setupUnlockMat()
     
 });
 

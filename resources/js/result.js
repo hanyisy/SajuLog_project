@@ -243,6 +243,33 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+document.addEventListener('DOMContentLoaded', function () {
+
+
+
+    // =========================
+    // 990원 결제 버튼 추가
+    // =========================
+    const payBtn = document.querySelector('.openPayment[data-type="trial"]');
+
+    if (payBtn) {
+        payBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // 여기서 모달 열려있다고 가정
+            const modalPayBtn = document.querySelector('.payment_modal .pay_confirm_btn');
+
+            if (modalPayBtn) {
+                modalPayBtn.onclick = function () {
+                    // 결제 성공 처리
+                    unlockAll(); // 핵심
+                };
+            }
+        });
+    }
+});
+
+
 
 
 const reviewData = [

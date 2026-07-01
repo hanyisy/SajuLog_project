@@ -440,7 +440,14 @@ function initPayment(){
     function closeModal(){
         modal.classList.remove("active");
         document.body.classList.remove("modal_open");
+
         resetModal();
+
+        const sec3 = document.querySelector(".main_section3");
+        const review = document.querySelector(".result_reviewBox");
+
+        if (sec3) sec3.style.display = "block";
+        if (review) review.style.display = "block";
     }
 
     function resetModal(){
@@ -536,7 +543,9 @@ function initPayment(){
         if (paymentType === "trial") {
 
             document.querySelector(".js_result_explainList").style.display = "";
-            document.querySelector(".result_match_addsec2").style.display = "";
+            if (document.querySelector(".result_match_addsec2")) {
+                document.querySelector(".result_match_addsec2").style.display = "";
+            }     
             document.querySelector(".js_kakaoUnlockBox").style.display = "none";
 
             if (typeof animateMatchTable === "function") {

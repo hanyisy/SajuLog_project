@@ -19,7 +19,7 @@ font-weight: 500; }
 .js_product_choice_box { color: #DDC49B; text-align: center; border: 1.5px solid #DDC49B; margin-bottom: .5em; cursor: pointer;
 font-size: 2em; padding: .3em 0; transition: .3s; margin-bottom: .5em; }
 
-.product_policy { color: #fff; display: flex; gap: .5em; align-items: center; }
+.product_policy { color: #fff; display: flex; gap: .3em; align-items: center; }
 
 .js_product_check { appearance: none; width: 1.2em; height: 1.2em; border: 1.5px solid #fff; cursor: pointer; position: relative; flex-shrink: 0; }
 .product_policy label { font-weight: 200; cursor: pointer; font-size: .8em; }

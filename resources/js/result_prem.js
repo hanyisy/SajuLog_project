@@ -231,6 +231,11 @@ function toggleExplain(index, element) {
 
 document.addEventListener('DOMContentLoaded', renderPremExplains);
 
+
+
+// ============================================================
+// 로딩
+// ============================================================
 document.addEventListener('DOMContentLoaded', () => {
   const loadBox   = document.querySelector('.result_loadBox');
   const gage      = document.querySelector('.result_gage');
@@ -289,6 +294,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, INTERVAL);
 
+
+  // ============================================================
+// 풀이창 헤더
+// ============================================================
   // btnBox 높이에 따라 sec1 padding-top 동기화
     const btnBox = document.querySelector('.resultPrem_btnBox');
 const sec1   = document.querySelector('.resultPrem_sec1');

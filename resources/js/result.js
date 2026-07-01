@@ -471,3 +471,66 @@ function renderReviews() {
             rt = setTimeout(() => setWrapHeight(visibleHeight(0), false), 150);
           });
         })();
+
+
+// ============================================================
+// 로딩
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  const loadBox   = document.querySelector('.result_loadBox');
+  const gage      = document.querySelector('.result_gage');
+  const loadTxt   = document.querySelector('.result_loadTxt');
+  const loadingP  = document.querySelector('.result_loadingBox > p');
+
+  const DURATION  = 8500;
+  const INTERVAL  = 30;
+  const STEPS     = DURATION / INTERVAL;
+
+  // 점 애니메이션
+  const texts = ['사주 분석 중', '풀이 준비 중'];
+  let current = 0;
+  let dotStep = 0;
+  let textIndex = 0;
+
+  // 점 업데이트 (400ms마다)
+  const dotTimer = setInterval(() => {
+    dotStep = (dotStep + 1) % 4; // 0,1,2,3 → '','.','..','..'
+    const dots = '.'.repeat(dotStep);
+    loadingP.textContent = texts[textIndex] + ' ' + dots;
+  }, 400);
+
+  // 게이지
+  const gageTimer = setInterval(() => {
+    current++;
+    const progress = (current / STEPS) * 100;
+
+    gage.style.width = progress + '%';
+
+    // 50%에서 텍스트 + 이미지 전환
+    if (progress >= 30 && textIndex === 0) {
+      textIndex = 1;
+      dotStep = 0;
+      loadTxt.classList.add('on');
+    }
+
+    if (current >= STEPS) {
+      clearInterval(gageTimer);
+      clearInterval(dotTimer);
+      gage.style.width = '100%';
+      loadingP.textContent = '풀이 준비 중 ...';
+      loadBox.classList.add('on');
+
+      const header = document.querySelector('header');
+    const btnBox = document.querySelector('.resultPrem_btnBox');
+    if (header && btnBox) {
+        btnBox.style.top = header.getBoundingClientRect().height + 'px';
+        syncPadding(); 
+        window.addEventListener('resize', () => {
+            btnBox.style.top = header.getBoundingClientRect().height + 'px';
+            syncPadding(); 
+        });
+    }
+
+    }
+  }, INTERVAL);
+});

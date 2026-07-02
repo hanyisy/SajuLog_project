@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/css/font.css" type="text/css">
+    <link rel="stylesheet" href="./resources/css/mainpage.css" type="text/css">
+    <link rel="stylesheet" href="./resources/css/result.css" type="text/css">
+    <title>사주결과페이지</title>
+</head>
+<body>
+    <header></header>
+    <div id="paymentContainer"></div>
+    
+    <section class="result_freeSec">
+        <div class="result_freeBgImg"><img src="./resources/img/result/result_freebg.webp" alt=""></div>
+        <div><img src="./resources/img/result/result_freeBlankBox.webp" alt=""></div>
+        <div class="result_sec1" style="padding-top: 0%;">
+            <div class="result_userTitle">
+                <h1><span class="js_result_userName">user</span>님</h1>
+                <h2 class="js_result_userProf">생년 | 양력 | 13:25 | 남성</h2>
+            </div><div class="js_result_userAnimal">갑술 (푸른 개)</div>
+        </div>
+
+        <div class="result_freeMid">
+
+            <div class="result_free_sajuFrame">
+                <div><img src="./resources/img/result/result_frametop.webp" alt=""></div>
+                <div><img src="./resources/img/result/result_framemid.webp" alt=""></div>
+                <div><img src="./resources/img/result/result_framebot.webp" alt=""></div>
+            </div>
+            
+            <div class="result_sajuList">
+                <div>
+                    <p class="result_name1">시주</p>
+                    <div class="result_saju_time1">
+                        <h1 class="result_saju_kanji">丁</h1>
+                        <span class="result_saju_kanji_name">정</span>
+                        <p class="result_saju_kanji_sibseong">비견</p>
+                    </div>
+                    <div class="result_saju_time2">
+                        <h1 class="result_saju_kanji"></h1>
+                        <span class="result_saju_kanji_name"></span>
+                        <p class="result_saju_kanji_sibseong"></p>
+                    </div>
+                </div>
+                <div>
+                    <p class="result_name1">일주</p>
+                    <div class="result_saju_day1">
+                        <h1 class="result_saju_kanji"></h1>
+                        <span class="result_saju_kanji_name"></span>
+                        <p class="result_saju_kanji_sibseong"></p>
+                    </div>
+                    <div class="result_saju_day2">
+                        <h1 class="result_saju_kanji"></h1>
+                        <span class="result_saju_kanji_name"></span>
+                        <p class="result_saju_kanji_sibseong"></p>
+                    </div>
+                </div>
+                <div>
+                    <p class="result_name1">월주</p>
+                    <div class="result_saju_month1">
+                        <h1 class="result_saju_kanji"></h1>
+                        <span class="result_saju_kanji_name"></span>
+                        <p class="result_saju_kanji_sibseong"></p>
+                    </div>
+                    <div class="result_saju_month2">
+                        <h1 class="result_saju_kanji"></h1>
+                        <span class="result_saju_kanji_name"></span>
+                        <p class="result_saju_kanji_sibseong"></p>
+                    </div>
+                </div>
+                <div>
+                    <p class="result_name1">연주</p>
+                    <div class="result_saju_year1">
+                        <h1 class="result_saju_kanji"></h1>
+                        <span class="result_saju_kanji_name"></span>
+                        <p class="result_saju_kanji_sibseong"></p>
+                    </div>
+                    <div class="result_saju_year2">
+                        <h1 class="result_saju_kanji"></h1>
+                        <span class="result_saju_kanji_name"></span>
+                        <p class="result_saju_kanji_sibseong"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="result_free_sajuTxt">
+            <div class="result_sajuList">
+                <div class="result_saju_time_jijanggan"></div>
+                <div class="result_saju_day_jijanggan"></div>
+                <div class="result_saju_month_jijanggan"></div>
+                <div class="result_saju_year_jijanggan"></div>
+            </div>
+            <div class="result_sajuList">
+                <div class="result_saju_time_unseong"></div>
+                <div class="result_saju_day_unseong"></div>
+                <div class="result_saju_month_unseong"></div>
+                <div class="result_saju_year_unseong"></div>
+            </div>
+            <div class="result_sajuList">
+                <div class="result_saju_time_shinsal"></div>
+                <div class="result_saju_day_shinsal"></div>
+                <div class="result_saju_month_shinsal"></div>
+                <div class="result_saju_year_shinsal"></div>
+            </div>
+            <div class="result_sajuList">
+                <div class="result_saju_time_etc"></div>
+                <div class="result_saju_day_etc"></div>
+                <div class="result_saju_month_etc"></div>
+                <div class="result_saju_year_etc"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="result_score">
+        <div class="score_con">
+            <div class="score_box">
+                <p>돈복</p>
+                <div class="score_btm score_high">
+                    <h3>94<span>/100</span></h3>
+                    <p>상위 3%</p>
+                </div>
+            </div>
+            <div class="score_box">
+                <p>인복</p>
+                <div class="score_btm score_high">
+                    <h3>93<span>/100</span></h3>
+                    <p>상위 3%</p>
+                </div>
+            </div>
+            <div class="score_box">
+                <p>귀인운</p>
+                <div class="score_btm score_high">
+                    <h3>91<span>/100</span></h3>
+                    <p>상위 3%</p>
+                </div>
+            </div>
+            <div class="score_box">
+                <p>승부운</p>
+                <div class="score_btm">
+                    <h3>87<span>/100</span></h3>
+                </div>
+            </div>
+            <div class="score_box">
+                <p>직감</p>
+                <div class="score_btm">
+                    <h3>85<span>/100</span></h3>
+                </div>
+            </div>
+            <div class="score_box">
+                <p>기회 감지</p>
+                <div class="score_btm">
+                    <h3>85<span>/100</span></h3>
+                </div>
+            </div>
+            <div class="score_box">
+                <p>성장운</p>
+                <div class="score_btm">
+                    <h3>82<span>/100</span></h3>
+                </div>
+            </div>
+            <div class="score_box">
+                <p>멘탈</p>
+                <div class="score_btm score_low">
+                    <h3>76<span>/100</span></h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="result_sec3">
+        <div class="result_explainTitle">
+            <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/result_subtitleFrame.webp" alt="">
+            <div>
+                <h1>사주해설</h1>
+                <!-- <p>각 제목을 클릭하면 해설을 볼 수 있어요!</p> -->
+            </div>
+        </div>
+
+        <!-- 맛보기 요약 섹션 -->
+        <div class="result_summaryBox">
+            <img src="./resources/img/result/result_txtBoxBg.webp" alt="">
+            <p class="result_summaryTxt js_result_summaryTxt"></p>
+        </div>
+
+        <!-- 카카오 친추 잠금 박스 -->
+        <div class="result_kakaoUnlockBox js_kakaoUnlockBox">
+            <div class="result_bgprotect"><img src="./resources/img/result/result_pro.webp" alt=""></div>
+            <div class="result_kakaoUnlock_inner">
+                <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/result_lock.webp" alt="">
+                <p class="result_kakaoUnlock_title">나머지 해설이 잠겨있어요</p>
+                <p class="result_kakaoUnlock_desc">카카오채널 친구추가 후<br>사주 해설 전체를 <b style=" color: #fa2500; display:inline-block; padding-right:0.1em; font-weight:700;">무료</b>로 확인하세요</p>
+                <!-- 카카오채널 URL을 href="" 안에 입력 -->
+                <!-- <a href="" target="_blank" class="result_kakaoUnlock_btn js_kakaoUnlock_btn">
+                    <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/kakao_icon.webp" alt="" onerror="this.style.display='none'">
+                    카카오채널 친구추가 후 전체보기
+                </a> -->
+                <a href="" target="_blank" class="result_kakaoUnlock_btn js_kakaoUnlock_btn">
+                    <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/kakao_icon.webp" alt="" onerror="this.style.display='none'">
+                    <span class="result_kakaoUnlockBoxTT">
+                        <!-- <span>카카오채널 친구추가 후 </span>
+                        <div>
+                            <span>무료로 보기</span>
+                        </div> -->
+                        <img src="https://land.withusmk.co.kr/assets/saju/resources/img/result/kakao_txtBtn_3.webp" alt="">
+                    </span>
+                </a>
+                <!-- 개발자가 친추 확인 후 unlock 처리할 버튼 (필요시 사용) -->
+                <!-- <button class="result_kakaoUnlock_confirm js_kakaoUnlock_confirm">친구추가 완료했어요</button> -->
+            </div>
+        </div>
+
+        <!-- 해설 리스트 (전체 잠금 → 친추 후 오픈) -->
+        <div class="result_explainList js_result_explainList" style="display:none;"></div>
+        
+        <div class="result_explain_claim result_explain_claimB" style="display:none; font-size: 1.5em; text-align: center;">
+            <p style="line-height: 1.5;">자네의 사주에는 아직 꺼내지 않은<br>'진짜' 이야기가 남아 있다네</p>
+            <p style="color: #fff; font-size: 1em; margin: 1em 0;">지금까지는 운명의 문을 두드린 것뿐.</p>
+            <p style="font-size: 1.4em; margin-bottom: 0;"><span style="color: #fff; font-size: .7em;">운명의 깊은 흐름과 숨겨진 가능성.</span><br>이제 그 답을 마주해보세.</p>
+        </div>
+    </section>
+
+    <section class="main_section3" style="display:none;">
+        <div class="main_sec3_bg">
+            <div><img src="./resources/img/main-img/mainpremium_bg.webp" alt=""></div>
+            <div><img src="./resources/img/main-img/mainpremium_topFrame.webp" alt=""></div>
+            <div><img src="./resources/img/main-img/mainpremium_botFrame.webp" alt=""></div>
+        </div>
+        <div class="main_sec3_top">
+            <div><img src="./resources/img/main-img/mainpremium_ob.webp" alt=""></div>
+            <h4>당신의 인생에서</h4>
+            <h2>가장 큰 기회와 위기를</h2>
+            <h2>미리 알 수 있다면?</h2>
+            <h3 style="font-size: 1.1em;">몰랐다면 평생 후회할 인생전환점</h3>
+        </div>
+        <div class="main_sec3_mid">
+            <img src="./resources/img/main-img/mainpremium_midFrame.webp" alt="">
+            <ul>
+                <li>
+                    <div><img src="./resources/img/main-img/mainpremium_checkob.webp" alt=""></div>
+                    <p>인생 터닝포인트 TOP5</p>
+                </li>
+                <li>
+                    <div><img src="./resources/img/main-img/mainpremium_checkob.webp" alt=""></div>
+                    <p>반드시 조심해야 할 시기 TOP5</p>
+                </li>
+                <li>
+                    <div><img src="./resources/img/main-img/mainpremium_checkob.webp" alt=""></div>
+                    <p>가장 큰돈이 들어오는 시기 TOP3</p>
+                </li>
+                <li>
+                    <div><img src="./resources/img/main-img/mainpremium_checkob.webp" alt=""></div>
+                    <p>돈을 가장 많이 잃을 수 있는 시기</p>
+                </li>
+                <li>
+                    <div><img src="./resources/img/main-img/mainpremium_checkob.webp" alt=""></div>
+                    <p>가장 운이 강한 나이와 그 이유</p>
+                </li>
+                <li>
+                    <div><img src="./resources/img/main-img/mainpremium_checkob.webp" alt=""></div>
+                    <p>귀인운 분석</p>
+                </li>
+                <li>
+                    <div><img src="./resources/img/main-img/mainpremium_checkob.webp" alt=""></div>
+                    <p>결혼 적기 및 배우자운 분석</p>
+                </li>
+                <li>
+                    <div><img src="./resources/img/main-img/mainpremium_checkob.webp" alt=""></div>
+                    <p>결혼 후 재물운,가정운 변화</p>
+                </li>
+                <li>
+                    <div><img src="./resources/img/main-img/mainpremium_checkob.webp" alt=""></div>
+                    <p>평생 재산 흐름 분석</p>
+                </li>
+                <li>
+                    <div><img src="./resources/img/main-img/mainpremium_checkob.webp" alt=""></div>
+                    <p>향후 10년 인생 로드맵</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tit">
+            <h2>90%는 모르는 <span>진</span><span>짜</span> 사주의 비밀</h2>
+            <p>태어난 시간을 그대로 넣으면, 당신의 사주가 달라질 수도 있다는 사실. 알고 계셨나요?</p>
+            <h3>사주로그는 정확한 진태양시 보정과 절기 계산까지.<br>정통 명리학의 기준으로 제대로 분석합니다.</h3>
+        </div>
+
+        <div class="main_sec3_bot">
+            <div><img src="./resources/img/result/price.webp" alt=""></div>
+        </div>
+        <div class="main_sec3_preSajuBtn"><a href="./register_prem.html" class="openPayment">지금 프리미엄사주 보러가기</a></div>
+    </section>
+
+    <section class="result_reviewBox" style="display:none;">
+        <img src="./resources/img/result/review_bg.webp" alt="">
+        <div class="review_tit">
+            <div><img src="./resources/img/result/review_Tit.webp" alt=""></div>
+            <h3>만족도 (별) 4.9  실제 설문참여 후기 384건 </h3>
+        </div>
+        <div class="review_slideWrap">
+            <div class="review_list">
+                <!-- <div class="review_frameBox">
+                    <div class="review_box">
+                        <div class="review_userBox">
+                            <div class="review_userImg"><img src="./resources/img/animal/w_mou.webp" alt=""></div>
+                            <div class="review_userTxt">
+                                <h3>정O영</h3><span>31세 여성 · 오늘</span>
+                            </div>
+                            <div class="review_star">
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="review_userrev">
+                            평소 사주에 관심이 많아 이곳저곳 많이 찾아보는편인데, 좀 색다른 풀이들이 많아서 신선했어요. 충분히 추천받을만 합니다^^
+                        </div>
+                    </div>
+                    <div class="review_frame">
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                    <div class="frame_cell"></div>
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                    <div class="frame_cell"></div>
+                    <div class="frame_cell" style="border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-left: 2px solid #b89f82;"></div>
+                    </div>
+                    <div class="review_frame2">
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                    <div class="frame_cell"></div>
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                    <div class="frame_cell"></div>
+                    <div class="frame_cell" style="border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-left: 2px solid #b89f82;"></div>
+                    </div>
+                </div>
+
+                <div class="review_frameBox">
+                    <div class="review_box">
+                    <div class="review_userBox">
+                        <div class="review_userImg"><img src="./resources/img/animal/w_rab.webp" alt=""></div>
+                        <div class="review_userTxt">
+                            <h3>김O연</h3><span>29세 여성 · 오늘</span>
+                        </div>
+                        <div class="review_star">
+                            <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                            <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                            <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                            <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                            <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="review_userrev">
+                        원래 후기 잘 안 남기는데 생각보다 만족해서 남겨봐요.
+                        제가 왜 늘 비슷한 문제로 고민하는지 설명해주시는데 좀 놀랐네요ㅋㅋ
+                        보면서 진짜 뜨끔한적이 한두번이 아니에요 ㅋㅋ 굿
+                    </div>
+                    </div>
+                    <div class="review_frame">
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                    <div class="frame_cell"></div>
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                    <div class="frame_cell"></div>
+                    <div class="frame_cell" style="border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-left: 2px solid #b89f82;"></div>
+                    </div>
+                    <div class="review_frame2">
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                    <div class="frame_cell"></div>
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                    <div class="frame_cell"></div>
+                    <div class="frame_cell" style="border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-left: 2px solid #b89f82;"></div>
+                    </div>
+                </div>
+
+                <div class="review_frameBox">
+                    <div class="review_box">
+                    <div class="review_userBox">
+                        <div class="review_userImg"><img src="./resources/img/animal/w_tig.webp" alt=""></div>
+                        <div class="review_userTxt">
+                            <h3>박O호</h3><span>36세 남성 · 오늘</span>
+                        </div>
+                        <div class="review_star">
+                            <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                            <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                            <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                            <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                            <div><img src="./resources/img/result/review_star0.5.webp" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="review_userrev">
+                        와이프가 예약해서 같이 봤는데 생각보다 괜찮았습니다.
+
+특히 성격적인 부분은 공감되는 내용이 많았네요.
+
+반신반의했는데 돈 아깝다는 생각은 안 들었습니다.
+                    </div>
+                    </div>
+                    <div class="review_frame">
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                    <div class="frame_cell"></div>
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                    <div class="frame_cell"></div>
+                    <div class="frame_cell" style="border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-left: 2px solid #b89f82;"></div>
+                    </div>
+                    <div class="review_frame2">
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                    <div class="frame_cell"></div>
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                    <div class="frame_cell"></div>
+                    <div class="frame_cell" style="border-right: 2px solid #b89f82;"></div>
+                    <div class="frame_cell" style="border-top: 2px solid #b89f82; border-left: 2px solid #b89f82;"></div>
+                    </div>
+                </div>
+
+                
+                <div class="review_frameBox">
+                    <div class="review_box">
+                        <div class="review_userBox">
+                            <div class="review_userImg"><img src="./resources/img/animal/w_pig.webp" alt=""></div>
+                            <div class="review_userTxt">
+                                <h3>최O영</h3><span>33세 여성 · 1일 전</span>
+                            </div>
+                            <div class="review_star">
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="review_userrev">
+                            썸 타는 사람이 있어서 봤는데 오히려 제 연애 습관을 더 알게 된 느낌ㅋㅋ
+
+왜 항상     비슷한 사람을 만나는지도 알 것 같고...
+
+생각보다     만족했어요.
+                        </div>
+                    </div>
+                    <div class="review_frame">
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-left: 2px solid #b89f82;"></div>
+                    </div>
+                    <div class="review_frame2">
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-left: 2px solid #b89f82;"></div>
+                    </div>
+                </div>
+
+                
+                <div class="review_frameBox">
+                    <div class="review_box">
+                        <div class="review_userBox">
+                            <div class="review_userImg"><img src="./resources/img/animal/w_pig.webp" alt=""></div>
+                            <div class="review_userTxt">
+                                <h3>최O영</h3><span>33세 여성 · 1일 전</span>
+                            </div>
+                            <div class="review_star">
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="review_userrev">
+                            썸 타는 사람이 있어서 봤는데 오히려 제 연애 습관을 더 알게 된 느낌ㅋㅋ
+
+왜 항상     비슷한 사람을 만나는지도 알 것 같고...
+
+생각보다     만족했어요.
+                        </div>
+                    </div>
+                    <div class="review_frame">
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-left: 2px solid #b89f82;"></div>
+                    </div>
+                    <div class="review_frame2">
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-left: 2px solid #b89f82;"></div>
+                    </div>
+                </div>
+
+                
+                <div class="review_frameBox">
+                    <div class="review_box">
+                        <div class="review_userBox">
+                            <div class="review_userImg"><img src="./resources/img/animal/w_pig.webp" alt=""></div>
+                            <div class="review_userTxt">
+                                <h3>최O영</h3><span>33세 여성 · 1일 전</span>
+                            </div>
+                            <div class="review_star">
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="review_userrev">
+                            썸 타는 사람이 있어서 봤는데 오히려 제 연애 습관을 더 알게 된 느낌ㅋㅋ
+
+왜 항상     비슷한 사람을 만나는지도 알 것 같고...
+
+생각보다     만족했어요.
+                        </div>
+                    </div>
+                    <div class="review_frame">
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-left: 2px solid #b89f82;"></div>
+                    </div>
+                    <div class="review_frame2">
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-left: 2px solid #b89f82;"></div>
+                    </div>
+                </div>
+
+                
+                <div class="review_frameBox">
+                    <div class="review_box">
+                        <div class="review_userBox">
+                            <div class="review_userImg"><img src="./resources/img/animal/w_pig.webp" alt=""></div>
+                            <div class="review_userTxt">
+                                <h3>최O영</h3><span>33세 여성 · 1일 전</span>
+                            </div>
+                            <div class="review_star">
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                                <div><img src="./resources/img/result/review_star.webp" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="review_userrev">
+                            썸 타는 사람이 있어서 봤는데 오히려 제 연애 습관을 더 알게 된 느낌ㅋㅋ
+
+왜 항상     비슷한 사람을 만나는지도 알 것 같고...
+
+생각보다     만족했어요.
+                        </div>
+                    </div>
+                    <div class="review_frame">
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-left: 2px solid #b89f82;"></div>
+                    </div>
+                    <div class="review_frame2">
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-left: 2px solid #b89f82;"></div>
+                        <div class="frame_cell"></div>
+                        <div class="frame_cell" style="border-right: 2px solid #b89f82;"></div>
+                        <div class="frame_cell" style="border-top: 2px solid #b89f82; border-left: 2px solid #b89f82;"></div>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </section>
+
+    <footer></footer>
+
+    <section class="result_loadBox">
+        <div class="result_bgMovie">
+            <video class="main_bg" id="mainBgVideo" autoplay muted loop playsinline preload="auto" poster="resources/img/main-img/main_thum.webp">
+                <source src="resources/img/result/freeResult_wMov.webm" type="video/webm">
+                <source src="resources/img/result/freeResult_Mov.mp4" type="video/mp4">
+            </video> 
+        </div>
+        <div class="result_prem_load">
+            <div class="result_load_top">
+                <img src="./resources/img/result/prem_result_loadT_2.webp" alt="">
+            </div>
+            <div class="result_loadingBox">
+                <div class="result_loadTxt">
+                    <img src="./resources/img/result/free_result_loadT.webp" alt="">
+                    <img src="./resources/img/result/free_result_loadT_1.webp" alt="">
+                </div>
+                <div class="result_load">
+                    <div class="result_gage"></div>
+                </div>
+                <p>사주 분석 중 ...</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sticky_Bottom_Bar js_sticky_Bottom_Bar"></section>
+
+    <script src="resources/js/result.js"></script>
+    <script src="./resources/js/common.js"></script>
+</body>
+</html>

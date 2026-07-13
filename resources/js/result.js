@@ -544,27 +544,31 @@ function renderReviews() {
 // 로딩
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
-  const loadBox   = document.querySelector('.result_loadBox');
-  const gage      = document.querySelector('.result_gage');
-  const loadTxt   = document.querySelector('.result_loadTxt');
-  const loadingP  = document.querySelector('.result_loadingBox > p');
+    const loadBox   = document.querySelector('.result_loadBox');
+    const gage      = document.querySelector('.result_gage');
+    const loadTxt   = document.querySelector('.result_loadTxt1');
+    const loadImgs = loadTxt.querySelectorAll('img');
+    const loadingP  = document.querySelector('.result_loadingBox > p');
+    let currentImgIndex = 0;
 
-  const DURATION  = 8500;
-  const INTERVAL  = 30;
-  const STEPS     = DURATION / INTERVAL;
+    loadImgs[currentImgIndex]?.classList.add('on');
 
-  // 점 애니메이션
-  const texts = ['사주 분석 중', '풀이 준비 중'];
-  let current = 0;
-  let dotStep = 0;
-  let textIndex = 0;
+    const DURATION  = 8500;
+    const INTERVAL  = 30;
+    const STEPS     = DURATION / INTERVAL;
 
-  // 점 업데이트 (400ms마다)
-  const dotTimer = setInterval(() => {
-    dotStep = (dotStep + 1) % 4; // 0,1,2,3 → '','.','..','..'
-    const dots = '.'.repeat(dotStep);
-    loadingP.textContent = texts[textIndex] + ' ' + dots;
-  }, 400);
+    // 점 애니메이션
+    const texts = ['사주 분석 중', '풀이 준비 중'];
+    let current = 0;
+    let dotStep = 0;
+    let textIndex = 0;
+
+    // 점 업데이트 (400ms마다)
+    const dotTimer = setInterval(() => {
+        dotStep = (dotStep + 1) % 4; // 0,1,2,3 → '','.','..','..'
+        const dots = '.'.repeat(dotStep);
+        loadingP.textContent = texts[textIndex] + ' ' + dots;
+    }, 400);
 
   // 게이지
   const gageTimer = setInterval(() => {
@@ -573,11 +577,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     gage.style.width = progress + '%';
 
-    // 50%에서 텍스트 + 이미지 전환
-    if (progress >= 30 && textIndex === 0) {
-      textIndex = 1;
-      dotStep = 0;
-      loadTxt.classList.add('on');
+    const nextImgIndex = Math.min(
+        Math.floor(progress / 25),
+        loadImgs.length - 1
+    );
+
+    if (nextImgIndex !== currentImgIndex) {
+        loadImgs[currentImgIndex]?.classList.remove('on');
+
+        currentImgIndex = nextImgIndex;
+
+        loadImgs[currentImgIndex]?.classList.add('on');
+    }
+
+    // 텍스트는 50%에서 변경
+    if (progress >= 50 && textIndex === 0) {
+        textIndex = 1;
+        dotStep = 0;
     }
 
     if (current >= STEPS) {

@@ -720,9 +720,14 @@ margin-bottom:3%;
 .result_loadTxt{
     width: 95%; margin: auto; padding-top: 5%; margin-bottom: 1%;
 }
+.result_loadTxt1{
+    width: 95%; margin: auto; padding-top: 5%; margin-bottom: 1%;
+}
 .result_loadTxt img:nth-last-child(1){display: none;}
 .result_loadTxt.on img:nth-child(1){display: none;}
 .result_loadTxt.on img:nth-child(2){display: block;}
+.result_loadTxt1 img.on{display: block;}
+.result_loadTxt1 img{display: none;}
 .result_loadingBox>p{text-align: center; font-size: 1.2em;}
 .result_load{
     width: 90%; margin: auto; height: 0.4em; background-color: rgba(255, 255, 255, 0.568); border-radius: 1em;

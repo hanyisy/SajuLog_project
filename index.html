@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,8 +15,12 @@
     <title>Document</title>
 </head>
 <body>
-    <header></header>
+    <header class="index_head"></header>
     <div id="paymentContainer"></div>
+    
+        <audio class="header_bgm" id="bgmAudio" autoplay loop preload="auto">
+            <source src="./resources/audio/sajuLog_bgm.mp3" type="audio/mpeg">
+        </audio>
 
     <section class="main_section1" style="z-index: 1;">
         <div class="main_wrap">
@@ -161,6 +165,8 @@
     <script src="./resources/js/common.js"></script>
 
     <script>
+
+        
         (function() {
             const video = document.getElementById('mainBgVideo');
             const img   = document.getElementById('mainBgImg');
@@ -177,6 +183,9 @@
                 // 로딩은 그대로 존재
             }
         })();
+
+        
+
     </script>
 </body>
 </html>

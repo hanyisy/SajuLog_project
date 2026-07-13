@@ -76,6 +76,44 @@ header{
 }
 .header_deco_obj>div:nth-child(1){width: 100%; transform: translateY(-45%) translateX(10%);}
 .header_deco_obj>div:nth-child(2){width: 100%; transform: translateY(-20%) translateX(10%);}
+.header_bgmBtn{
+    width: 3em; line-height: 100%; height: 3em; display: none;  
+    justify-content: center; align-items: center;
+    position: relative; transition: background-color 0.2s ease;
+    background: transparent;
+}
+header.index_head .header_bgmBtn{display: flex;}
+
+.header_bgmBtn:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.header_bgmBtn_icon {
+  transition: opacity 0.3s ease;  font-size: 2.5em;
+}
+
+.header_bgmBtn[data-state="off"] .header_bgmBtn_icon {
+  opacity: 0.35;
+}
+
+.header_bgm{position: absolute; width: 1px; height: 1px; opacity: 0; z-index: -1;}
+
+/* 대각선 - width로 그려지는 느낌 */
+.header_bgmBtn::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  background: #333;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 0;
+  transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.header_bgmBtn[data-state="off"]::before {
+  width: 24px;
+}
 
 
 /* 하단메뉴바 */

@@ -9,6 +9,9 @@ const headerContent = `
             <div class="header_cashBtn" style=" pointer-events: none; opacity: 0;">
                 <a href="./product.html" target="_self"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/header_btn.webp" alt="버튼"></a>
             </div>
+            <div class="header_bgmBtn" data-state="off">
+                <span class="header_bgmBtn_icon">&#9835;</span>
+            </div>
             <div class="header_barBtn js_header_barBtn">
                 <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/burger_bar.webp" alt="메뉴">
             </div>
@@ -123,6 +126,47 @@ window.addEventListener('DOMContentLoaded', () => {
         headerElement.innerHTML = headerContent;
         document.body.insertAdjacentHTML('beforeend', mainMenuCon);
     }
+
+    /* 메인페이지 BGM */
+const bgmAudio = document.getElementById('bgmAudio');
+const bgmBtn = document.querySelector('.index_head .header_bgmBtn');
+
+if (bgmAudio && bgmBtn) {
+    bgmAudio.volume = 0.5;
+
+    function updateBgmState() {
+        bgmBtn.dataset.state = bgmAudio.paused ? 'off' : 'on';
+    }
+
+    /* 페이지 진입 즉시 자동재생 */
+    bgmAudio.play()
+        .then(() => {
+            updateBgmState();
+        })
+        .catch((error) => {
+            updateBgmState();
+            console.warn('브라우저에서 BGM 자동재생이 차단됨:', error);
+        });
+
+    /* 버튼 클릭 시 재생/정지 */
+    bgmBtn.addEventListener('click', async () => {
+        if (bgmAudio.paused) {
+            try {
+                await bgmAudio.play();
+            } catch (error) {
+                console.error('BGM 재생 실패:', error);
+            }
+        } else {
+            bgmAudio.pause();
+        }
+
+        updateBgmState();
+    });
+
+    bgmAudio.addEventListener('play', updateBgmState);
+    bgmAudio.addEventListener('pause', updateBgmState);
+}
+
     // 페이지에 <header> 태그가 존재할 때만 실행
     if (stickyBottomElement) {
         stickyBottomElement.innerHTML = stickyBottom;

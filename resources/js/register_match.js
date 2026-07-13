@@ -208,6 +208,30 @@
 // });
 
 
+// 이미지 리스트
+// 12지신 한글↔영문 매핑
+const zodiacMap = {
+    '쥐띠': 'rat',
+    '소띠': 'ox',
+    '호랑이띠': 'tiger',
+    '토끼띠': 'rabbit',
+    '용띠': 'dragon',
+    '뱀띠': 'snake',
+    '말띠': 'horse',
+    '양띠': 'goat',     // 염소띠도 같음
+    '염소띠': 'goat',
+    '원숭이띠': 'monkey',
+    '닭띠': 'rooster',
+    '개띠': 'dog',
+    '돼지띠': 'pig'
+};
+
+// 이미지 경로 생성 함수
+function getZodiacImageUrl(zodiacKor) {
+    const zodiacEng = zodiacMap[zodiacKor] || 'rat';
+    return `https://land.withusmk.co.kr/assets/saju/resources/img/animal/saju_${zodiacEng}.webp`;
+}
+
 
 // =============================
 // 더미 데이터 (초기값 — localStorage에 없을 때만 사용)
@@ -217,24 +241,25 @@ const defaultSajuData = [
         "user_profile": {
             "name": "김민준", "gender": "남성", "birth_date": "1990-03-22",
             "birth_type": "양력", "zodiac": "말띠",
-            "zodiacImg": "https://land.withusmk.co.kr/assets/saju/resources/img/animal/hor.webp"
+            "zodiacImg": getZodiacImageUrl("말띠")  // ← 자동 생성
         }
     },
     {
         "user_profile": {
             "name": "이서연", "gender": "여성", "birth_date": "1998-11-05",
             "birth_type": "음력", "zodiac": "호랑이띠",
-            "zodiacImg": "https://land.withusmk.co.kr/assets/saju/resources/img/animal/tig.webp"
+            "zodiacImg": getZodiacImageUrl("호랑이띠")
         }
     },
     {
         "user_profile": {
             "name": "박지현", "gender": "여성", "birth_date": "1985-08-30",
             "birth_type": "양력", "zodiac": "소띠",
-            "zodiacImg": "https://land.withusmk.co.kr/assets/saju/resources/img/animal/cow.webp"
+            "zodiacImg": getZodiacImageUrl("소띠")
         }
     }
 ];
+
 
 // localStorage에 있으면 그거 쓰고, 없으면 더미 데이터 사용
 let sajuDataList = JSON.parse(localStorage.getItem('sajuDataList')) || defaultSajuData;
@@ -316,6 +341,8 @@ function addNewUser() {
         return;
     }
 
+    // zodiac은 나중에 실제 계산값으로 업데이트할 거면 일단 "미정"으로
+    const zodiacKor = '미정';
     const newUser = {
         user_profile: {
             name,
@@ -323,8 +350,8 @@ function addNewUser() {
             birth_date: birthDate,
             birth_type: birthType || '양력',
             birth_time: birthTime || '시간모름',
-            zodiac: '미정',
-            zodiacImg: 'https://land.withusmk.co.kr/assets/saju/resources/img/animal/hor.webp'
+            zodiac: zodiacKor,
+            zodiacImg: getZodiacImageUrl(zodiacKor)  // ← 자동 생성
         }
     };
 
@@ -335,10 +362,8 @@ function addNewUser() {
     const newIndex = sajuDataList.length - 1;
 
     if (currentTarget) {
-        // + 신규입력으로 들어온 경우 → 바로 슬롯에 선택
         handleUserSelect(newIndex);
     } else {
-        // 하단 버튼으로 들어온 경우 → 리스트 추가만
         alert(`${name}님이 추가되었습니다.`);
     }
 
@@ -429,7 +454,7 @@ function handleUserSelect(index) {
         const imgEl  = targetSlot.querySelector('.js_match_user_icon img');
         if (nameEl) nameEl.innerText = selectedUser.name;
         if (imgEl) {
-            imgEl.src = selectedUser.zodiacImg;
+            imgEl.src = getZodiacImageUrl(selectedUser.zodiac);
             imgEl.alt = selectedUser.zodiac;
         }
     }

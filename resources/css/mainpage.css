@@ -77,22 +77,26 @@ header{
 .header_deco_obj>div:nth-child(1){width: 100%; transform: translateY(-45%) translateX(10%);}
 .header_deco_obj>div:nth-child(2){width: 100%; transform: translateY(-20%) translateX(10%);}
 .header_bgmBtn{
-    width: 3em; line-height: 100%; height: 3em; display: none;  
-    justify-content: center; align-items: center;
+    width: auto; line-height: 100%; height: 2em; display: none;  
+    justify-content: center; align-items: center; border-radius: 7em;
     position: relative; transition: background-color 0.2s ease;
-    background: transparent;
+    background: transparent; border: 1px solid white; padding: 0 0.7em;
 }
 header.index_head .header_bgmBtn{display: flex;}
+.header_bgmBtnTXT{font-size: 1.3em; padding-left: 0.3em; line-height: 100%;transition: opacity 0.3s ease;}
 
 .header_bgmBtn:hover {
   background-color: rgba(0, 0, 0, 0.04);
 }
 
 .header_bgmBtn_icon {
-  transition: opacity 0.3s ease;  font-size: 2.5em;
+  transition: opacity 0.3s ease;  font-size: 1.5em; position: relative;
 }
-
+.header_bgmBtn[data-state="off"]{border: 1px solid rgba(255, 255, 255, 0.35);}
 .header_bgmBtn[data-state="off"] .header_bgmBtn_icon {
+  opacity: 0.35;
+}
+.header_bgmBtn[data-state="off"] .header_bgmBtnTXT {
   opacity: 0.35;
 }
 
@@ -105,14 +109,14 @@ header.index_head .header_bgmBtn{display: flex;}
   height: 2px;
   background: #333;
   top: 50%;
-  left: 50%;
+  left: 25%;
   transform: translate(-50%, -50%) rotate(-45deg);
   width: 0;
   transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .header_bgmBtn[data-state="off"]::before {
-  width: 24px;
+  width: 1.5em;
 }
 
 

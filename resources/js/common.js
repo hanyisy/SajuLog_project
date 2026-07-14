@@ -10,7 +10,7 @@ const headerContent = `
                 <a href="./product.html" target="_self"><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/header_btn.webp" alt="버튼"></a>
             </div>
             <div class="header_bgmBtn" data-state="off">
-                <span class="header_bgmBtn_icon">&#9835;</span>
+                <span class="header_bgmBtn_icon">&#9835;</span><span class="header_bgmBtnTXT">OFF</span>
             </div>
             <div class="header_barBtn js_header_barBtn">
                 <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/burger_bar.webp" alt="메뉴">
@@ -128,44 +128,103 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     /* 메인페이지 BGM */
-const bgmAudio = document.getElementById('bgmAudio');
-const bgmBtn = document.querySelector('.index_head .header_bgmBtn');
+    const bgmAudio = document.getElementById('bgmAudio');
+    const bgmBtn = document.querySelector('.index_head .header_bgmBtn');
 
-if (bgmAudio && bgmBtn) {
-    bgmAudio.volume = 0.5;
+    if (bgmAudio && bgmBtn) {
+        bgmAudio.volume = 0.5;
 
-    function updateBgmState() {
-        bgmBtn.dataset.state = bgmAudio.paused ? 'off' : 'on';
-    }
+        let bgmHasStarted = false;
 
-    /* 페이지 진입 즉시 자동재생 */
-    bgmAudio.play()
-        .then(() => {
-            updateBgmState();
-        })
-        .catch((error) => {
-            updateBgmState();
-            console.warn('브라우저에서 BGM 자동재생이 차단됨:', error);
-        });
+        function updateBgmState() {
+            bgmBtn.dataset.state = bgmAudio.paused ? 'off' : 'on';
+        }
 
-    /* 버튼 클릭 시 재생/정지 */
-    bgmBtn.addEventListener('click', async () => {
-        if (bgmAudio.paused) {
+        function removeFirstInteractionEvents() {
+            document.removeEventListener(
+                'pointerdown',
+                startBgmFromFirstInteraction,
+                true
+            );
+
+            document.removeEventListener(
+                'keydown',
+                startBgmFromFirstInteraction,
+                true
+            );
+        }
+
+        async function playBgm() {
             try {
                 await bgmAudio.play();
+
+                bgmHasStarted = true;
+                updateBgmState();
+                document.querySelector('.header_bgmBtnTXT').innerHTML='ON';
+
+                /*
+                 * 처음 한 번 재생된 뒤에는
+                 * 다른 곳을 눌러도 자동으로 다시 재생되지 않음
+                 */
+                removeFirstInteractionEvents();
             } catch (error) {
                 console.error('BGM 재생 실패:', error);
             }
-        } else {
-            bgmAudio.pause();
         }
 
-        updateBgmState();
-    });
+        function startBgmFromFirstInteraction(event) {
+            if (bgmHasStarted) return;
 
-    bgmAudio.addEventListener('play', updateBgmState);
-    bgmAudio.addEventListener('pause', updateBgmState);
-}
+            /*
+             * BGM 버튼을 처음 누른 경우에는
+             * 아래 버튼 클릭 이벤트에서 직접 처리
+             *
+             * 이 조건이 없으면 pointerdown에서 재생된 뒤
+             * click 이벤트에서 바로 정지될 수 있음
+             */
+            if (
+                event.target instanceof Element &&
+                event.target.closest('.header_bgmBtn')
+            ) {
+                return;
+            }
+
+            playBgm();
+        }
+
+        /*
+         * 클릭, 터치, 드래그 시작 시 실행
+         * capture:true라 로딩창이 떠 있어도 document에서 먼저 감지
+         */
+        document.addEventListener(
+            'pointerdown',
+            startBgmFromFirstInteraction,
+            true
+        );
+
+        /* 키보드 조작 대응 */
+        document.addEventListener(
+            'keydown',
+            startBgmFromFirstInteraction,
+            true
+        );
+
+        /* 헤더 BGM 버튼 재생·정지 토글 */
+        bgmBtn.addEventListener('click', async () => {
+            if (bgmAudio.paused) {
+                await playBgm();
+            } else {
+                bgmAudio.pause();
+                updateBgmState();
+                document.querySelector('.header_bgmBtnTXT').innerHTML='OFF';
+            }
+        });
+
+        bgmAudio.addEventListener('play', updateBgmState);
+        bgmAudio.addEventListener('pause', updateBgmState);
+
+        updateBgmState();
+    }
 
     // 페이지에 <header> 태그가 존재할 때만 실행
     if (stickyBottomElement) {

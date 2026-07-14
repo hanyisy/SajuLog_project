@@ -132,7 +132,24 @@ window.addEventListener('DOMContentLoaded', () => {
     const bgmBtn = document.querySelector('.index_head .header_bgmBtn');
 
     if (bgmAudio && bgmBtn) {
-        bgmAudio.volume = 0.5;
+        const BGM_VOLUME = 0.5;   // 최종 볼륨
+        let fadeTimer = null;
+
+        function fadeInBgm() {
+            clearInterval(fadeTimer);
+            bgmAudio.volume = 0;
+            const step = 30;
+            const inc = BGM_VOLUME / (1000 / step);   // 1500ms 동안
+            fadeTimer = setInterval(() => {
+                const next = bgmAudio.volume + inc;
+                if (next >= BGM_VOLUME) {
+                    bgmAudio.volume = BGM_VOLUME;
+                    clearInterval(fadeTimer);
+                } else {
+                    bgmAudio.volume = next;
+                }
+            }, step);
+        }
 
         let bgmHasStarted = false;
 
@@ -157,6 +174,7 @@ window.addEventListener('DOMContentLoaded', () => {
         async function playBgm() {
             try {
                 await bgmAudio.play();
+                fadeInBgm();
 
                 bgmHasStarted = true;
                 updateBgmState();

@@ -171,29 +171,64 @@ document.addEventListener('DOMContentLoaded', renderSaju);
 // ============================================================
 // 해설 렌더링
 // ============================================================
+// 일반 사주 해설 오픈후 간단해설 추가 
 function renderExplains() {
     const container = document.querySelector('.js_result_explainList');
     if (!container) return;
 
     container.innerHTML = '';
 
-    sajuExplains.forEach((item, index) => {
-        const card = document.createElement('div');
-        card.className = 'result_explainCard';
-        card.innerHTML = `
-            <div class="result_explainCard_titleBox" onclick="toggleExplain(${index}, this)">
-                <p class="result_explainCard_title">${item.title}</p>
-                <div class="result_explain_toggleBtn">
-                    <div></div>
-                    <div class="result_explain_toggleBtn2"></div>
-                </div>
-            </div>
-            <div class="result_explainCard_txt">
-                <p>${item.content}</p>
-            </div>
-        `;
-        container.appendChild(card);
-    });
+    // sajuExplains.forEach((item, index) => {
+    //     const card = document.createElement('div');
+    //     card.className = 'result_explainCard';
+    //     card.innerHTML = `
+    //         <div class="result_explainCard_titleBox" onclick="toggleExplain(${index}, this)">
+    //             <p class="result_explainCard_title">${item.title}</p>
+    //             <div class="result_explain_toggleBtn">
+    //                 <div></div>
+    //                 <div class="result_explain_toggleBtn2"></div>
+    //             </div>
+    //         </div>
+    //         <div class="result_explainCard_txt">
+    //             <p>${item.content}</p>
+    //         </div>
+    //     `;
+    //     container.appendChild(card);
+    // });
+    const card = document.createElement('div');
+    card.className = 'result_explainTxtBox';
+    card.innerHTML = `
+        자네의 사주는 겉과 속이 다른 형상이네.<br> 
+        담담해 보이나 마음 깊은 곳에는 분명한 기준과 고집이 있고,<br> 
+        중요한 순간에는 스스로 납득한 길을 택하려 하지. <br><br>
+        상황을 살피고 여러 가능성을 헤아린 뒤 방향을 정하는 기운이 강해서<br> 
+        결단이 늦어 보일 수 있지만, 한 번 뜻을 세우면 끝까지 붙들 수 있는 끈기를 지녔네.<br>
+        자네의 재능은 처음부터 화려하게 드러나기보다 경험이 쌓일수록 선명해질 것이다. <br>
+        직접 부딪히고 실패하며 자신만의 방식을 만들어 가는 사람이므로, <br>
+        남이 정해 놓은 길보다 스스로 선택한 일에서 더 뛰어난 능력을 드러낼 터이네.<br><br>
+        마음이 깊은 만큼 생각도 많은 사람이라, <br>
+        속으로는 수많은 경우의 수를 헤아리며 자신을 무겁게 만들 수도 있지. <br>
+        감정을 드러내지 않지만 한 번 마음 안에 들어온 것은 오랫동안 기억하며, <br>
+        천천히 신뢰를 쌓은 몇 사람과 깊은 관계를 맺으려 할 것이네. <br>
+        신뢰가 무너지면 조용히 거리를 두는 편이네.<br><br>
+        자네의 운은 한곳에서 완성되는 흐름과 다르다. <br>
+        몇 번의 변화와 선택을 지나며 자신에게 맞는 <br>
+        자리를 찾아가는 기운이 강하니, 예상하지 못한 <br>
+        방향 전환이 반복될 수도 있을 것이다. 그럴 때 스스로를 <br>
+        의심할 수도 있지만, 지나고 보면 그 변화들은 <br>
+        자네를 본래 있어야 할 자리로 옮겨 놓은 과정이 되리라.<br><br>
+        일과 재물에서는 단번에 큰 성과를 얻기보다 <br>
+        점차 기반을 넓혀 가는 형상이네. 처음에는 결과가 더디게 느껴질 수 있지만, <br>
+        자네가 쌓은 것은 쉽게 무너지지 않으며 시간이 지날수록 힘을 발휘할 것이네.<br><br>
+        자네의 진정한 힘은 어려움을 피하는 데 있지 않다. <br>
+        흔들리더라도 다시 중심을 찾고, 실패 속에서 필요한 것을 골라내며,<br> 
+        지나온 시간을 새로운 힘으로 바꾸는 데 있지. <br>
+        몇 번의 굴곡을 지나온 뒤 오히려 더욱 선명해지는 사람이 바로 자네다.<br><br><br>
+        자네에게 찾아올 변화가 기회가 될지,<br> 
+        잠시 머물다 지나갈 흔들림이 될지는<br>
+        앞으로 흐르는 운의 방향과 맞물려 살펴보아야 하지.
+    `;
+    container.appendChild(card);
 }
 
 // ============================================================

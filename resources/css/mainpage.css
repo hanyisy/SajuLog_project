@@ -469,7 +469,7 @@ footer .inner ul li { cursor: pointer; }
 .main_sec3_mid ul{
     width: 90%; height: 95%; position: absolute; top: 50%; left: 50%; 
     transform: translateX(-50%) translateY(-50%); display: flex; flex-direction: column;
-    justify-content: center; align-items: center; gap: 0.3em;
+    justify-content: center; align-items: center; gap: 0.7em;
 }
 .main_sec3_mid li{
     width: 100%; display: flex; align-items: center; justify-content: left;

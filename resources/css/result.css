@@ -783,6 +783,8 @@ margin-bottom:3%;
     transition: padding-top 0.3s ease;
 } */
 
+.resultPrem_sec1 { padding-top: 18%; }
+
 .result_premTop{
     width: 100%; position: relative; height: auto;
 }
@@ -894,7 +896,7 @@ margin-bottom:3%;
 .result_pay { background: #DDC49B;  }
 
 
-
+.resultMat_sec1 { padding-top: 18%; }
 
 
 /* 무료사주 부분 스타일 변경부분 */

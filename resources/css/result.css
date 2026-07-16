@@ -514,9 +514,9 @@ height: .2em; background: #fff; top: -.35em; left: 50%; transform: translateX(-5
 }
 .result_kakaoUnlock_desc {
     font-size: 1.5em;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.2;
-    opacity: 0.8;
+    /* opacity: 0.8; */
     margin-bottom: 5%;
 }
 .result_kakaoUnlock_btn {

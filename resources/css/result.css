@@ -934,3 +934,40 @@ margin-bottom:3%;
     color: white; position: relative; font-size: 1.1em; position: absolute;
     top: 2%; right: 0; padding-right: 5%; text-align: right;
 }
+
+
+/* 타이틀관련 텍스트 크기 */
+
+.result_match_sec2_tit{
+    text-align: center; color: white; font-size: 1.8em; font-family: 'YeogiOttaeJalnanGothic';
+    container-type: inline-size;
+}
+.result_match_sec2_tit>div{
+    width: 8%; margin: auto; margin-bottom: 5%;
+}
+.result_match_sec2_tit h2{font-size: 11.5cqw; font-weight: 100;}
+.result_match_sec2_tit h2.resultMatch_Title2{font-size: 13cqw;}
+.result_match_sec2_tit h3{margin: 2% auto 5%; color: #FF7ECC; font-size: 6.5cqw; font-weight: 100; margin-bottom: 5%;}
+.resultMatch_subTitle{
+    font-family: 'BookkMyungjo'; margin-bottom: 5%; font-weight: 700; color: #FF7ECC; 
+    position: relative; font-size: 6.5cqw;
+}
+.resultMatch_subTitle::before{
+    content: '·'; margin-right: 1cqw;
+}
+.resultMatch_subTitle::after{
+    content: '·'; margin-left: 1cqw;
+}
+
+.main_sec3_top{
+    width: 100%; container-type: inline-size;
+}
+.main_sec3_top .result_subTitle{
+    font-size: 4cqw;
+}
+.main_sec3_top .result_Title{
+    font-size: 7.5cqw;
+}
+.main_sec3_top .result_subText{
+    font-size: 4.5cqw;
+}

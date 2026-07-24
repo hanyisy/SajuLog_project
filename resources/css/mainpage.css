@@ -469,7 +469,7 @@ footer .inner ul li { cursor: pointer; }
 .main_sec3_mid ul{
     width: 90%; height: 95%; position: absolute; top: 50%; left: 50%; 
     transform: translateX(-50%) translateY(-50%); display: flex; flex-direction: column;
-    justify-content: center; align-items: center; gap: 0.7em;
+    justify-content: center; align-items: center; gap: 1em;
 }
 .main_sec3_mid li{
     width: 100%; display: flex; align-items: center; justify-content: left;
@@ -478,7 +478,7 @@ footer .inner ul li { cursor: pointer; }
 .main_sec3_mid li div{
     width: 1.5em;
 }
-.main_sec3_mid p{font-size: 1.7em;}
+.main_sec3_mid p{font-size: 1.8em;}
 .main_sec3_bot{
     width: 76%; margin: 5% auto; margin-top: 8%;
 }

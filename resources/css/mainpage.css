@@ -476,7 +476,7 @@ footer .inner ul li { cursor: pointer; }
 .main_sec3_mid li div{
     width: 1.5em;
 }
-.main_sec3_mid p{font-size: 1.8em;}
+.main_sec3_mid p{ font-size: clamp(1.4em, 3.5vw, 1.7em); }
 .main_sec3_bot{
     width: 76%; margin: 5% auto; margin-top: 8%;
 }
@@ -584,4 +584,8 @@ footer .inner ul li { cursor: pointer; }
     body { width: 100%; font-size: 12px;}
     .main_sec3_top{font-size: 1.3em;}
     .main_sec3_preSajuBtn{font-size: 1.5em;}
+}
+
+@media (max-width: 350px) {
+    .main_sec3_mid p { font-size: 1.8em; }
 }

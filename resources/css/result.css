@@ -365,11 +365,11 @@ height: .2em; background: #fff; top: -.35em; left: 50%; transform: translateX(-5
     width: 100%; font-size: 1.5em; line-height: 200%; border-bottom: 1px solid white; padding-bottom: 3%;
 }
 .result_match_sec3_exTxt{
-    text-align: center; font-size: 1.2em; line-height: 150%; margin-bottom: 1.5em;
+    text-align: center; font-size: 1.5em; line-height: 150%; margin-bottom: 1.5em;
 }
 
 .result_match_sec3_exTxtadd{
-    font-weight: 700; font-size: 1.3em; color: #fdc7ff;
+    font-weight: 700; font-size: 1.7em; color: #fdc7ff;
 }
 
 .result_match_sec3_table{
@@ -973,3 +973,21 @@ margin-bottom:3%;
 .main_sec3_top .result_subText{
     font-size: 4.5cqw;
 }
+
+
+
+
+
+
+
+/* 디자인팀수정_260724 */
+.result_prem_mainTxt, .reult_matBot { line-height: 140%; }
+.reult_matBot { font-size: 1.4em; }
+.crt_pageNav { display: flex; align-items: center; justify-content: center; gap: .5em; padding: 2em 0; background: #0f0f0f; }
+.crt_pageNav button { background: none; color: #ddc49b; font-size: 4em; line-height: 1; cursor: pointer; }
+.crt_pageNav button:disabled { opacity: .3; cursor: default; }
+.crt_pageNav span { color: #fff; font-size: 2em; letter-spacing: .05em; }
+.reult_premBot{ font-size: 1.45em; }
+.result_prem_pointTxt, .result_mat_pointTxt { font-size: 1.9em; line-height: 145%; }
+.result_explainTxtBox{ font-size: 1.6em; }
+.result_summaryBox .result_summaryTxt { font-size: 1.7em; }

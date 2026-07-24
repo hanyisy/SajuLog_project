@@ -778,3 +778,69 @@ document.addEventListener("DOMContentLoaded", () => {
     });
  
 });
+
+
+
+
+// 페이지네이션 구성_260724_주한
+// 페이지네이션 구성_260724_주한 (res_mat)
+(function () {
+    var sections = Array.prototype.slice.call(
+        document.querySelectorAll('#res_mat1,#res_mat2,#res_mat3,#res_mat4,#res_mat5,#res_mat6,#res_mat7,#res_mat8')
+    );
+    var total = sections.length;
+    if (total === 0) return;
+    var idx = 0;
+    var prevBtn = document.getElementById('crt_prevBtn');
+    var nextBtn = document.getElementById('crt_nextBtn');
+    var label = document.getElementById('crt_pageLabel');
+
+    function render() {
+        sections.forEach(function (sec, i) {
+            sec.style.display = (i === idx) ? '' : 'none';
+        });
+        label.textContent = (idx + 1) + ' / ' + total;
+        prevBtn.disabled = (idx === 0);
+        nextBtn.disabled = (idx === total - 1);
+    }
+
+    prevBtn.addEventListener('click', function () {
+        if (idx > 0) { idx--; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    });
+    nextBtn.addEventListener('click', function () {
+        if (idx < total - 1) { idx++; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    });
+
+    render();
+})();
+
+// 페이지네이션 구성_260724_주한 (res_pre)
+(function () {
+    var sections = Array.prototype.slice.call(
+        document.querySelectorAll('#res_pre1,#res_pre2,#res_pre3,#res_pre4,#res_pre5,#res_pre6,#res_pre7,#res_pre8')
+    );
+    var total = sections.length;
+    if (total === 0) return;
+    var idx = 0;
+    var prevBtn = document.getElementById('crt_prevBtn');
+    var nextBtn = document.getElementById('crt_nextBtn');
+    var label = document.getElementById('crt_pageLabel');
+
+    function render() {
+        sections.forEach(function (sec, i) {
+            sec.style.display = (i === idx) ? '' : 'none';
+        });
+        label.textContent = (idx + 1) + ' / ' + total;
+        prevBtn.disabled = (idx === 0);
+        nextBtn.disabled = (idx === total - 1);
+    }
+
+    prevBtn.addEventListener('click', function () {
+        if (idx > 0) { idx--; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    });
+    nextBtn.addEventListener('click', function () {
+        if (idx < total - 1) { idx++; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    });
+
+    render();
+})();

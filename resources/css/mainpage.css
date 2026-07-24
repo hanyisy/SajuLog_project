@@ -235,15 +235,13 @@ header.index_head .header_bgmBtn{display: flex;}
 
 /* 페이지메뉴 */
 
-.shareBtn{
-    position: relative; z-index: 100; width: 100%; max-width: 800px;
-    justify-content: right; margin-bottom: 3%;
-    display: none;
+.shareBtn{ background: #00001d; border-top: 1.5px solid #bdad86; border-bottom: 1.5px solid #bdad86;
+align-items: center; justify-content: center; gap: 1em; color: #fff; padding: 1.5em 0;
 }
-.shareBtn>div{ 
-    width: 4.5em; aspect-ratio: 1/1; background-color: #00000046; margin-right: 2.5%; border-radius: 50%;
-    cursor: pointer;
-}
+
+.shareBtn h2 { font-size: 1.5em; color: #ddc49b; font-weight: 100; font-family: 'YeogiOttaeJalnanGothic'; }
+
+.shareBtn>div{  width: 2.3em; aspect-ratio: 1/1; border-radius: 50%; cursor: pointer; }
 .shareBtn>div img{pointer-events: none;}
 
 .page_menu { width: 95%; margin: 0 auto; position: relative;  display: flex;  align-items: center;  justify-content: center;  margin-bottom: 1em; }

@@ -26,9 +26,7 @@ const headerContent = `
 `;
 const stickyBottom = `
 
-    <div class="shareBtn">
-        <div><img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/share.webp" alt=""></div>
-    </div>
+
 
     <div class="sticky_Bottom_BarBox">
             <img src="https://land.withusmk.co.kr/assets/saju/resources/img/ui/sticky_Bottom_Bar_frame.webp" alt="" style=" pointer-events: none;">

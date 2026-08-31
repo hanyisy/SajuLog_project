@@ -1075,7 +1075,8 @@ font-family: 'Noto Serif KR'; line-height: 100%; }
 .result_box::before { content: ""; top: 1.2em; left: 1.2em; background: url(../img/result/result_last.png)center/cover no-repeat; }
 .result_box::after { content: ""; bottom: 1.2em; right: 1.2em; background: url(../img/result/result_first.png)center/cover no-repeat; }
 
-.resultPrem_sec9 .saju_frameBox { --color-line: #D7B783; width: 90%; margin: 0 auto; padding: 10% 1.5em; }
+.resultPrem_sec9 .saju_frameBox { --color-line: #D7B783; width: 90%; margin: 0 auto; padding: calc(var(--corner-size) * 1.05) calc(var(--line-v-width) + var(--corner-size) * 0.45); }
+.resultPrem_sec9 .result_frm { word-break: keep-all; overflow-wrap: anywhere; }
 .result_frm h3 { color: #DDC49B; text-align: center; font-size: 2.5em; margin-bottom: 1em; 
 font-family: 'Noto Serif KR', serif; font-weight: 700;}
 .result_frm p { color: #fff; margin-bottom: 1.5em; line-height: 1.8; font-family: 'BookendBatang'; }
@@ -1328,3 +1329,42 @@ display: inline-block; background-color: #553f0f; padding: 0 0.2em; line-height:
 /* 260827 */
 .warning_box:first-child { margin-bottom: 25%; }
 .warning_box { margin-bottom: 10%; }
+.crt_slideView { overflow: hidden; }
+.crt_slideTrack { display: flex; align-items: flex-start; touch-action: pan-y; }
+.crt_slideTrack > section { flex: 0 0 100%; min-width: 0; }
+.crt_swipeArrow {
+    position: fixed; top: 50%; transform: translateY(-50%); z-index: 55;
+    width: 2em; height: 2em; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; background: rgba(10, 10, 14, .72); color: #fff;
+    border: 1px solid rgba(255, 255, 255, .35); font-size: 1.5em; line-height: 1;
+    opacity: 0; pointer-events: none; transition: opacity .12s ease, background .12s ease, color .12s ease;
+}
+.crt_swipeArrowL { left: .4em; }
+.crt_swipeArrowR { right: .4em; }
+.crt_swipeArrow.go { background: #ddc49b; color: #111; border-color: #ddc49b; }
+
+.result_prem_toggleBox .result_prem_pointTxt { color: #DDC49B; }
+@keyframes crtTitleSweep {
+  0%   { background-position: 200% 0; }
+  100% { background-position: 0% 0; }
+}
+.result_prem_toggleBox.is-open .result_prem_pointTxt {
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    #d9bc85 0%,
+    #ffe9b8 20%,
+    #ffffff 35%,
+    #ffe9b8 50%,
+    #d9bc85 65%,
+    #ffe9b8 80%,
+    #ffffff 95%,
+    #d9bc85 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: crtTitleSweep 2.4s linear infinite;
+}

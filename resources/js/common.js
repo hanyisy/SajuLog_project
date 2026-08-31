@@ -888,34 +888,172 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 // 페이지네이션 구성_260724_주한 (res_pre)
+// 운영코드 복붙
 (function () {
-    var sections = Array.prototype.slice.call(
-        document.querySelectorAll('#res_pre1,#res_pre2,#res_pre3,#res_pre4,#res_pre5,#res_pre6,#res_pre7,#res_pre8,#res_pre9')
-    );
-    var total = sections.length;
+    var track = document.querySelector('.crt_slideTrack');
+    if (!track) return;
+    var view = track.parentElement;
+    var slides = Array.prototype.slice.call(track.querySelectorAll('section[id^="res_pre"]'));
+    var total = slides.length;
     if (total === 0) return;
-    var idx = 0;
     var prevBtn = document.getElementById('crt_prevBtn');
     var nextBtn = document.getElementById('crt_nextBtn');
     var label = document.getElementById('crt_pageLabel');
+    var arrowL = document.querySelector('.crt_swipeArrowL');
+    var arrowR = document.querySelector('.crt_swipeArrowR');
+    var TH = 100;
+    var idx = 0;
+    var busy = false;
+    var interacted = false;
+    var peeked = false;
 
+    function width() { return view.clientWidth; }
+    function base() { return -idx * width(); }
+    function syncHeight() { track.style.height = slides[idx].offsetHeight + 'px'; }
+    function syncLayout() {
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(' + base() + 'px)';
+        syncHeight();
+    }
     function render() {
-        sections.forEach(function (sec, i) {
-            sec.style.display = (i === idx) ? '' : 'none';
-        });
         label.textContent = (idx + 1) + ' / ' + total;
         prevBtn.disabled = (idx === 0);
         nextBtn.disabled = (idx === total - 1);
+        syncLayout();
+    }
+    function goTo(next) {
+        if (next < 0 || next >= total) return;
+        idx = next;
+        render();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    prevBtn.addEventListener('click', function () {
-        if (idx > 0) { idx--; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    var ro = new ResizeObserver(syncHeight);
+    slides.forEach(function (s) { ro.observe(s); });
+    window.addEventListener('resize', syncLayout);
+
+    var start = null;
+    var axis = null;
+    var lastDx = 0;
+
+    function setArrow(el, show, progress) {
+        if (!el) return;
+        el.style.opacity = show ? String(0.35 + 0.65 * progress) : '0';
+        el.classList.toggle('go', show && progress >= 1);
+    }
+    function draw(dx) {
+        var canPrev = idx > 0;
+        var canNext = idx < total - 1;
+        var resisted = ((dx > 0 && !canPrev) || (dx < 0 && !canNext)) ? dx * 0.25 : dx;
+        lastDx = resisted;
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(' + (base() + resisted) + 'px)';
+        var progress = Math.min(1, Math.abs(resisted) / TH);
+        setArrow(arrowL, resisted > 0 && canPrev, progress);
+        setArrow(arrowR, resisted < 0 && canNext, progress);
+    }
+    function endDrag(commit) {
+        var dx = lastDx;
+        start = null;
+        axis = null;
+        lastDx = 0;
+        document.body.style.userSelect = '';
+        setArrow(arrowL, false, 0);
+        setArrow(arrowR, false, 0);
+        var canPrev = idx > 0;
+        var canNext = idx < total - 1;
+        if (commit && Math.abs(dx) >= TH && ((dx < 0 && canNext) || (dx > 0 && canPrev))) {
+            var next = dx < 0 ? idx + 1 : idx - 1;
+            busy = true;
+            track.style.transition = 'transform .25s ease';
+            track.style.transform = 'translateX(' + (-next * width()) + 'px)';
+            setTimeout(function () { busy = false; goTo(next); }, 260);
+            return;
+        }
+        track.style.transition = 'transform .22s ease';
+        track.style.transform = 'translateX(' + base() + 'px)';
+    }
+    function move(dx, dy) {
+        if (!axis) {
+            if (Math.abs(dx) < 12 && Math.abs(dy) < 12) return;
+            axis = Math.abs(dx) > Math.abs(dy) ? 'h' : 'v';
+            if (axis === 'h') document.body.style.userSelect = 'none';
+        }
+        if (axis === 'h') draw(dx);
+    }
+
+    document.addEventListener('touchstart', function (e) {
+        interacted = true;
+        if (busy) return;
+        var t = e.touches[0];
+        start = { x: t.clientX, y: t.clientY };
+        axis = null;
+    }, { passive: true });
+    document.addEventListener('touchmove', function (e) {
+        if (!start) return;
+        var t = e.touches[0];
+        move(t.clientX - start.x, t.clientY - start.y);
+    }, { passive: true });
+    document.addEventListener('touchend', function () {
+        if (axis === 'h') endDrag(true); else { start = null; axis = null; }
+    }, { passive: true });
+    document.addEventListener('touchcancel', function () {
+        if (axis === 'h') endDrag(false); else { start = null; axis = null; }
+    }, { passive: true });
+
+    document.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'mouse') return;
+        interacted = true;
+        if (busy) return;
+        start = { x: e.clientX, y: e.clientY };
+        axis = null;
     });
-    nextBtn.addEventListener('click', function () {
-        if (idx < total - 1) { idx++; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    document.addEventListener('pointermove', function (e) {
+        if (e.pointerType !== 'mouse' || !start) return;
+        if (e.buttons === 0) { endDrag(false); return; }
+        move(e.clientX - start.x, e.clientY - start.y);
     });
+    document.addEventListener('pointerup', function (e) {
+        if (e.pointerType !== 'mouse' || !start) return;
+        if (axis === 'h') endDrag(true); else { start = null; axis = null; }
+    });
+    document.addEventListener('dragstart', function (e) { e.preventDefault(); });
+
+    var wheel = { acc: 0, lastTs: 0, coolUntil: 0 };
+    document.addEventListener('wheel', function (e) {
+        if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+        var now = e.timeStamp;
+        if (now < wheel.coolUntil) return;
+        if (now - wheel.lastTs > 300) wheel.acc = 0;
+        wheel.lastTs = now;
+        wheel.acc += e.deltaX;
+        if (Math.abs(wheel.acc) < 80) return;
+        var dir = wheel.acc > 0 ? 1 : -1;
+        wheel.acc = 0;
+        wheel.coolUntil = now + 500;
+        goTo(idx + dir);
+    }, { passive: true });
+
+    prevBtn.addEventListener('click', function () { goTo(idx - 1); });
+    nextBtn.addEventListener('click', function () { goTo(idx + 1); });
 
     render();
+
+    if (total > 1) {
+        setTimeout(function () {
+            if (peeked || interacted || busy) return;
+            peeked = true;
+            var peek = Math.min(72, width() * 0.18);
+            track.style.transition = 'transform .4s ease';
+            track.style.transform = 'translateX(' + (-peek) + 'px)';
+            if (arrowR) { arrowR.style.opacity = '1'; arrowR.classList.add('go'); }
+            setTimeout(function () {
+                track.style.transition = 'transform .32s ease';
+                track.style.transform = 'translateX(0px)';
+                if (arrowR) { arrowR.style.opacity = '0'; arrowR.classList.remove('go'); }
+            }, 560);
+        }, 700);
+    }
 })();
 
 

@@ -1121,8 +1121,7 @@ background: linear-gradient(0deg, #fff 10%, #caac7b 95%);
 background-clip: text; line-height: 1.5;
 color: transparent; font-weight: 800;
 -webkit-text-fill-color: transparent;
-padding-top: 0.6lh;
-padding-bottom: 0.55lh;
+
 }
 .result_explainCard .result_explainCard_txt p { font-family: 'BookendBatang'; line-height: 150%; text-align: left; }
 .main_preSajuBtn_btm { margin: 10% auto 0%  !important; }

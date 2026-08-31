@@ -1075,7 +1075,8 @@ font-family: 'Noto Serif KR'; line-height: 100%; }
 .result_box::before { content: ""; top: 1.2em; left: 1.2em; background: url(../img/result/result_last.png)center/cover no-repeat; }
 .result_box::after { content: ""; bottom: 1.2em; right: 1.2em; background: url(../img/result/result_first.png)center/cover no-repeat; }
 
-.resultPrem_sec9 .saju_frameBox { --color-line: #D7B783; width: 90%; margin: 0 auto; padding: 10% 1.5em; }
+.resultPrem_sec9 .saju_frameBox { --color-line: #D7B783; width: 90%; margin: 0 auto; padding: calc(var(--corner-size) * 1.05) calc(var(--line-v-width) + var(--corner-size) * 0.45); }
+.resultPrem_sec9 .result_frm { word-break: keep-all; overflow-wrap: anywhere; }
 .result_frm h3 { color: #DDC49B; text-align: center; font-size: 2.5em; margin-bottom: 1em; 
 font-family: 'Noto Serif KR', serif; font-weight: 700;}
 .result_frm p { color: #fff; margin-bottom: 1.5em; line-height: 1.8; font-family: 'BookendBatang'; }
@@ -1120,6 +1121,8 @@ background: linear-gradient(0deg, #fff 10%, #caac7b 95%);
 background-clip: text; line-height: 1.5;
 color: transparent; font-weight: 800;
 -webkit-text-fill-color: transparent;
+padding-top: 0.6lh;
+padding-bottom: 0.55lh;
 }
 .result_explainCard .result_explainCard_txt p { font-family: 'BookendBatang'; line-height: 150%; text-align: left; }
 .main_preSajuBtn_btm { margin: 10% auto 0%  !important; }

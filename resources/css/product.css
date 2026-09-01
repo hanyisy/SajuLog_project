@@ -195,5 +195,7 @@ border-radius: .3em; font-weight: 100; }
 .proudct_choice_explainCard{display: none;}
 .proudct_choice_explainCard.active{display: block;}
 
-
-/* 260824 */
+/* 260901 상품 선택 이미지 */
+.product_choice_image { display: none; width: 90%; margin: 0 auto 5%; }
+.product_choice_image.active { display: block; }
+.product_choice_image img { display: block; width: 100%; height: auto; border-radius: .5em; }

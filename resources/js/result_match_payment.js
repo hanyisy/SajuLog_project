@@ -7,7 +7,9 @@
             {
                 title: "월하와 화연의 정통궁합",
                 description: "우리 사이의 진짜 궁합을 읽다",
-                price: "2,900원"
+                price: "2,900원",
+                // 260901 첫 궁합 상품 선택 이미지
+                image: "resources/img/product/ex04.webp"
             },
             {
                 title: "월하와 화연의 미래궁합",
@@ -56,6 +58,8 @@
             if (titleElement) titleElement.textContent = product.title;
             if (descriptionElement) descriptionElement.textContent = product.description;
             if (priceElement) priceElement.textContent = product.price;
+            // 260901 궁합 상품 선택 이미지 전달
+            if (product.image) card.dataset.image = product.image;
 
             if (product.available === false) {
                 card.style.position = "relative";

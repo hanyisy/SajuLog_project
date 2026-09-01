@@ -1142,6 +1142,9 @@ function initType3Payment(modal) {
 
     const productCards = modal.querySelectorAll(".produc_choice_card");
     const explainCards = modal.querySelectorAll(".js_proudct_choice_explainCard");
+    // 260901 상품 선택 이미지
+    const productChoiceImage = modal.querySelector(".js_product_choice_image");
+    const productChoiceImageContent = modal.querySelector(".js_product_choice_image_content");
 
     const paymentOption = modal.querySelector(".product_choice_option");
     const choiceBoxes = modal.querySelectorAll(".js_product_choice_box");
@@ -1210,6 +1213,18 @@ function initType3Payment(modal) {
 
 
             selectedProduct = card.dataset.target;
+            // 260901 선택한 상품 이미지를 결제수단 위에 표시
+            const productImages = {
+                "1": "resources/img/product/ex01.webp",
+                "2": "resources/img/product/ex02.webp",
+                "3": "resources/img/product/ex03.webp"
+            };
+            const productImage = card.dataset.image || productImages[selectedProduct];
+            if (productChoiceImage && productChoiceImageContent && productImage) {
+                productChoiceImageContent.src = productImage;
+                productChoiceImageContent.alt = card.querySelector(".produc_choice_card_L h2")?.textContent.trim() || "상품 이미지";
+                productChoiceImage.classList.add("active");
+            }
 
             const priceText =
                 card.querySelector(".produc_choice_card_R h2")
